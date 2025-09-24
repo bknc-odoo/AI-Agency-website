@@ -351,7 +351,96 @@
     "title": "Bring Your Messy Data - We'll Handle Everything",
     "subtitle": "No ERP required. No data restructuring needed. Our AI understands whatever you have and builds its own smart database",
     "pipeline": "AI Processing Pipeline",
-    "cta": "Send Us Your Messy Data"
+    "cta": "Send Us Your Messy Data",
+    "dataTypes": [
+      {
+        "id": "office-chaos",
+        "name": "Your Office Files (The Messy Ones)",
+        "description": "Stop worrying about your scattered Word docs, old Excel files, and random PDFs. Our AI reads everything.",
+        "formats": ["Word Documents", "Excel Spreadsheets", "PowerPoint Files", "PDF Reports", "Email Archives"],
+        "capabilities": [
+          "Reads any document format",
+          "Extracts key information automatically",
+          "Connects related data across files",
+          "Creates searchable knowledge base",
+          "No reformatting required"
+        ],
+        "useCase": "Turn your document chaos into organized, searchable intelligence",
+        "processingTime": "Minutes, not months",
+        "accuracy": "AI understands context, not just text"
+      },
+      {
+        "id": "google-drive",
+        "name": "Your Google Drive Disaster",
+        "description": "All those Google Sheets, Docs, and Slides sitting in random folders? AI organizes it all automatically.",
+        "formats": ["Google Sheets", "Google Docs", "Google Slides", "Shared Folders", "Collaborative Files"],
+        "capabilities": [
+          "Connects to Google Workspace directly",
+          "Reads collaborative documents",
+          "Tracks changes and versions",
+          "Builds unified data view",
+          "No manual export needed"
+        ],
+        "useCase": "Transform your Google Drive mess into structured business intelligence",
+        "processingTime": "Syncs continuously",
+        "accuracy": "Understands collaborative context"
+      },
+      {
+        "id": "email-madness",
+        "name": "Your Email Mountains",
+        "description": "Years of emails with attachments, contracts, and conversations? AI extracts every important detail.",
+        "formats": ["Gmail Archives", "Outlook Files", "Email Attachments", "Threading History", "Contact Lists"],
+        "capabilities": [
+          "Reads email content and attachments",
+          "Extracts contracts and agreements",
+          "Identifies key relationships",
+          "Creates timeline of interactions",
+          "Privacy-safe processing"
+        ],
+        "useCase": "Turn email chaos into relationship and contract intelligence",
+        "processingTime": "Processes years of emails overnight",
+        "accuracy": "Understands business relationships"
+      },
+      {
+        "id": "legacy-systems",
+        "name": "Your Old System Exports",
+        "description": "That ancient CRM export, old accounting software data, or CSV files from 2015? AI makes sense of it all.",
+        "formats": ["CSV Exports", "Database Dumps", "Legacy Reports", "Old Software Files", "Mixed Formats"],
+        "capabilities": [
+          "Handles any file format",
+          "Cleans messy data automatically",
+          "Connects historical patterns",
+          "No data migration needed",
+          "Preserves data history"
+        ],
+        "useCase": "Rescue valuable insights from old systems without expensive migrations",
+        "processingTime": "Works with what you have",
+        "accuracy": "Smart enough to handle inconsistencies"
+      },
+      {
+        "id": "real-world-chaos",
+        "name": "Your Real-World Mix",
+        "description": "Photos of whiteboards, scanned documents, voice recordings, and handwritten notes? AI handles the real world.",
+        "formats": ["Phone Photos", "Scanned Documents", "Voice Recordings", "Handwritten Notes", "Mixed Media"],
+        "capabilities": [
+          "Reads handwriting and photos",
+          "Transcribes voice recordings",
+          "Processes mixed media files",
+          "Connects physical and digital",
+          "No perfect formats required"
+        ],
+        "useCase": "Digitize and organize everything from the physical world",
+        "processingTime": "Understands messy real-world data",
+        "accuracy": "Handles imperfect inputs perfectly"
+      }
+    ],
+    "pipelineSteps": [
+      { "step": "Ingest", "desc": "Data Collection" },
+      { "step": "Clean", "desc": "Preprocessing" },
+      { "step": "Analyze", "desc": "AI Processing" },
+      { "step": "Extract", "desc": "Insights" },
+      { "step": "Deliver", "desc": "Results" }
+    ]
   },
   "capabilities": {
     "title": "Business AI Automation Hub",
