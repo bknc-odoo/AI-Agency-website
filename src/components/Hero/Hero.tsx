@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
       return (
         <>
           <span className="gradient-text">Обери </span>
-          <span className="gradient-text-animated glitch-effect" data-text="ШІ">ШІ</span>
+          <span className="gradient-text-animated">ШІ</span>
           <span className="gradient-text">.</span>
         </>
       )

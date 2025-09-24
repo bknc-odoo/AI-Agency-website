@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 interface Agent {
   id: string
@@ -14,6 +15,7 @@ interface Agent {
 }
 
 const AgentsGallery: React.FC = () => {
+  const { t } = useTranslation()
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null)
 
   const agents: Agent[] = [
@@ -131,11 +133,11 @@ const AgentsGallery: React.FC = () => {
     <section className="py-20 px-4 bg-slate-900/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Custom AI Agents Gallery
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
+            {t('agentsGallery.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Pre-trained, specialized agents ready to transform your operations
+            {t('agentsGallery.subtitle')}
           </p>
         </div>
 

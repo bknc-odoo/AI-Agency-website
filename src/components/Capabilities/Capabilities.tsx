@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { useTranslation } from '@/hooks/useTranslation'
+import enTranslations from '@/translations/en.json'
+import uaTranslations from '@/translations/ua.json'
 
 interface Capability {
   category: string
@@ -12,11 +15,13 @@ interface Capability {
 }
 
 const Capabilities: React.FC = () => {
+  const { t, language } = useTranslation()
+  const translations = language === 'en' ? enTranslations : uaTranslations
   const [activeCategory, setActiveCategory] = useState(0)
 
   const capabilities: Capability[] = [
     {
-      category: "Voice AI Agents",
+      category: t('capabilities.categories.voice'),
       color: "from-cyan-400 to-blue-500",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -26,31 +31,10 @@ const Capabilities: React.FC = () => {
           <line x1="8" y1="23" x2="16" y2="23" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
-      items: [
-        {
-          title: "24/7 Customer Service Agent",
-          description: "Stop losing customers to long wait times and inconsistent support. AI agent handles every inquiry instantly",
-          metrics: "95% customer satisfaction, 70% cost reduction"
-        },
-        {
-          title: "Sales & Lead Qualification Agent",
-          description: "End the frustration of cold prospects and unqualified leads. AI agent finds and nurtures ready-to-buy customers",
-          metrics: "3x more qualified leads, 60% conversion rate"
-        },
-        {
-          title: "Appointment Booking Agent",
-          description: "Stop the back-and-forth email chains for scheduling. AI agent books, reschedules, and confirms automatically",
-          metrics: "100% accuracy, 85% time saved"
-        },
-        {
-          title: "Order Processing & Support Agent",
-          description: "End order mix-ups and processing delays. AI agent handles everything from order to delivery tracking",
-          metrics: "99.9% order accuracy, instant processing"
-        }
-      ]
+      items: translations.capabilities.items.voice
     },
     {
-      category: "Knowledge Base Agents",
+      category: t('capabilities.categories.knowledge'),
       color: "from-purple-400 to-pink-500",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -60,28 +44,7 @@ const Capabilities: React.FC = () => {
           <path d="M15 13a3 3 0 1 0-6 0" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
-      items: [
-        {
-          title: "Internal Knowledge Assistant",
-          description: "Stop employees from asking 'where do I find...' every day. AI agent knows every policy and procedure instantly",
-          metrics: "90% faster information retrieval, 24/7 availability"
-        },
-        {
-          title: "Customer FAQ & Support Agent",
-          description: "End repetitive support tickets flooding your inbox. AI agent answers every common question automatically",
-          metrics: "80% ticket reduction, instant responses"
-        },
-        {
-          title: "Training & Onboarding Agent",
-          description: "Stop new hires from feeling lost and overwhelmed. AI agent guides them through everything step-by-step",
-          metrics: "50% faster onboarding, 95% completion rate"
-        },
-        {
-          title: "Technical Documentation Agent",
-          description: "End developers wasting hours searching for code examples. AI agent finds exactly what they need instantly",
-          metrics: "75% less development time, 100% accuracy"
-        }
-      ]
+      items: translations.capabilities.items.knowledge
     },
     {
       category: "Process Automation Agents",
@@ -162,11 +125,11 @@ const Capabilities: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Business AI Automation Hub
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
+            {t('capabilities.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Custom AI agents and automation tools that transform your business operations from day one
+            {t('capabilities.subtitle')}
           </p>
         </div>
 
@@ -210,8 +173,8 @@ const Capabilities: React.FC = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect">
-            Start Your AI Automation Journey
+          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105">
+            {t('capabilities.cta')}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M7 17l9.2-9.2M17 17V7H7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
