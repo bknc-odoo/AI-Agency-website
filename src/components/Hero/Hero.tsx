@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import ParticleNetwork from '@/components/Effects/ParticleNetwork'
 import CircuitPattern from '@/components/Effects/CircuitPattern'
+import NeuralNetwork3D from '@/components/Effects/NeuralNetwork3D'
 
 const Hero: React.FC = () => {
   const { t, language } = useTranslation()
@@ -46,6 +47,9 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden digital-noise">
+      {/* 3D Neural Network Background */}
+      <NeuralNetwork3D />
+
       {/* Particle Network Background */}
       <ParticleNetwork />
 

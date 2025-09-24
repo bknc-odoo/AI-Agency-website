@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import NeuralNetwork3D from '@/components/Effects/NeuralNetwork3D'
 
 interface Capability {
   category: string
@@ -155,9 +154,6 @@ const Capabilities: React.FC = () => {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden">
-      {/* 3D Neural Network Background */}
-      <NeuralNetwork3D />
-
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900/90" />
 

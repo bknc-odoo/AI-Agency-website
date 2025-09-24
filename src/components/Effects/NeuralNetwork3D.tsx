@@ -22,6 +22,7 @@ interface Connection3D {
 
 const NeuralNetwork3D: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const nodesRef = useRef<Node3D[]>([])
   const connectionsRef = useRef<Connection3D[]>([])
   const animationRef = useRef<number | null>(null)
@@ -30,13 +31,19 @@ const NeuralNetwork3D: React.FC = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current
-    if (!canvas) return
+    const container = containerRef.current
+    if (!canvas || !container) return
 
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    const updateCanvasSize = () => {
+      const rect = container.getBoundingClientRect()
+      canvas.width = rect.width
+      canvas.height = rect.height
+    }
+
+    updateCanvasSize()
 
     // Initialize 3D neural network
     const initializeNetwork = () => {
@@ -252,8 +259,7 @@ const NeuralNetwork3D: React.FC = () => {
     animate()
 
     const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      updateCanvasSize()
     }
 
     window.addEventListener('resize', handleResize)
@@ -268,11 +274,13 @@ const NeuralNetwork3D: React.FC = () => {
   }, [])
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-40"
-      style={{ zIndex: 3 }}
-    />
+    <div ref={containerRef} className="absolute inset-0">
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 pointer-events-none opacity-40"
+        style={{ zIndex: 1 }}
+      />
+    </div>
   )
 }
 
