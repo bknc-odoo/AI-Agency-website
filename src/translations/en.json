@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "services": "Services",
+    "approach": "Approach",
+    "team": "Team",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "The Future Isn't Waiting.",
+    "subtitle": "Nord It.",
+    "description": "Partner with Nord AI to develop and implement bespoke AI solutions that keep your business ahead of the competition.",
+    "cta": "Book a Consultation"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Comprehensive AI solutions designed to accelerate your digital transformation and drive unprecedented growth.",
+    "strategy": {
+      "title": "AI Strategy",
+      "description": "Comprehensive AI roadmaps tailored to your business objectives and market position.",
+      "features": [
+        "Strategic Planning",
+        "ROI Analysis",
+        "Implementation Roadmap",
+        "Risk Assessment"
+      ]
+    },
+    "agents": {
+      "title": "Custom AI Agents",
+      "description": "Bespoke AI agents designed and trained specifically for your unique business challenges.",
+      "features": [
+        "Executive Assistant Agents",
+        "Content Creation Agents",
+        "Lead Generation Agents",
+        "Internal Strategy Agents"
+      ]
+    },
+    "analytics": {
+      "title": "Data Analytics",
+      "description": "Transform raw data into actionable insights with advanced analytics and visualization.",
+      "features": [
+        "Predictive Analytics",
+        "Real-time Dashboards",
+        "Data Mining",
+        "Business Intelligence"
+      ]
+    },
+    "automation": {
+      "title": "Process Automation",
+      "description": "Streamline operations with intelligent automation solutions that scale with your business.",
+      "features": [
+        "Workflow Automation",
+        "RPA Integration",
+        "Smart Chatbots",
+        "AI Analysts"
+      ]
+    }
+  },
+  "approach": {
+    "title": "Our Approach",
+    "description": "A proven methodology that ensures successful AI implementation from concept to deployment.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "Deep dive into your business challenges, goals, and current infrastructure to identify AI opportunities."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "description": "Develop a comprehensive AI roadmap with clear milestones, timelines, and success metrics."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Build and train custom AI agents using cutting-edge technology and best practices."
+      },
+      "integration": {
+        "title": "Integration",
+        "description": "Seamlessly deploy and integrate AI solutions into your existing workflows and systems."
+      }
+    }
+  },
+  "difference": {
+    "title": "The Nord Difference",
+    "description": "Why leading businesses choose Nord AI to accelerate their digital transformation.",
+    "stats": {
+      "speed": {
+        "value": "60%",
+        "title": "Speed to Market",
+        "description": "Our streamlined process gets you from concept to deployment 60% faster."
+      },
+      "custom": {
+        "value": "100%",
+        "title": "Custom Solutions",
+        "description": "No cookie-cutter approaches. Every solution is tailored to your unique needs."
+      },
+      "support": {
+        "value": "24/7",
+        "title": "Ongoing Support",
+        "description": "24/7 monitoring and continuous optimization to ensure peak performance."
+      }
+    }
+  },
+  "team": {
+    "title": "Meet Your Principal AI Strategist",
+    "quote": "\"I founded Nord AI with a single mission: demystify artificial intelligence and show people how they can leverage this amazing technology.\"",
+    "tagline": "BUILDING THE FUTURE WITH AI"
+  },
+  "contact": {
+    "title": "Start Your AI Journey",
+    "description": "Ready to transform your business with AI? Let's discuss how Nord AI can accelerate your digital transformation.",
+    "benefits": {
+      "consultation": {
+        "title": "Free Consultation",
+        "description": "30-minute strategy session"
+      },
+      "proposal": {
+        "title": "Custom Proposal",
+        "description": "Tailored solution roadmap"
+      },
+      "implementation": {
+        "title": "Rapid Implementation",
+        "description": "Fast-track to AI success"
+      }
+    },
+    "form": {
+      "title": "Book Your Consultation"
+    }
+  },
+  "footer": {
+    "tagline": "Making AI Simple",
+    "services": "Services",
+    "contact": "Contact"
+  }
+}
