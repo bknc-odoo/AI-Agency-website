@@ -2,36 +2,24 @@ import React from 'react'
 import TranslationProvider from './components/TranslationProvider'
 import Navigation from './components/Navigation/Navigation'
 import Hero from './components/Hero/Hero'
+import Services from './components/Services/Services'
+import Approach from './components/Approach/Approach'
+import Difference from './components/Difference/Difference'
+import Team from './components/Team/Team'
+import Contact from './components/Contact/Contact'
 import './styles/globals.css'
 
 const App: React.FC = () => {
   return (
     <TranslationProvider>
-      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
         <Navigation />
         <Hero />
-
-        {/* Placeholder sections */}
-        <section id="services" className="section-padding">
-          <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-8">Services Section</h2>
-            <p className="text-center text-muted-foreground">Services content coming soon...</p>
-          </div>
-        </section>
-
-        <section id="approach" className="section-padding bg-card/30">
-          <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-8">Approach Section</h2>
-            <p className="text-center text-muted-foreground">Approach content coming soon...</p>
-          </div>
-        </section>
-
-        <section id="team" className="section-padding">
-          <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-8">Team Section</h2>
-            <p className="text-center text-muted-foreground">Team content coming soon...</p>
-          </div>
-        </section>
+        <Services />
+        <Approach />
+        <Difference />
+        <Team />
+        <Contact />
       </div>
     </TranslationProvider>
   )
