@@ -80,7 +80,12 @@ const Navigation: React.FC = () => {
               </a>
 
               {/* AI Solutions Dropdown */}
-              <div className="relative" ref={dropdownRef}>
+              <div
+                className="relative"
+                ref={dropdownRef}
+                onMouseEnter={() => setIsAiSolutionsOpen(true)}
+                onMouseLeave={() => setIsAiSolutionsOpen(false)}
+              >
                 <button
                   className="flex items-center text-slate-300 hover:text-cyan-400 transition-colors"
                   onClick={() => setIsAiSolutionsOpen(!isAiSolutionsOpen)}
