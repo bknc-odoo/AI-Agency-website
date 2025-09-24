@@ -39,11 +39,18 @@
                             </div>
                         </div>
                         <div class="hidden md:flex items-center space-x-8">
-                            <a href="#services" class="text-muted-foreground hover:text-primary transition-colors">Services</a>
-                            <a href="#approach" class="text-muted-foreground hover:text-primary transition-colors">Approach</a>
-                            <a href="#team" class="text-muted-foreground hover:text-primary transition-colors">Team</a>
+                            <a href="#services" class="text-muted-foreground hover:text-primary transition-colors" data-translate="nav-services">Services</a>
+                            <a href="#approach" class="text-muted-foreground hover:text-primary transition-colors" data-translate="nav-approach">Approach</a>
+                            <a href="#team" class="text-muted-foreground hover:text-primary transition-colors" data-translate="nav-team">Team</a>
                         </div>
-                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 rounded-md px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">Get Started</button>
+                        <div class="flex items-center space-x-4">
+                            <!-- Language Switcher -->
+                            <div class="flex items-center bg-card/50 rounded-md p-1">
+                                <button id="lang-en" class="lang-btn px-3 py-1 text-xs font-medium rounded transition-colors bg-primary text-primary-foreground">EN</button>
+                                <button id="lang-ua" class="lang-btn px-3 py-1 text-xs font-medium rounded transition-colors text-muted-foreground hover:text-foreground">UA</button>
+                            </div>
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 rounded-md px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold" data-translate="cta-get-started">Get Started</button>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -59,15 +66,15 @@
                 <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div class="animate-fade-in-up">
                         <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-                            The Future Isn't<br>Waiting.<br>
+                            <span data-translate="hero-title">The Future Isn't<br>Waiting.<br></span>
                             <span class="gradient-text">Nord</span> It.
                         </h1>
-                        <p class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+                        <p class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed" data-translate="hero-description">
                             Partner with Nord AI to develop and implement bespoke AI solutions that keep your business ahead of the competition.
                         </p>
                         <div class="flex justify-center">
                             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-11 rounded-md border-primary/50 text-primary hover:bg-primary/10 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105">
-                                Book a Consultation
+                                <span data-translate="hero-cta">Book a Consultation</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-5 w-5">
                                     <path d="M5 12h14"></path>
                                     <path d="m12 5 7 7-7 7"></path>
@@ -88,8 +95,8 @@
                     <div class="max-w-7xl mx-auto">
                         <div class="text-center mb-16 animate-fade-in-up">
                             <div class="text-primary font-mono text-sm tracking-wider mb-4">002</div>
-                            <h2 class="text-4xl md:text-6xl font-bold mb-6">Our <span class="gradient-text">Services</span></h2>
-                            <p class="text-xl text-muted-foreground max-w-3xl mx-auto">Comprehensive AI solutions designed to accelerate your digital transformation and drive unprecedented growth.</p>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-6" data-translate="services-section">Our <span class="gradient-text">Services</span></h2>
+                            <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-translate="services-description">Comprehensive AI solutions designed to accelerate your digital transformation and drive unprecedented growth.</p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="group relative bg-card border border-border rounded-xl p-8 transition-all duration-500 cursor-pointer transform hover:scale-105" style="animation-delay: 0s;">
@@ -99,8 +106,8 @@
                                         <div class="w-2 h-2 rounded-full transition-all duration-300 bg-primary"></div>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">AI Strategy</h3>
-                                <p class="text-muted-foreground mb-6 leading-relaxed">Comprehensive AI roadmaps tailored to your business objectives and market position.</p>
+                                <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300" data-translate="service-ai-strategy">AI Strategy</h3>
+                                <p class="text-muted-foreground mb-6 leading-relaxed" data-translate="service-ai-strategy-desc">Comprehensive AI roadmaps tailored to your business objectives and market position.</p>
                                 <div class="space-y-2">
                                     <div class="flex items-center text-sm text-muted-foreground">
                                         <div class="w-1.5 h-1.5 bg-primary rounded-full mr-3 opacity-60"></div>Strategic Planning
@@ -124,8 +131,8 @@
                                         <div class="w-2 h-2 rounded-full transition-all duration-300 bg-primary"></div>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">Custom AI Agents</h3>
-                                <p class="text-muted-foreground mb-6 leading-relaxed">Bespoke AI agents designed and trained specifically for your unique business challenges.</p>
+                                <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300" data-translate="service-custom-agents">Custom AI Agents</h3>
+                                <p class="text-muted-foreground mb-6 leading-relaxed" data-translate="service-custom-agents-desc">Bespoke AI agents designed and trained specifically for your unique business challenges.</p>
                                 <div class="space-y-2">
                                     <div class="flex items-center text-sm text-muted-foreground">
                                         <div class="w-1.5 h-1.5 bg-primary rounded-full mr-3 opacity-60"></div>Executive Assistant Agents
@@ -149,8 +156,8 @@
                                         <div class="w-2 h-2 rounded-full transition-all duration-300 bg-primary"></div>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">Data Analytics</h3>
-                                <p class="text-muted-foreground mb-6 leading-relaxed">Transform raw data into actionable insights with advanced analytics and visualization.</p>
+                                <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300" data-translate="service-data-analytics">Data Analytics</h3>
+                                <p class="text-muted-foreground mb-6 leading-relaxed" data-translate="service-data-analytics-desc">Transform raw data into actionable insights with advanced analytics and visualization.</p>
                                 <div class="space-y-2">
                                     <div class="flex items-center text-sm text-muted-foreground">
                                         <div class="w-1.5 h-1.5 bg-primary rounded-full mr-3 opacity-60"></div>Predictive Analytics
@@ -174,8 +181,8 @@
                                         <div class="w-2 h-2 rounded-full transition-all duration-300 bg-primary"></div>
                                     </div>
                                 </div>
-                                <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">Process Automation</h3>
-                                <p class="text-muted-foreground mb-6 leading-relaxed">Streamline operations with intelligent automation solutions that scale with your business.</p>
+                                <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300" data-translate="service-automation">Process Automation</h3>
+                                <p class="text-muted-foreground mb-6 leading-relaxed" data-translate="service-automation-desc">Streamline operations with intelligent automation solutions that scale with your business.</p>
                                 <div class="space-y-2">
                                     <div class="flex items-center text-sm text-muted-foreground">
                                         <div class="w-1.5 h-1.5 bg-primary rounded-full mr-3 opacity-60"></div>Workflow Automation
@@ -201,8 +208,8 @@
                     <div class="max-w-7xl mx-auto">
                         <div class="text-center mb-16 animate-fade-in-up">
                             <div class="text-primary font-mono text-sm tracking-wider mb-4">003</div>
-                            <h2 class="text-4xl md:text-6xl font-bold mb-6">Our <span class="gradient-text">Approach</span></h2>
-                            <p class="text-xl text-muted-foreground max-w-3xl mx-auto">A proven methodology that ensures successful AI implementation from concept to deployment.</p>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-6" data-translate="approach-section">Our <span class="gradient-text">Approach</span></h2>
+                            <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-translate="approach-description">A proven methodology that ensures successful AI implementation from concept to deployment.</p>
                         </div>
                         <div class="relative">
                             <div class="hidden lg:flex items-stretch justify-between relative gap-6">
@@ -211,8 +218,8 @@
                                         <span class="text-primary-foreground font-bold text-lg">01</span>
                                     </div>
                                     <div class="text-center bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg glow-effect-hover h-full flex flex-col">
-                                        <h3 class="text-xl font-bold mb-3 text-primary">Discovery</h3>
-                                        <p class="text-muted-foreground text-sm leading-relaxed flex-1">Deep dive into your business challenges, goals, and current infrastructure to identify AI opportunities.</p>
+                                        <h3 class="text-xl font-bold mb-3 text-primary" data-translate="approach-discovery">Discovery</h3>
+                                        <p class="text-muted-foreground text-sm leading-relaxed flex-1" data-translate="approach-discovery-desc">Deep dive into your business challenges, goals, and current infrastructure to identify AI opportunities.</p>
                                     </div>
                                 </div>
                                 <div class="relative z-10 flex flex-col items-center flex-1 max-w-xs">
@@ -220,8 +227,8 @@
                                         <span class="text-primary-foreground font-bold text-lg">02</span>
                                     </div>
                                     <div class="text-center bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg glow-effect-hover h-full flex flex-col">
-                                        <h3 class="text-xl font-bold mb-3 text-primary">Strategy</h3>
-                                        <p class="text-muted-foreground text-sm leading-relaxed flex-1">Develop a comprehensive AI roadmap with clear milestones, timelines, and success metrics.</p>
+                                        <h3 class="text-xl font-bold mb-3 text-primary" data-translate="approach-strategy">Strategy</h3>
+                                        <p class="text-muted-foreground text-sm leading-relaxed flex-1" data-translate="approach-strategy-desc">Develop a comprehensive AI roadmap with clear milestones, timelines, and success metrics.</p>
                                     </div>
                                 </div>
                                 <div class="relative z-10 flex flex-col items-center flex-1 max-w-xs">
@@ -229,8 +236,8 @@
                                         <span class="text-primary-foreground font-bold text-lg">03</span>
                                     </div>
                                     <div class="text-center bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg glow-effect-hover h-full flex flex-col">
-                                        <h3 class="text-xl font-bold mb-3 text-primary">Development</h3>
-                                        <p class="text-muted-foreground text-sm leading-relaxed flex-1">Build and train custom AI agents using cutting-edge technology and best practices.</p>
+                                        <h3 class="text-xl font-bold mb-3 text-primary" data-translate="approach-development">Development</h3>
+                                        <p class="text-muted-foreground text-sm leading-relaxed flex-1" data-translate="approach-development-desc">Build and train custom AI agents using cutting-edge technology and best practices.</p>
                                     </div>
                                 </div>
                                 <div class="relative z-10 flex flex-col items-center flex-1 max-w-xs">
@@ -238,8 +245,8 @@
                                         <span class="text-primary-foreground font-bold text-lg">04</span>
                                     </div>
                                     <div class="text-center bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg glow-effect-hover h-full flex flex-col">
-                                        <h3 class="text-xl font-bold mb-3 text-primary">Integration</h3>
-                                        <p class="text-muted-foreground text-sm leading-relaxed flex-1">Seamlessly deploy and integrate AI solutions into your existing workflows and systems.</p>
+                                        <h3 class="text-xl font-bold mb-3 text-primary" data-translate="approach-integration">Integration</h3>
+                                        <p class="text-muted-foreground text-sm leading-relaxed flex-1" data-translate="approach-integration-desc">Seamlessly deploy and integrate AI solutions into your existing workflows and systems.</p>
                                     </div>
                                 </div>
                             </div>
@@ -254,32 +261,32 @@
                 <div class="max-w-7xl mx-auto relative z-10">
                     <div class="text-center mb-16 animate-fade-in-up">
                         <div class="text-primary font-mono text-sm tracking-wider mb-4">004</div>
-                        <h2 class="text-4xl md:text-6xl font-bold mb-6">The Nord <span class="gradient-text">Difference</span></h2>
-                        <p class="text-xl text-muted-foreground max-w-3xl mx-auto">Why leading businesses choose Nord AI to accelerate their digital transformation.</p>
+                        <h2 class="text-4xl md:text-6xl font-bold mb-6" data-translate="difference-section">The Nord <span class="gradient-text">Difference</span></h2>
+                        <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-translate="difference-description">Why leading businesses choose Nord AI to accelerate their digital transformation.</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center max-w-5xl mx-auto">
                         <div class="text-center group hover:transform hover:scale-105 transition-all duration-300" style="animation-delay: 0s;">
                             <div class="mb-6">
                                 <div class="text-6xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">60%</div>
-                                <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Speed to Market</h3>
+                                <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300" data-translate="difference-speed">Speed to Market</h3>
                             </div>
-                            <p class="text-muted-foreground leading-relaxed">Our streamlined process gets you from concept to deployment 60% faster.</p>
+                            <p class="text-muted-foreground leading-relaxed" data-translate="difference-speed-desc">Our streamlined process gets you from concept to deployment 60% faster.</p>
                             <div class="mt-6 w-16 h-0.5 bg-gradient-to-r from-primary to-primary/50 mx-auto group-hover:w-24 transition-all duration-300"></div>
                         </div>
                         <div class="text-center group hover:transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.2s;">
                             <div class="mb-6">
                                 <div class="text-6xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
-                                <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Custom Solutions</h3>
+                                <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300" data-translate="difference-custom">Custom Solutions</h3>
                             </div>
-                            <p class="text-muted-foreground leading-relaxed">No cookie-cutter approaches. Every solution is tailored to your unique needs.</p>
+                            <p class="text-muted-foreground leading-relaxed" data-translate="difference-custom-desc">No cookie-cutter approaches. Every solution is tailored to your unique needs.</p>
                             <div class="mt-6 w-16 h-0.5 bg-gradient-to-r from-primary to-primary/50 mx-auto group-hover:w-24 transition-all duration-300"></div>
                         </div>
                         <div class="text-center group hover:transform hover:scale-105 transition-all duration-300" style="animation-delay: 0.4s;">
                             <div class="mb-6">
                                 <div class="text-6xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-                                <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Ongoing Support</h3>
+                                <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300" data-translate="difference-support">Ongoing Support</h3>
                             </div>
-                            <p class="text-muted-foreground leading-relaxed">24/7 monitoring and continuous optimization to ensure peak performance.</p>
+                            <p class="text-muted-foreground leading-relaxed" data-translate="difference-support-desc">24/7 monitoring and continuous optimization to ensure peak performance.</p>
                             <div class="mt-6 w-16 h-0.5 bg-gradient-to-r from-primary to-primary/50 mx-auto group-hover:w-24 transition-all duration-300"></div>
                         </div>
                     </div>
@@ -297,7 +304,7 @@
                     <div class="max-w-4xl mx-auto">
                         <div class="text-center mb-16 animate-fade-in-up">
                             <div class="text-primary font-mono text-sm tracking-wider mb-4">005</div>
-                            <h2 class="text-4xl md:text-6xl font-bold mb-12">Meet Your Principal <span class="gradient-text">AI Strategist</span></h2>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-12" data-translate="team-section">Meet Your Principal <span class="gradient-text">AI Strategist</span></h2>
                         </div>
                         <div class="text-center">
                             <div class="relative mb-8 inline-block">
@@ -306,10 +313,10 @@
                                 </div>
                             </div>
                             <div class="max-w-3xl mx-auto mb-12">
-                                <p class="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">"I founded Nord AI with a single mission: demystify artificial intelligence and show people how they can leverage this amazing technology."</p>
+                                <p class="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6" data-translate="team-quote">"I founded Nord AI with a single mission: demystify artificial intelligence and show people how they can leverage this amazing technology."</p>
                             </div>
                             <div class="border-t border-border pt-8">
-                                <p class="text-sm text-muted-foreground mb-6 font-semibold tracking-wider">BUILDING THE FUTURE WITH AI</p>
+                                <p class="text-sm text-muted-foreground mb-6 font-semibold tracking-wider" data-translate="team-building">BUILDING THE FUTURE WITH AI</p>
                             </div>
                         </div>
                     </div>
@@ -326,16 +333,16 @@
                         <div class="grid lg:grid-cols-2 gap-16 items-start">
                             <div class="animate-fade-in-up">
                                 <div class="text-primary font-mono text-sm tracking-wider mb-4">006</div>
-                                <h2 class="text-4xl md:text-6xl font-bold mb-6">Start Your <span class="gradient-text">AI Journey</span></h2>
-                                <p class="text-xl text-muted-foreground mb-8 leading-relaxed">Ready to transform your business with AI? Let's discuss how Nord AI can accelerate your digital transformation.</p>
+                                <h2 class="text-4xl md:text-6xl font-bold mb-6" data-translate="contact-section">Start Your <span class="gradient-text">AI Journey</span></h2>
+                                <p class="text-xl text-muted-foreground mb-8 leading-relaxed" data-translate="contact-description">Ready to transform your business with AI? Let's discuss how Nord AI can accelerate your digital transformation.</p>
                                 <div class="space-y-6">
                                     <div class="flex items-center space-x-4">
                                         <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
                                             <div class="w-4 h-4 bg-primary rounded-full"></div>
                                         </div>
                                         <div>
-                                            <div class="font-semibold">Free Consultation</div>
-                                            <div class="text-muted-foreground text-sm">30-minute strategy session</div>
+                                            <div class="font-semibold" data-translate="contact-free">Free Consultation</div>
+                                            <div class="text-muted-foreground text-sm" data-translate="contact-free-desc">30-minute strategy session</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center space-x-4">
@@ -343,8 +350,8 @@
                                             <div class="w-4 h-4 bg-primary rounded-full"></div>
                                         </div>
                                         <div>
-                                            <div class="font-semibold">Custom Proposal</div>
-                                            <div class="text-muted-foreground text-sm">Tailored solution roadmap</div>
+                                            <div class="font-semibold" data-translate="contact-proposal">Custom Proposal</div>
+                                            <div class="text-muted-foreground text-sm" data-translate="contact-proposal-desc">Tailored solution roadmap</div>
                                         </div>
                                     </div>
                                     <div class="flex items-center space-x-4">
@@ -352,15 +359,15 @@
                                             <div class="w-4 h-4 bg-primary rounded-full"></div>
                                         </div>
                                         <div>
-                                            <div class="font-semibold">Rapid Implementation</div>
-                                            <div class="text-muted-foreground text-sm">Fast-track to AI success</div>
+                                            <div class="font-semibold" data-translate="contact-implementation">Rapid Implementation</div>
+                                            <div class="text-muted-foreground text-sm" data-translate="contact-implementation-desc">Fast-track to AI success</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="animate-slide-in-right">
                                 <div class="bg-card border border-border rounded-2xl p-8 glow-effect">
-                                    <h3 class="text-2xl font-bold mb-6">Book Your Consultation</h3>
+                                    <h3 class="text-2xl font-bold mb-6" data-translate="contact-form-title">Book Your Consultation</h3>
                                     <form class="space-y-6">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <div>
@@ -449,7 +456,7 @@
                                 <span class="text-foreground">Nord</span>
                                 <span class="gradient-text">AI</span>
                             </div>
-                            <p class="text-muted-foreground mb-6 max-w-md">Making AI Simple</p>
+                            <p class="text-muted-foreground mb-6 max-w-md" data-translate="footer-tagline">Making AI Simple</p>
                             <div class="flex space-x-4">
                                 <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                                 <div class="w-2 h-2 bg-primary/60 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
@@ -457,7 +464,7 @@
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-semibold mb-4">Services</h3>
+                            <h3 class="font-semibold mb-4" data-translate="footer-services">Services</h3>
                             <ul class="space-y-2 text-muted-foreground text-sm">
                                 <li><a href="#" class="hover:text-primary transition-colors">AI Strategy</a></li>
                                 <li><a href="#" class="hover:text-primary transition-colors">Custom Development</a></li>
@@ -466,7 +473,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h3 class="font-semibold mb-4">Contact</h3>
+                            <h3 class="font-semibold mb-4" data-translate="footer-contact">Contact</h3>
                             <ul class="space-y-2 text-muted-foreground text-sm">
                                 <li>nordgaimer.ivan@gmail.com</li>
                             </ul>
@@ -483,5 +490,157 @@
             </footer>
         </div>
     </div>
+
+    <!-- Language Switcher JavaScript -->
+    <script>
+        // Translation data
+        const translations = {
+            'en': {
+                'nav-services': 'Services',
+                'nav-approach': 'Approach',
+                'nav-team': 'Team',
+                'cta-get-started': 'Get Started',
+                'hero-title': 'The Future Isn\'t<br>Waiting.<br>',
+                'hero-description': 'Partner with Nord AI to develop and implement bespoke AI solutions that keep your business ahead of the competition.',
+                'hero-cta': 'Book a Consultation',
+                'services-section': 'Our <span class="gradient-text">Services</span>',
+                'services-description': 'Comprehensive AI solutions designed to accelerate your digital transformation and drive unprecedented growth.',
+                'service-ai-strategy': 'AI Strategy',
+                'service-ai-strategy-desc': 'Comprehensive AI roadmaps tailored to your business objectives and market position.',
+                'service-custom-agents': 'Custom AI Agents',
+                'service-custom-agents-desc': 'Bespoke AI agents designed and trained specifically for your unique business challenges.',
+                'service-data-analytics': 'Data Analytics',
+                'service-data-analytics-desc': 'Transform raw data into actionable insights with advanced analytics and visualization.',
+                'service-automation': 'Process Automation',
+                'service-automation-desc': 'Streamline operations with intelligent automation solutions that scale with your business.',
+                'approach-section': 'Our <span class="gradient-text">Approach</span>',
+                'approach-description': 'A proven methodology that ensures successful AI implementation from concept to deployment.',
+                'approach-discovery': 'Discovery',
+                'approach-discovery-desc': 'Deep dive into your business challenges, goals, and current infrastructure to identify AI opportunities.',
+                'approach-strategy': 'Strategy',
+                'approach-strategy-desc': 'Develop a comprehensive AI roadmap with clear milestones, timelines, and success metrics.',
+                'approach-development': 'Development',
+                'approach-development-desc': 'Build and train custom AI agents using cutting-edge technology and best practices.',
+                'approach-integration': 'Integration',
+                'approach-integration-desc': 'Seamlessly deploy and integrate AI solutions into your existing workflows and systems.',
+                'difference-section': 'The Nord <span class="gradient-text">Difference</span>',
+                'difference-description': 'Why leading businesses choose Nord AI to accelerate their digital transformation.',
+                'difference-speed': 'Speed to Market',
+                'difference-speed-desc': 'Our streamlined process gets you from concept to deployment 60% faster.',
+                'difference-custom': 'Custom Solutions',
+                'difference-custom-desc': 'No cookie-cutter approaches. Every solution is tailored to your unique needs.',
+                'difference-support': 'Ongoing Support',
+                'difference-support-desc': '24/7 monitoring and continuous optimization to ensure peak performance.',
+                'team-section': 'Meet Your Principal <span class="gradient-text">AI Strategist</span>',
+                'team-quote': '"I founded Nord AI with a single mission: demystify artificial intelligence and show people how they can leverage this amazing technology."',
+                'team-building': 'BUILDING THE FUTURE WITH AI',
+                'contact-section': 'Start Your <span class="gradient-text">AI Journey</span>',
+                'contact-description': 'Ready to transform your business with AI? Let\'s discuss how Nord AI can accelerate your digital transformation.',
+                'contact-free': 'Free Consultation',
+                'contact-free-desc': '30-minute strategy session',
+                'contact-proposal': 'Custom Proposal',
+                'contact-proposal-desc': 'Tailored solution roadmap',
+                'contact-implementation': 'Rapid Implementation',
+                'contact-implementation-desc': 'Fast-track to AI success',
+                'contact-form-title': 'Book Your Consultation',
+                'footer-tagline': 'Making AI Simple',
+                'footer-services': 'Services',
+                'footer-contact': 'Contact'
+            },
+            'ua': {
+                'nav-services': 'Послуги',
+                'nav-approach': 'Підхід',
+                'nav-team': 'Команда',
+                'cta-get-started': 'Почати',
+                'hero-title': 'Майбутнє не чекає.<br>Обери<br>',
+                'hero-description': 'Співпрацюйте з Nord AI для розробки та впровадження індивідуальних ШІ-рішень, які тримають ваш бізнес попереду конкурентів.',
+                'hero-cta': 'Записатися на консультацію',
+                'services-section': 'Наші <span class="gradient-text">Послуги</span>',
+                'services-description': 'Комплексні ШІ-рішення, розроблені для прискорення вашої цифрової трансформації та забезпечення безпрецедентного зростання.',
+                'service-ai-strategy': 'ШІ Стратегія',
+                'service-ai-strategy-desc': 'Комплексні дорожні карти ШІ, адаптовані до ваших бізнес-цілей та ринкової позиції.',
+                'service-custom-agents': 'Індивідуальні ШІ Агенти',
+                'service-custom-agents-desc': 'Індивідуальні ШІ-агенти, розроблені та навчені спеціально для ваших унікальних бізнес-викликів.',
+                'service-data-analytics': 'Аналітика Даних',
+                'service-data-analytics-desc': 'Перетворюйте необроблені дані на практичні інсайти за допомогою розширеної аналітики та візуалізації.',
+                'service-automation': 'Автоматизація Процесів',
+                'service-automation-desc': 'Оптимізуйте операції за допомогою інтелектуальних рішень автоматизації, які масштабуються з вашим бізнесом.',
+                'approach-section': 'Наш <span class="gradient-text">Підхід</span>',
+                'approach-description': 'Перевірена методологія, яка забезпечує успішне впровадження ШІ від концепції до розгортання.',
+                'approach-discovery': 'Дослідження',
+                'approach-discovery-desc': 'Глибокий аналіз ваших бізнес-викликів, цілей та поточної інфраструктури для виявлення можливостей ШІ.',
+                'approach-strategy': 'Стратегія',
+                'approach-strategy-desc': 'Розробка комплексної дорожньої карти ШІ з чіткими етапами, термінами та метриками успіху.',
+                'approach-development': 'Розробка',
+                'approach-development-desc': 'Створення та навчання індивідуальних ШІ-агентів з використанням передових технологій та найкращих практик.',
+                'approach-integration': 'Інтеграція',
+                'approach-integration-desc': 'Безперебійне розгортання та інтеграція ШІ-рішень у ваші існуючі робочі процеси та системи.',
+                'difference-section': 'Переваги <span class="gradient-text">Nord</span>',
+                'difference-description': 'Чому провідні компанії обирають Nord AI для прискорення своєї цифрової трансформації.',
+                'difference-speed': 'Швидкість виходу на ринок',
+                'difference-speed-desc': 'Наш оптимізований процес дозволяє пройти шлях від концепції до розгортання на 60% швидше.',
+                'difference-custom': 'Індивідуальні рішення',
+                'difference-custom-desc': 'Ніяких шаблонних підходів. Кожне рішення адаптовано до ваших унікальних потреб.',
+                'difference-support': 'Постійна підтримка',
+                'difference-support-desc': 'Цілодобовий моніторинг та безперервна оптимізація для забезпечення максимальної продуктивності.',
+                'team-section': 'Зустрічайте вашого головного <span class="gradient-text">ШІ-стратега</span>',
+                'team-quote': '"Я заснував Nord AI з єдиною місією: демістифікувати штучний інтелект та показати людям, як вони можуть використовувати цю дивовижну технологію."',
+                'team-building': 'БУДУЄМО МАЙБУТНЄ З ШІ',
+                'contact-section': 'Почніть вашу <span class="gradient-text">ШІ-подорож</span>',
+                'contact-description': 'Готові трансформувати свій бізнес за допомогою ШІ? Давайте обговоримо, як Nord AI може прискорити вашу цифрову трансформацію.',
+                'contact-free': 'Безкоштовна консультація',
+                'contact-free-desc': '30-хвилинна стратегічна сесія',
+                'contact-proposal': 'Індивідуальна пропозиція',
+                'contact-proposal-desc': 'Адаптована дорожня карта рішення',
+                'contact-implementation': 'Швидке впровадження',
+                'contact-implementation-desc': 'Швидкий шлях до успіху з ШІ',
+                'contact-form-title': 'Записатися на консультацію',
+                'footer-tagline': 'Робимо ШІ простим',
+                'footer-services': 'Послуги',
+                'footer-contact': 'Контакти'
+            }
+        };
+
+        // Current language state
+        let currentLang = localStorage.getItem('nordai-lang') || 'en';
+
+        // Function to update content
+        function updateContent(lang) {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-primary-foreground');
+                btn.classList.add('text-muted-foreground', 'hover:text-foreground');
+            });
+
+            const activeBtn = document.getElementById(`lang-${lang}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-muted-foreground', 'hover:text-foreground');
+                activeBtn.classList.add('bg-primary', 'text-primary-foreground');
+            }
+
+            // Store language preference
+            localStorage.setItem('nordai-lang', lang);
+            currentLang = lang;
+        }
+
+        // Language switcher event listeners
+        document.getElementById('lang-en').addEventListener('click', () => updateContent('en'));
+        document.getElementById('lang-ua').addEventListener('click', () => updateContent('ua'));
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent(currentLang);
+        });
+    </script>
 </body>
 </html>
