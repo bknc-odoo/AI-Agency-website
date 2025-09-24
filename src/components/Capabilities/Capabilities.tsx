@@ -29,22 +29,22 @@ const Capabilities: React.FC = () => {
       items: [
         {
           title: "24/7 Customer Service Agent",
-          description: "Handle customer inquiries, complaints, and support requests with human-like conversation",
+          description: "Stop losing customers to long wait times and inconsistent support. AI agent handles every inquiry instantly",
           metrics: "95% customer satisfaction, 70% cost reduction"
         },
         {
           title: "Sales & Lead Qualification Agent",
-          description: "Engage prospects, qualify leads, and schedule appointments automatically",
+          description: "End the frustration of cold prospects and unqualified leads. AI agent finds and nurtures ready-to-buy customers",
           metrics: "3x more qualified leads, 60% conversion rate"
         },
         {
           title: "Appointment Booking Agent",
-          description: "Schedule meetings, reschedule conflicts, and send confirmations across all platforms",
+          description: "Stop the back-and-forth email chains for scheduling. AI agent books, reschedules, and confirms automatically",
           metrics: "100% accuracy, 85% time saved"
         },
         {
           title: "Order Processing & Support Agent",
-          description: "Take orders, process payments, handle returns and provide order status updates",
+          description: "End order mix-ups and processing delays. AI agent handles everything from order to delivery tracking",
           metrics: "99.9% order accuracy, instant processing"
         }
       ]
@@ -63,22 +63,22 @@ const Capabilities: React.FC = () => {
       items: [
         {
           title: "Internal Knowledge Assistant",
-          description: "Instant answers from company policies, procedures, and documentation for employees",
+          description: "Stop employees from asking 'where do I find...' every day. AI agent knows every policy and procedure instantly",
           metrics: "90% faster information retrieval, 24/7 availability"
         },
         {
           title: "Customer FAQ & Support Agent",
-          description: "Automatically answer customer questions from your knowledge base and documentation",
+          description: "End repetitive support tickets flooding your inbox. AI agent answers every common question automatically",
           metrics: "80% ticket reduction, instant responses"
         },
         {
           title: "Training & Onboarding Agent",
-          description: "Guide new employees through training materials and answer onboarding questions",
+          description: "Stop new hires from feeling lost and overwhelmed. AI agent guides them through everything step-by-step",
           metrics: "50% faster onboarding, 95% completion rate"
         },
         {
           title: "Technical Documentation Agent",
-          description: "Help teams find code snippets, API docs, and technical specifications instantly",
+          description: "End developers wasting hours searching for code examples. AI agent finds exactly what they need instantly",
           metrics: "75% less development time, 100% accuracy"
         }
       ]
@@ -97,22 +97,22 @@ const Capabilities: React.FC = () => {
       items: [
         {
           title: "Data Entry & Processing Agent",
-          description: "Extract data from documents, emails, and forms to automatically update systems",
+          description: "Stop wasting hours on mind-numbing data entry. AI agent extracts and processes everything automatically",
           metrics: "99.8% accuracy, 10x faster processing"
         },
         {
           title: "Invoice & Payment Agent",
-          description: "Generate invoices, process payments, and handle billing automation end-to-end",
+          description: "End late payments and billing errors that hurt cash flow. AI agent handles everything from invoice to payment",
           metrics: "Zero human errors, 30-day payment cycles"
         },
         {
           title: "Email & Communication Agent",
-          description: "Sort emails, draft responses, schedule follow-ups, and manage communication workflows",
+          description: "Stop drowning in your inbox every morning. AI agent sorts, responds, and manages all communications",
           metrics: "80% email volume reduction, instant responses"
         },
         {
           title: "Report Generation Agent",
-          description: "Create daily, weekly, monthly reports from multiple data sources automatically",
+          description: "End the monthly scramble to compile reports. AI agent generates everything automatically and on-time",
           metrics: "100% consistent reports, real-time updates"
         }
       ]
@@ -133,23 +133,23 @@ const Capabilities: React.FC = () => {
       items: [
         {
           title: "Industry-Specific Expert Agent",
-          description: "Custom AI trained on your industry knowledge, regulations, and best practices",
-          metrics: "Domain expertise level: 95%, compliance: 100%"
+          description: "Stop losing deals due to lack of industry expertise. Custom AI trained on your sector's regulations and best practices",
+          metrics: "Never miss compliance requirements again"
         },
         {
           title: "Workflow Integration Agent",
-          description: "Connect all your business tools and automate complex multi-step workflows",
-          metrics: "15+ tool integrations, 90% workflow automation"
+          description: "End the chaos of switching between 15+ tools daily. One AI agent that connects everything seamlessly",
+          metrics: "No more manual data entry between systems"
         },
         {
           title: "Decision Support Agent",
-          description: "Analyze business data and provide recommendations for strategic decisions",
-          metrics: "Data-driven insights, 40% better decisions"
+          description: "Stop making decisions based on gut feeling. Get data-driven recommendations for every strategic choice",
+          metrics: "Turn hours of analysis into instant insights"
         },
         {
           title: "Custom API & Tool Agent",
-          description: "Build specialized agents that integrate with your unique systems and requirements",
-          metrics: "Tailored solutions, unlimited scalability"
+          description: "Stop saying 'our system can't do that'. Build AI agents that work exactly how your business operates",
+          metrics: "Unlimited customization for your unique needs"
         }
       ]
     }
