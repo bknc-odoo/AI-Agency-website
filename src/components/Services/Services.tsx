@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
+import { StrategyIcon, RobotIcon, AnalyticsIcon, AutomationIcon } from '@/components/Icons/Icons'
 
 const Services: React.FC = () => {
   const { t } = useTranslation()
@@ -7,28 +8,28 @@ const Services: React.FC = () => {
   const services = [
     {
       key: 'strategy',
-      icon: '🎯',
+      icon: <StrategyIcon size={48} className="text-cyan-400" />,
       title: t('services.strategy.title'),
       description: t('services.strategy.description'),
       features: ['Strategic Planning', 'ROI Analysis', 'Implementation Roadmap', 'Risk Assessment']
     },
     {
       key: 'agents',
-      icon: '🤖',
+      icon: <RobotIcon size={48} className="text-cyan-400" />,
       title: t('services.agents.title'),
       description: t('services.agents.description'),
       features: ['Executive Assistant Agents', 'Content Creation Agents', 'Lead Generation Agents', 'Internal Strategy Agents']
     },
     {
       key: 'analytics',
-      icon: '📊',
+      icon: <AnalyticsIcon size={48} className="text-cyan-400" />,
       title: t('services.analytics.title'),
       description: t('services.analytics.description'),
       features: ['Predictive Analytics', 'Real-time Dashboards', 'Data Mining', 'Business Intelligence']
     },
     {
       key: 'automation',
-      icon: '⚡',
+      icon: <AutomationIcon size={48} className="text-cyan-400" />,
       title: t('services.automation.title'),
       description: t('services.automation.description'),
       features: ['Workflow Automation', 'RPA Integration', 'Smart Chatbots', 'AI Analysts']
@@ -53,7 +54,7 @@ const Services: React.FC = () => {
               key={service.key}
               className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105"
             >
-              <div className="text-4xl mb-4">{service.icon}</div>
+              <div className="mb-6 flex justify-center">{service.icon}</div>
               <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
               <p className="text-slate-300 mb-6 leading-relaxed">{service.description}</p>
 

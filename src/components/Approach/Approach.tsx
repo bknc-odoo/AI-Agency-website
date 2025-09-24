@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
+import { SearchIcon, TargetIcon, CodeIcon, RocketIcon } from '@/components/Icons/Icons'
 
 const Approach: React.FC = () => {
   const { t } = useTranslation()
@@ -10,28 +11,28 @@ const Approach: React.FC = () => {
       number: '01',
       title: t('approach.steps.discovery.title'),
       description: t('approach.steps.discovery.description'),
-      icon: '🔍'
+      icon: <SearchIcon size={40} className="text-cyan-400" />
     },
     {
       key: 'strategy',
       number: '02',
       title: t('approach.steps.strategy.title'),
       description: t('approach.steps.strategy.description'),
-      icon: '🎯'
+      icon: <TargetIcon size={40} className="text-cyan-400" />
     },
     {
       key: 'development',
       number: '03',
       title: t('approach.steps.development.title'),
       description: t('approach.steps.development.description'),
-      icon: '⚡'
+      icon: <CodeIcon size={40} className="text-cyan-400" />
     },
     {
       key: 'integration',
       number: '04',
       title: t('approach.steps.integration.title'),
       description: t('approach.steps.integration.description'),
-      icon: '🚀'
+      icon: <RocketIcon size={40} className="text-cyan-400" />
     }
   ]
 
@@ -57,7 +58,7 @@ const Approach: React.FC = () => {
 
               <div className="bg-slate-900/50 rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 h-full">
                 <div className="flex items-center mb-6">
-                  <span className="text-2xl mr-4">{step.icon}</span>
+                  <div className="mr-4">{step.icon}</div>
                   <span className="text-4xl font-bold text-cyan-400">{step.number}</span>
                 </div>
 

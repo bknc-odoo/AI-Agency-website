@@ -36,9 +36,13 @@ const Team: React.FC = () => {
           {/* Image/Visual */}
           <div className="relative">
             <div className="relative rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 border border-slate-700/50">
-              {/* Placeholder for founder image */}
-              <div className="aspect-square rounded-xl bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center mb-6">
-                <div className="text-6xl">👨‍💼</div>
+              {/* Founder Photo */}
+              <div className="aspect-square rounded-xl overflow-hidden mb-6">
+                <img
+                  src="/founder-photo.jpeg"
+                  alt="Nord AI Founder - Principal AI Strategist"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <div className="text-center">

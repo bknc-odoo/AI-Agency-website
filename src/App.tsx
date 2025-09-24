@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero'
 import Services from './components/Services/Services'
 import Approach from './components/Approach/Approach'
 import Difference from './components/Difference/Difference'
+import Testimonials from './components/Testimonials/Testimonials'
 import Team from './components/Team/Team'
 import Contact from './components/Contact/Contact'
 import './styles/globals.css'
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Services />
         <Approach />
         <Difference />
+        <Testimonials />
         <Team />
         <Contact />
       </div>
