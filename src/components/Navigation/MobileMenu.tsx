@@ -59,7 +59,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
             onClick={handleLinkClick}
           >
-            One-to-One Mentorship
+            {t('nav.mentorship')}
           </a>
 
           <button

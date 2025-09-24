@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
       title: t('contact.benefits.consultation.title'),
       description: t('contact.benefits.consultation.description'),
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
           <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
           <circle cx="9" cy="11" r="1" fill="currentColor"/>
           <circle cx="15" cy="11" r="1" fill="currentColor"/>
@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
       title: t('contact.benefits.proposal.title'),
       description: t('contact.benefits.proposal.description'),
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
           <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
           <path d="M7 8h10M7 12h6M7 16h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           <circle cx="17" cy="16" r="2" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.3"/>
@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
       title: t('contact.benefits.implementation.title'),
       description: t('contact.benefits.implementation.description'),
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
           <path d="M13 10h8l-10 12v-8H3l10-12v8z" stroke="currentColor" strokeWidth="1" opacity="0.7"/>
         </svg>
@@ -78,7 +78,12 @@ const Contact: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {benefits.map((benefit) => (
             <div key={benefit.key} className="text-center">
-              <div className="mb-4 flex justify-center">{benefit.icon}</div>
+              <div className="relative mb-8">
+                <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-xl w-24 h-24 mx-auto"></div>
+                <div className="relative bg-slate-800/50 rounded-full w-24 h-24 mx-auto flex items-center justify-center border border-cyan-400/30">
+                  {benefit.icon}
+                </div>
+              </div>
               <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
               <p className="text-slate-400">{benefit.description}</p>
             </div>

@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex justify-center">
-            <button className="inline-flex items-center gap-2 btn-primary text-lg px-8 py-4 glow-effect hover:scale-105 transition-transform">
+            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105">
               {t('hero.cta')}
               <svg
                 className="w-5 h-5"
