@@ -16,6 +16,31 @@ body {
   color: transparent;
 }
 
+.gradient-text-animated {
+  background: linear-gradient(90deg, #00D4FF 0%, #38BDF8 25%, #06B6D4 50%, #00D4FF 75%, #38BDF8 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmer 2s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  position: relative;
+}
+
+.gradient-text-animated::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 212, 255, 0.3) 50%, transparent 100%);
+  animation: glow-pulse 2s ease-in-out infinite;
+  border-radius: 4px;
+  z-index: -1;
+}
+
 .glow-effect {
   box-shadow: 0 10px 15px -3px rgba(0, 212, 255, 0.25), 0 4px 6px -2px rgba(0, 212, 255, 0.05);
 }
@@ -60,5 +85,25 @@ body {
   }
   50% {
     opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }

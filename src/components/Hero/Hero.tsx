@@ -2,7 +2,23 @@ import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 
 const Hero: React.FC = () => {
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
+
+  const renderSubtitle = () => {
+    const subtitle = t('hero.subtitle')
+
+    if (language === 'ua' && subtitle === 'Обери ШІ.') {
+      return (
+        <>
+          <span className="gradient-text">Обери </span>
+          <span className="gradient-text-animated">ШІ</span>
+          <span className="gradient-text">.</span>
+        </>
+      )
+    }
+
+    return <span className="gradient-text">{subtitle}</span>
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -23,7 +39,7 @@ const Hero: React.FC = () => {
               {t('hero.title')}
               <br />
             </span>
-            <span className="gradient-text">{t('hero.subtitle')}</span>
+{renderSubtitle()}
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
