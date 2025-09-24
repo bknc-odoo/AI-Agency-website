@@ -47,7 +47,7 @@ const Capabilities: React.FC = () => {
       items: translations.capabilities.items.knowledge
     },
     {
-      category: "Process Automation Agents",
+      category: t('capabilities.categories.automation'),
       color: "from-green-400 to-emerald-500",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -57,31 +57,10 @@ const Capabilities: React.FC = () => {
           <path d="M12 3v9l4 4" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
-      items: [
-        {
-          title: "Data Entry & Processing Agent",
-          description: "Stop wasting hours on mind-numbing data entry. AI agent extracts and processes everything automatically",
-          metrics: "99.8% accuracy, 10x faster processing"
-        },
-        {
-          title: "Invoice & Payment Agent",
-          description: "End late payments and billing errors that hurt cash flow. AI agent handles everything from invoice to payment",
-          metrics: "Zero human errors, 30-day payment cycles"
-        },
-        {
-          title: "Email & Communication Agent",
-          description: "Stop drowning in your inbox every morning. AI agent sorts, responds, and manages all communications",
-          metrics: "80% email volume reduction, instant responses"
-        },
-        {
-          title: "Report Generation Agent",
-          description: "End the monthly scramble to compile reports. AI agent generates everything automatically and on-time",
-          metrics: "100% consistent reports, real-time updates"
-        }
-      ]
+      items: translations.capabilities.items.automation
     },
     {
-      category: "Custom Business Agents",
+      category: t('capabilities.categories.custom'),
       color: "from-orange-400 to-red-500",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
@@ -93,28 +72,7 @@ const Capabilities: React.FC = () => {
           <path d="M14 7a3 3 0 0 1 6 0" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
-      items: [
-        {
-          title: "Industry-Specific Expert Agent",
-          description: "Stop losing deals due to lack of industry expertise. Custom AI trained on your sector's regulations and best practices",
-          metrics: "Never miss compliance requirements again"
-        },
-        {
-          title: "Workflow Integration Agent",
-          description: "End the chaos of switching between 15+ tools daily. One AI agent that connects everything seamlessly",
-          metrics: "No more manual data entry between systems"
-        },
-        {
-          title: "Decision Support Agent",
-          description: "Stop making decisions based on gut feeling. Get data-driven recommendations for every strategic choice",
-          metrics: "Turn hours of analysis into instant insights"
-        },
-        {
-          title: "Custom API & Tool Agent",
-          description: "Stop saying 'our system can't do that'. Build AI agents that work exactly how your business operates",
-          metrics: "Unlimited customization for your unique needs"
-        }
-      ]
+      items: translations.capabilities.items.custom
     }
   ]
 

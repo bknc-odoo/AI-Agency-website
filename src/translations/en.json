@@ -353,6 +353,107 @@
     "pipeline": "AI Processing Pipeline",
     "cta": "Send Us Your Messy Data"
   },
+  "capabilities": {
+    "title": "Business AI Automation Hub",
+    "subtitle": "Custom AI agents and automation tools that transform your business operations from day one",
+    "cta": "Start Your AI Automation Journey",
+    "categories": {
+      "voice": "Voice AI Agents",
+      "knowledge": "Knowledge Base Agents",
+      "automation": "Process Automation Agents",
+      "custom": "Custom Business Agents"
+    },
+    "items": {
+      "voice": [
+        {
+          "title": "24/7 Customer Service Agent",
+          "description": "Stop losing customers to long wait times and inconsistent support. AI agent handles every inquiry instantly",
+          "metrics": "95% customer satisfaction, 70% cost reduction"
+        },
+        {
+          "title": "Sales & Lead Qualification Agent",
+          "description": "End the frustration of cold prospects and unqualified leads. AI agent finds and nurtures ready-to-buy customers",
+          "metrics": "3x more qualified leads, 60% conversion rate"
+        },
+        {
+          "title": "Appointment Booking Agent",
+          "description": "Stop the back-and-forth email chains for scheduling. AI agent books, reschedules, and confirms automatically",
+          "metrics": "100% accuracy, 85% time saved"
+        },
+        {
+          "title": "Order Processing & Support Agent",
+          "description": "End order mix-ups and processing delays. AI agent handles everything from order to delivery tracking",
+          "metrics": "99.9% order accuracy, instant processing"
+        }
+      ],
+      "knowledge": [
+        {
+          "title": "Internal Knowledge Assistant",
+          "description": "Stop employees from asking 'where do I find...' every day. AI agent knows every policy and procedure instantly",
+          "metrics": "90% faster information retrieval, 24/7 availability"
+        },
+        {
+          "title": "Training & Onboarding Agent",
+          "description": "Stop spending weeks training new employees. AI agent delivers personalized training automatically",
+          "metrics": "50% faster onboarding, 95% knowledge retention"
+        },
+        {
+          "title": "Technical Documentation Agent",
+          "description": "End outdated manuals and confusing instructions. AI agent keeps all documentation current and searchable",
+          "metrics": "Always up-to-date documentation, instant search"
+        },
+        {
+          "title": "Corporate Memory Agent",
+          "description": "Stop losing valuable knowledge when employees leave. AI agent captures and transfers all company expertise",
+          "metrics": "100% knowledge retention, accessible anytime"
+        }
+      ],
+      "automation": [
+        {
+          "title": "Data Entry & Processing Agent",
+          "description": "Stop wasting hours on mind-numbing data entry. AI agent extracts and processes everything automatically",
+          "metrics": "99.8% accuracy, 10x faster processing"
+        },
+        {
+          "title": "Invoice & Payment Agent",
+          "description": "End late payments and billing errors that hurt cash flow. AI agent handles everything from invoice to payment",
+          "metrics": "Zero human errors, 30-day payment cycles"
+        },
+        {
+          "title": "Email & Communication Agent",
+          "description": "Stop drowning in your inbox every morning. AI agent sorts, responds, and manages all communications",
+          "metrics": "80% email volume reduction, instant responses"
+        },
+        {
+          "title": "Report Generation Agent",
+          "description": "End the monthly scramble to compile reports. AI agent generates everything automatically and on-time",
+          "metrics": "100% consistent reports, real-time updates"
+        }
+      ],
+      "custom": [
+        {
+          "title": "Industry-Specific Expert Agent",
+          "description": "Stop losing deals due to lack of industry expertise. Custom AI trained on your sector's regulations and best practices",
+          "metrics": "Never miss compliance requirements again"
+        },
+        {
+          "title": "Workflow Integration Agent",
+          "description": "End the chaos of switching between 15+ tools daily. One AI agent that connects everything seamlessly",
+          "metrics": "No more manual data entry between systems"
+        },
+        {
+          "title": "Decision Support Agent",
+          "description": "Stop making decisions based on gut feeling. Get data-driven recommendations for every strategic choice",
+          "metrics": "Turn hours of analysis into instant insights"
+        },
+        {
+          "title": "Custom API & Tool Agent",
+          "description": "Stop saying 'our system can't do that'. Build AI agents that work exactly how your business operates",
+          "metrics": "Unlimited customization for your unique needs"
+        }
+      ]
+    }
+  },
   "callback": {
     "title": "Get a Callback",
     "subtitle": "Let's talk about your AI needs",
