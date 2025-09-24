@@ -80,7 +80,7 @@ const Team: React.FC = () => {
 
         {/* AI Team Grid */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {/* Claude - AI Employee */}
+          {/* Claude (AI Principal) */}
           <div className="tech-card digital-noise rounded-2xl p-8 group">
             <div className="text-center mb-6">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-400/20 to-pink-500/20 flex items-center justify-center">
@@ -92,8 +92,8 @@ const Team: React.FC = () => {
                   <circle cx="16" cy="16" r="1" fill="currentColor"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Claude</h3>
-              <p className="text-purple-400 text-sm mb-4">AI Development Specialist</p>
+              <h3 className="text-xl font-bold text-white mb-2">Claude (AI Principal)</h3>
+              <p className="text-purple-400 text-sm mb-4">Lead AI Development & Strategy</p>
             </div>
 
             <ul className="space-y-3 mb-6">
@@ -114,56 +114,56 @@ const Team: React.FC = () => {
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
                 <div className="text-lg font-bold text-purple-400">24/7</div>
-                <div className="text-xs text-slate-400">Available</div>
+                <div className="text-xs text-slate-400">Availability</div>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-pink-400">AI</div>
-                <div className="text-xs text-slate-400">Employee</div>
+                <div className="text-lg font-bold text-pink-400">∞</div>
+                <div className="text-xs text-slate-400">Processing Power</div>
               </div>
             </div>
           </div>
 
-          {/* GPT AI Employee */}
+          {/* The Hybrid Advantage */}
           <div className="tech-card digital-noise rounded-2xl p-8 group">
             <div className="text-center mb-6">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400/20 to-emerald-500/20 flex items-center justify-center">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-green-400">
-                  <path d="M9.5 2A2.5 2.5 0 007 4.5v15A2.5 2.5 0 009.5 22h5a2.5 2.5 0 002.5-2.5v-15A2.5 2.5 0 0014.5 2h-5z" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M10 8h4m-4 4h4m-4 4h4" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">GPT Assistant</h3>
-              <p className="text-green-400 text-sm mb-4">AI Content & Strategy Specialist</p>
+              <h3 className="text-xl font-bold text-white mb-2">The Hybrid Advantage</h3>
+              <p className="text-green-400 text-sm mb-4">Human Creativity + AI Efficiency</p>
             </div>
 
             <ul className="space-y-3 mb-6">
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                Content creation & copywriting
+                Human intuition guides AI execution
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                Strategic analysis & research
+                AI handles complex tasks at scale
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                Multi-language communication
+                Continuous learning & improvement
               </li>
             </ul>
 
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-green-400">∞</div>
-                <div className="text-xs text-slate-400">Content</div>
+                <div className="text-lg font-bold text-green-400">10x</div>
+                <div className="text-xs text-slate-400">Faster Results</div>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-emerald-400">AI</div>
-                <div className="text-xs text-slate-400">Employee</div>
+                <div className="text-lg font-bold text-emerald-400">99%</div>
+                <div className="text-xs text-slate-400">Quality Assured</div>
               </div>
             </div>
           </div>
 
-          {/* Specialized AI Employee */}
+          {/* Third AI team member to fill the row */}
           <div className="tech-card digital-noise rounded-2xl p-8 group">
             <div className="text-center mb-6">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
@@ -176,22 +176,22 @@ const Team: React.FC = () => {
                   <circle cx="19" cy="6" r="1" fill="currentColor"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Analytics AI</h3>
-              <p className="text-cyan-400 text-sm mb-4">AI Data & Analytics Specialist</p>
+              <h3 className="text-xl font-bold text-white mb-2">AI Analytics Engine</h3>
+              <p className="text-cyan-400 text-sm mb-4">Data Intelligence & Insights</p>
             </div>
 
             <ul className="space-y-3 mb-6">
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
-                Data analysis & visualization
+                Real-time data processing & analysis
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
-                Predictive modeling & insights
+                Predictive modeling & forecasting
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
-                Automated reporting & dashboards
+                Automated insights & recommendations
               </li>
             </ul>
 
@@ -201,8 +201,8 @@ const Team: React.FC = () => {
                 <div className="text-xs text-slate-400">Time</div>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-blue-400">AI</div>
-                <div className="text-xs text-slate-400">Employee</div>
+                <div className="text-lg font-bold text-blue-400">Smart</div>
+                <div className="text-xs text-slate-400">Analytics</div>
               </div>
             </div>
           </div>
