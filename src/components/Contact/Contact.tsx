@@ -63,10 +63,14 @@ const Contact: React.FC = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 px-4 bg-slate-800/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-20 px-4 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 to-slate-900/50" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
             {t('contact.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
@@ -76,24 +80,37 @@ const Contact: React.FC = () => {
 
         {/* Benefits */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {benefits.map((benefit) => (
-            <div key={benefit.key} className="text-center">
-              <div className="relative mb-8">
-                <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-xl w-24 h-24 mx-auto"></div>
-                <div className="relative bg-slate-800/50 rounded-full w-24 h-24 mx-auto flex items-center justify-center border border-cyan-400/30">
+          {benefits.map((benefit, index) => (
+            <div
+              key={benefit.key}
+              className="tech-card digital-noise rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+            >
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full scale-150 group-hover:scale-200 transition-transform duration-300"></div>
+                <div className="relative z-10 w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
                   {benefit.icon}
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
-              <p className="text-slate-400">{benefit.description}</p>
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">{benefit.title}</h3>
+              <p className="text-slate-300 group-hover:text-slate-200 transition-colors duration-300">{benefit.description}</p>
+
+              {/* Holographic border effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+              {/* Corner accents */}
+              <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
             </div>
           ))}
         </div>
 
         {/* Contact Form */}
         <div className="max-w-2xl mx-auto">
-          <div className="bg-slate-900/50 rounded-2xl p-8 border border-slate-700/50">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+          <div className="tech-card digital-noise rounded-2xl p-8 group">
+            <h3 className="text-2xl font-bold text-white mb-6 text-center group-hover:text-cyan-300 transition-colors duration-300">
               {t('contact.form.title')}
             </h3>
 
@@ -101,7 +118,7 @@ const Contact: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                    Name *
+                    {t('contact.form.name')} *
                   </label>
                   <input
                     type="text"
@@ -111,13 +128,13 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition-colors"
-                    placeholder="Your full name"
+                    placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                    Email *
+                    {t('contact.form.email')} *
                   </label>
                   <input
                     type="email"
@@ -127,14 +144,14 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition-colors"
-                    placeholder="your@email.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-2">
-                  Company
+                  {t('contact.form.company')}
                 </label>
                 <input
                   type="text"
@@ -143,13 +160,13 @@ const Contact: React.FC = () => {
                   value={formData.company}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition-colors"
-                  placeholder="Your company name"
+                  placeholder={t('contact.form.companyPlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                  Tell us about your project
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -158,20 +175,23 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-                  placeholder="Describe your AI needs and objectives..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-xl font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-xl font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105"
               >
-                Start Your AI Journey
+                {t('contact.cta')}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
             </form>
 
             <p className="text-center text-sm text-slate-400 mt-6">
-              We'll respond within 24 hours to schedule your consultation.
+              {t('contact.form.note')}
             </p>
           </div>
         </div>

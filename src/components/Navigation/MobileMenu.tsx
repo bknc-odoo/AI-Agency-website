@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import LanguageSwitcher from './LanguageSwitcher'
 
@@ -9,6 +9,7 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation()
+  const [isAiSolutionsOpen, setIsAiSolutionsOpen] = useState(false)
 
   const handleLinkClick = () => {
     onClose()
@@ -49,6 +50,60 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           >
             {t('nav.services')}
           </a>
+
+          {/* AI Solutions Mobile Expandable */}
+          <div className="text-center">
+            <button
+              className="flex items-center text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
+              onClick={() => setIsAiSolutionsOpen(!isAiSolutionsOpen)}
+            >
+              {t('nav.aiSolutions')}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                className={`ml-2 transform transition-transform ${
+                  isAiSolutionsOpen ? 'rotate-180' : ''
+                }`}
+              >
+                <path
+                  d="M6 9l6 6 6-6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div className={`mt-4 space-y-4 transition-all duration-200 overflow-hidden ${
+              isAiSolutionsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            }`}>
+              <a
+                href="#capabilities"
+                className="block text-lg text-slate-400 hover:text-cyan-400 transition-colors"
+                onClick={handleLinkClick}
+              >
+                {t('nav.aiCapabilities')}
+              </a>
+              <a
+                href="#agents-gallery"
+                className="block text-lg text-slate-400 hover:text-cyan-400 transition-colors"
+                onClick={handleLinkClick}
+              >
+                {t('nav.customAgents')}
+              </a>
+              <a
+                href="#data-showcase"
+                className="block text-lg text-slate-400 hover:text-cyan-400 transition-colors"
+                onClick={handleLinkClick}
+              >
+                {t('nav.dataProcessing')}
+              </a>
+            </div>
+          </div>
+
           <a
             href="#approach"
             className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"

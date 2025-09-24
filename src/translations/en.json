@@ -1,6 +1,10 @@
 {
   "nav": {
     "services": "Services",
+    "aiSolutions": "AI Solutions",
+    "aiCapabilities": "AI Capabilities",
+    "customAgents": "Custom Agents",
+    "dataProcessing": "Data Processing",
     "approach": "Approach",
     "team": "Team",
     "mentorship": "1:1 Mentorship",
@@ -122,8 +126,95 @@
       }
     },
     "form": {
-      "title": "Book Your Consultation"
+      "title": "Book Your Consultation",
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Tell us about your project",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "your@email.com",
+      "companyPlaceholder": "Your company name",
+      "messagePlaceholder": "Describe your AI needs and objectives...",
+      "note": "We'll respond within 24 hours to schedule your consultation."
+    },
+    "cta": "Start Your AI Journey"
+  },
+  "capabilities": {
+    "title": "Business AI Automation Hub",
+    "subtitle": "Discover which AI capabilities can transform your business operations",
+    "categories": {
+      "voice": "Voice AI Agents",
+      "knowledge": "Knowledge Base Agents",
+      "automation": "Process Automation",
+      "analytics": "AI Analytics",
+      "content": "Content Creation",
+      "customer": "Customer Support"
+    },
+    "items": {
+      "voice": [
+        {
+          "title": "24/7 Customer Service Agent",
+          "metrics": "95% customer satisfaction, 70% cost reduction"
+        },
+        {
+          "title": "Lead Qualification Agent",
+          "metrics": "3x conversion increase, 80% qualification accuracy"
+        },
+        {
+          "title": "Appointment Booking Agent",
+          "metrics": "90% booking success rate, 50% time savings"
+        }
+      ],
+      "knowledge": [
+        {
+          "title": "AI HR Assistant",
+          "metrics": "60% faster employee query responses"
+        },
+        {
+          "title": "Technical Support Agent",
+          "metrics": "85% first-contact resolution rate"
+        },
+        {
+          "title": "AI Legal Consultant",
+          "metrics": "Instant answers to legal questions"
+        }
+      ]
     }
+  },
+  "agentsGallery": {
+    "title": "Custom AI Agents Gallery",
+    "subtitle": "Pre-trained, specialized agents ready to transform your operations"
+  },
+  "dataShowcase": {
+    "title": "Bring Your Messy Data",
+    "subtitle": "We'll turn any data you have into a smart, functional system",
+    "types": [
+      {
+        "name": "Your Office Files (The Messy Ones)",
+        "description": "Stop worrying about scattered Word docs, old Excel files, and random PDFs."
+      },
+      {
+        "name": "Spreadsheets & Databases",
+        "description": "From old CSVs to complex databases - we'll make them intelligent."
+      },
+      {
+        "name": "Web Scraping & APIs",
+        "description": "We gather data from any online source and turn it into analytics."
+      }
+    ],
+    "cta": "Start Data Transformation"
+  },
+  "callback": {
+    "title": "Get a Callback",
+    "subtitle": "Let's talk about your AI needs",
+    "form": {
+      "name": "Your Name",
+      "phone": "Phone Number",
+      "message": "Briefly describe your project",
+      "submit": "Request Callback"
+    },
+    "success": "Thank you! We'll contact you shortly.",
+    "error": "Something went wrong. Please try again."
   },
   "footer": {
     "tagline": "Making AI Simple",

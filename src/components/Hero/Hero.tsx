@@ -32,11 +32,20 @@ const Hero: React.FC = () => {
   const renderSubtitle = () => {
     const subtitle = t('hero.subtitle')
 
-    if (language === 'ua' && subtitle === 'Обери ШІ.') {
+    if (language === 'ua' && subtitle === 'Обери Розум') {
       return (
         <>
           <span className="gradient-text">Обери </span>
-          <span className="gradient-text-animated">ШІ</span>
+          <span className="gradient-text-animated">Розум</span>
+        </>
+      )
+    }
+
+    if (language === 'en' && subtitle === 'Choose Intelligence.') {
+      return (
+        <>
+          <span className="gradient-text">Choose </span>
+          <span className="gradient-text-animated">Intelligence</span>
           <span className="gradient-text">.</span>
         </>
       )
