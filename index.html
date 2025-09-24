@@ -21,9 +21,48 @@
     <script type="module" crossorigin src="assets/index-Dv36Aanc.js"></script>
     <link rel="stylesheet" crossorigin href="assets/index-CBm6bOgf.css">
     <link rel="stylesheet" href="blue-theme.css">
+    <style>
+        /* Language switcher specific styles */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(30, 58, 138, 0.9);
+            border: 2px solid #00D4FF;
+            border-radius: 8px;
+            padding: 4px;
+            backdrop-filter: blur(10px);
+        }
+        .lang-btn {
+            padding: 8px 16px;
+            margin: 0 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: #94A3B8;
+        }
+        .lang-btn.active {
+            background: #00D4FF;
+            color: #1E3A8A;
+        }
+        .lang-btn:hover:not(.active) {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00D4FF;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Fixed Language Switcher -->
+    <div class="language-switcher">
+        <button id="lang-en-fixed" class="lang-btn active">EN</button>
+        <button id="lang-ua-fixed" class="lang-btn">UA</button>
+    </div>
+
     <div id="root">
         <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
             <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
@@ -616,8 +655,8 @@
             // Update HTML lang attribute
             document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
 
-            // Update language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            // Update language buttons (navbar)
+            document.querySelectorAll('#lang-en, #lang-ua').forEach(btn => {
                 btn.classList.remove('bg-primary', 'text-primary-foreground');
                 btn.classList.add('text-muted-foreground', 'hover:text-foreground');
             });
@@ -628,14 +667,28 @@
                 activeBtn.classList.add('bg-primary', 'text-primary-foreground');
             }
 
+            // Update fixed language buttons
+            document.querySelectorAll('#lang-en-fixed, #lang-ua-fixed').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            const activeFixedBtn = document.getElementById(`lang-${lang}-fixed`);
+            if (activeFixedBtn) {
+                activeFixedBtn.classList.add('active');
+            }
+
             // Store language preference
             localStorage.setItem('nordai-lang', lang);
             currentLang = lang;
         }
 
         // Language switcher event listeners
-        document.getElementById('lang-en').addEventListener('click', () => updateContent('en'));
-        document.getElementById('lang-ua').addEventListener('click', () => updateContent('ua'));
+        document.getElementById('lang-en')?.addEventListener('click', () => updateContent('en'));
+        document.getElementById('lang-ua')?.addEventListener('click', () => updateContent('ua'));
+
+        // Fixed language switcher event listeners
+        document.getElementById('lang-en-fixed').addEventListener('click', () => updateContent('en'));
+        document.getElementById('lang-ua-fixed').addEventListener('click', () => updateContent('ua'));
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
