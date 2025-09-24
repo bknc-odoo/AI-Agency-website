@@ -57,17 +57,10 @@
             color: #00D4FF;
         }
 
-        /* Mobile responsive adjustments */
+        /* Hide fixed switcher on mobile to avoid overlap */
         @media (max-width: 768px) {
             .language-switcher {
-                top: 8px;
-                right: 8px;
-                padding: 1px;
-            }
-            .lang-btn {
-                padding: 3px 6px;
-                font-size: 10px;
-                min-width: 20px;
+                display: none;
             }
         }
     </style>
@@ -100,11 +93,13 @@
                             <a href="#team" class="text-muted-foreground hover:text-primary transition-colors" data-translate="nav-team">Team</a>
                             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 rounded-md px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold" data-translate="cta-get-started">Get Started</button>
                         </div>
-                        <div class="flex items-center">
+                        <div class="flex items-center space-x-3">
+                            <!-- Mobile Get Started Button -->
+                            <button class="md:hidden inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-8 rounded-md px-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs" data-translate="cta-get-started">Get Started</button>
                             <!-- Language Switcher -->
                             <div class="flex items-center bg-card/80 rounded-lg p-1 border border-primary/20">
-                                <button id="lang-en" class="lang-btn px-4 py-2 text-sm font-medium rounded-md transition-colors bg-primary text-primary-foreground">EN</button>
-                                <button id="lang-ua" class="lang-btn px-4 py-2 text-sm font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-primary/10">UA</button>
+                                <button id="lang-en" class="lang-btn px-3 py-1.5 text-xs font-medium rounded-md transition-colors bg-primary text-primary-foreground">EN</button>
+                                <button id="lang-ua" class="lang-btn px-3 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-primary/10">UA</button>
                             </div>
                         </div>
                     </div>
