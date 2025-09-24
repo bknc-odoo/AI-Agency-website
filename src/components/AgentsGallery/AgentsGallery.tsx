@@ -9,10 +9,8 @@ interface Agent {
   metrics: {
     efficiency: string
     accuracy: string
-    savings: string
   }
   gradient: string
-  demo?: string
 }
 
 const AgentsGallery: React.FC = () => {
@@ -33,11 +31,9 @@ const AgentsGallery: React.FC = () => {
       ],
       metrics: {
         efficiency: '80% time saved',
-        accuracy: '99.9% scheduling accuracy',
-        savings: '$150k/year'
+        accuracy: '99.9% scheduling accuracy'
       },
-      gradient: 'from-purple-500 to-indigo-600',
-      demo: 'Try Demo'
+      gradient: 'from-purple-500 to-indigo-600'
     },
     {
       id: 'sales',
@@ -53,11 +49,9 @@ const AgentsGallery: React.FC = () => {
       ],
       metrics: {
         efficiency: '10x more outreach',
-        accuracy: '85% response rate',
-        savings: '$200k/year'
+        accuracy: '85% response rate'
       },
-      gradient: 'from-green-500 to-emerald-600',
-      demo: 'Try Demo'
+      gradient: 'from-green-500 to-emerald-600'
     },
     {
       id: 'customer',
@@ -73,11 +67,9 @@ const AgentsGallery: React.FC = () => {
       ],
       metrics: {
         efficiency: '90% first-contact resolution',
-        accuracy: '95% satisfaction score',
-        savings: '$300k/year'
+        accuracy: '95% satisfaction score'
       },
-      gradient: 'from-blue-500 to-cyan-600',
-      demo: 'Try Demo'
+      gradient: 'from-blue-500 to-cyan-600'
     },
     {
       id: 'analyst',
@@ -93,11 +85,9 @@ const AgentsGallery: React.FC = () => {
       ],
       metrics: {
         efficiency: '100x faster analysis',
-        accuracy: '98% prediction accuracy',
-        savings: '$250k/year'
+        accuracy: '98% prediction accuracy'
       },
-      gradient: 'from-orange-500 to-red-600',
-      demo: 'Try Demo'
+      gradient: 'from-orange-500 to-red-600'
     },
     {
       id: 'developer',
@@ -113,11 +103,9 @@ const AgentsGallery: React.FC = () => {
       ],
       metrics: {
         efficiency: '3x faster development',
-        accuracy: '90% bug prevention',
-        savings: '$180k/year'
+        accuracy: '90% bug prevention'
       },
-      gradient: 'from-pink-500 to-rose-600',
-      demo: 'Try Demo'
+      gradient: 'from-pink-500 to-rose-600'
     },
     {
       id: 'marketing',
@@ -133,11 +121,9 @@ const AgentsGallery: React.FC = () => {
       ],
       metrics: {
         efficiency: '20x content output',
-        accuracy: '2x engagement rate',
-        savings: '$120k/year'
+        accuracy: '2x engagement rate'
       },
-      gradient: 'from-teal-500 to-green-600',
-      demo: 'Try Demo'
+      gradient: 'from-teal-500 to-green-600'
     }
   ]
 
@@ -178,7 +164,7 @@ const AgentsGallery: React.FC = () => {
                 <p className="text-slate-300 mb-4">{agent.description}</p>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-3 gap-2 mb-4">
+                <div className="grid grid-cols-2 gap-2 mb-4">
                   <div className="text-center">
                     <p className="text-xs text-slate-500">Efficiency</p>
                     <p className="text-sm font-bold text-cyan-400">{agent.metrics.efficiency}</p>
@@ -186,10 +172,6 @@ const AgentsGallery: React.FC = () => {
                   <div className="text-center">
                     <p className="text-xs text-slate-500">Accuracy</p>
                     <p className="text-sm font-bold text-green-400">{agent.metrics.accuracy}</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-xs text-slate-500">Savings</p>
-                    <p className="text-sm font-bold text-yellow-400">{agent.metrics.savings}</p>
                   </div>
                 </div>
 
@@ -210,10 +192,6 @@ const AgentsGallery: React.FC = () => {
                   )}
                 </div>
 
-                {/* Demo Button */}
-                <button className={`w-full py-2 rounded-lg bg-gradient-to-r ${agent.gradient} text-white font-semibold opacity-90 group-hover:opacity-100 transition-opacity`}>
-                  {agent.demo}
-                </button>
               </div>
 
               {/* Hover Effect */}
@@ -248,7 +226,7 @@ const AgentsGallery: React.FC = () => {
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-slate-800/50 rounded-lg p-4 text-center">
                   <p className="text-slate-500 mb-1">Efficiency</p>
                   <p className="text-2xl font-bold text-cyan-400">{selectedAgent.metrics.efficiency}</p>
@@ -256,10 +234,6 @@ const AgentsGallery: React.FC = () => {
                 <div className="bg-slate-800/50 rounded-lg p-4 text-center">
                   <p className="text-slate-500 mb-1">Accuracy</p>
                   <p className="text-2xl font-bold text-green-400">{selectedAgent.metrics.accuracy}</p>
-                </div>
-                <div className="bg-slate-800/50 rounded-lg p-4 text-center">
-                  <p className="text-slate-500 mb-1">Annual Savings</p>
-                  <p className="text-2xl font-bold text-yellow-400">{selectedAgent.metrics.savings}</p>
                 </div>
               </div>
 
