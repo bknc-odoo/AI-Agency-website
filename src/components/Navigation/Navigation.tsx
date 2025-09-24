@@ -38,15 +38,15 @@ const Navigation: React.FC = () => {
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-background/95 backdrop-blur-lg border-b border-border'
+            ? 'bg-slate-900/95 backdrop-blur-lg border-b border-slate-700'
             : 'bg-transparent'
         }`}
       >
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="text-2xl font-bold">
-              <span className="text-foreground">Nord</span>
+              <span className="text-white">Nord</span>
               <span className="gradient-text">AI</span>
             </div>
 
@@ -54,23 +54,23 @@ const Navigation: React.FC = () => {
             <div className="hidden md:flex items-center space-x-6">
               <a
                 href="#services"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
                 {t('nav.services')}
               </a>
               <a
                 href="#approach"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
                 {t('nav.approach')}
               </a>
               <a
                 href="#team"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
                 {t('nav.team')}
               </a>
-              <button className="btn-primary">
+              <button className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-cyan-300">
                 {t('nav.getStarted')}
               </button>
             </div>
@@ -86,17 +86,17 @@ const Navigation: React.FC = () => {
                 aria-label="Toggle menu"
               >
                 <span
-                  className={`w-5 h-0.5 bg-foreground transition-transform duration-300 ${
+                  className={`w-5 h-0.5 bg-white transition-transform duration-300 ${
                     isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
                   }`}
                 />
                 <span
-                  className={`w-5 h-0.5 bg-foreground transition-opacity duration-300 ${
+                  className={`w-5 h-0.5 bg-white transition-opacity duration-300 ${
                     isMobileMenuOpen ? 'opacity-0' : ''
                   }`}
                 />
                 <span
-                  className={`w-5 h-0.5 bg-foreground transition-transform duration-300 ${
+                  className={`w-5 h-0.5 bg-white transition-transform duration-300 ${
                     isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
                   }`}
                 />
