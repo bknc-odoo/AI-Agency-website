@@ -155,16 +155,17 @@ const NeuralNetwork3D: React.FC = () => {
 
       if (projected.scale > 0.1) {
         const size = node.radius * projected.scale
-        const pulse = 1 + Math.sin(node.pulsePhase) * 0.3
+        const pulse = 1 + Math.sin(node.pulsePhase) * 0.6 // Bigger pulse expansion (was 0.3)
 
-        // Draw node glow
+        // Draw enhanced node glow with bigger expansion
         ctx.beginPath()
-        ctx.arc(projected.x, projected.y, size * pulse * 1.5, 0, Math.PI * 2)
+        ctx.arc(projected.x, projected.y, size * pulse * 2.2, 0, Math.PI * 2) // Bigger glow (was 1.5)
         const gradient = ctx.createRadialGradient(
           projected.x, projected.y, 0,
-          projected.x, projected.y, size * pulse * 1.5
+          projected.x, projected.y, size * pulse * 2.2
         )
-        gradient.addColorStop(0, `rgba(0, 212, 255, ${0.3 * projected.scale})`)
+        gradient.addColorStop(0, `rgba(0, 212, 255, ${0.4 * projected.scale})`) // Brighter glow (was 0.3)
+        gradient.addColorStop(0.6, `rgba(0, 212, 255, ${0.1 * projected.scale})`) // Add middle gradient stop
         gradient.addColorStop(1, 'rgba(0, 212, 255, 0)')
         ctx.fillStyle = gradient
         ctx.fill()
@@ -175,12 +176,12 @@ const NeuralNetwork3D: React.FC = () => {
         ctx.fillStyle = `rgba(0, 212, 255, ${0.8 + node.activation * 0.2})`
         ctx.fill()
 
-        // Draw activation ring
-        if (node.activation > 0.7) {
+        // Draw activation ring - more visible and frequent
+        if (node.activation > 0.5) { // Trigger at lower threshold (was 0.7)
           ctx.beginPath()
-          ctx.arc(projected.x, projected.y, size * pulse * 1.3, 0, Math.PI * 2)
-          ctx.strokeStyle = `rgba(255, 255, 0, ${(node.activation - 0.7) * 3 * projected.scale})`
-          ctx.lineWidth = 2 * projected.scale
+          ctx.arc(projected.x, projected.y, size * pulse * 1.6, 0, Math.PI * 2) // Bigger ring (was 1.3)
+          ctx.strokeStyle = `rgba(255, 255, 0, ${(node.activation - 0.5) * 2 * projected.scale})` // Adjusted for new threshold
+          ctx.lineWidth = 3 * projected.scale // Thicker line (was 2)
           ctx.stroke()
         }
       }
@@ -199,17 +200,17 @@ const NeuralNetwork3D: React.FC = () => {
       rotationRef.current.y += (mouseRef.current.x / canvas.width - 0.5) * 0.01
       rotationRef.current.x += (mouseRef.current.y / canvas.height - 0.5) * 0.01
 
-      // Auto-rotation
-      rotationRef.current.y += 0.002
-      rotationRef.current.x = Math.sin(Date.now() * 0.0005) * 0.1
+      // Slightly faster auto-rotation for more dynamic feel
+      rotationRef.current.y += 0.003 // Faster rotation (was 0.002)
+      rotationRef.current.x = Math.sin(Date.now() * 0.0008) * 0.15 // More dramatic vertical oscillation
 
       // Update nodes
       nodesRef.current.forEach(node => {
-        node.pulsePhase += 0.05
+        node.pulsePhase += 0.12 // Faster pulse animation (was 0.05)
 
-        // Random activation changes
-        if (Math.random() < 0.01) {
-          node.activation = Math.max(0, Math.min(1, node.activation + (Math.random() - 0.5) * 0.3))
+        // More frequent and dramatic activation changes
+        if (Math.random() < 0.03) { // More frequent (was 0.01)
+          node.activation = Math.max(0, Math.min(1, node.activation + (Math.random() - 0.5) * 0.6)) // Bigger changes (was 0.3)
         }
 
         // Subtle movement
@@ -222,9 +223,9 @@ const NeuralNetwork3D: React.FC = () => {
         node.vx += (targetX - node.x) * 0.001
       })
 
-      // Update connections
+      // Update connections - faster switching
       connectionsRef.current.forEach(conn => {
-        if (Math.random() < 0.005) {
+        if (Math.random() < 0.015) { // Much faster connection switching (was 0.005)
           conn.active = !conn.active
         }
       })
