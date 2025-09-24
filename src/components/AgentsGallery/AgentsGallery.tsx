@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
+import enTranslations from '@/translations/en.json'
+import uaTranslations from '@/translations/ua.json'
 
 interface Agent {
   id: string
@@ -15,10 +17,11 @@ interface Agent {
 }
 
 const AgentsGallery: React.FC = () => {
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
+  const translations = language === 'en' ? enTranslations : uaTranslations
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null)
 
-  const agents: Agent[] = [
+  const agents: Agent[] = translations.agentsGallery.agents || [
     {
       id: 'executive',
       name: 'Executive Assistant AI',

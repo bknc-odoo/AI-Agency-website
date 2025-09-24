@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 interface DataType {
   id: string
@@ -13,6 +14,7 @@ interface DataType {
 }
 
 const DataShowcase: React.FC = () => {
+  const { t } = useTranslation()
   const [activeData, setActiveData] = useState(0)
 
   const dataTypes: DataType[] = [
@@ -136,11 +138,11 @@ const DataShowcase: React.FC = () => {
     <section className="py-20 px-4 bg-gradient-to-b from-slate-800/20 to-slate-900/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Bring Your Messy Data - We'll Handle Everything
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
+            {t('dataShowcase.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            No ERP required. No data restructuring needed. Our AI understands whatever you have and builds its own smart database
+            {t('dataShowcase.subtitle')}
           </p>
         </div>
 
@@ -233,7 +235,7 @@ const DataShowcase: React.FC = () => {
 
         {/* Processing Pipeline Visualization */}
         <div className="tech-card rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">AI Processing Pipeline</h3>
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">{t('dataShowcase.pipeline')}</h3>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {[
               { step: 'Ingest', desc: 'Data Collection', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m14-7l-5 5-5-5" stroke="currentColor" strokeWidth="2"/></svg> },
@@ -260,8 +262,8 @@ const DataShowcase: React.FC = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-400/25 glow-effect">
-            Send Us Your Messy Data
+          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105">
+            {t('dataShowcase.cta')}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M7 11l5-5 5 5M12 6v14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

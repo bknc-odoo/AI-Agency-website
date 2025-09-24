@@ -105,9 +105,20 @@
     "cta": "Experience the Nord AI Difference"
   },
   "team": {
-    "title": "Meet Your Principal AI Strategist",
-    "quote": "\"I founded Nord AI with a single mission: demystify artificial intelligence and show people how they can leverage this amazing technology.\"",
-    "tagline": "BUILDING THE FUTURE WITH AI"
+    "title": "Meet Our AI + Human Hybrid Team",
+    "quote": "Led by a human CEO with AI employees working together to deliver unprecedented results. The future of business leadership.",
+    "tagline": "BUILDING THE FUTURE WITH AI",
+    "aiEmployeesTitle": "AI Employees Under My Leadership",
+    "aiEmployeesDescription": "Meet the AI team members that work 24/7 to execute our vision and deliver exceptional results for our clients.",
+    "claudeTitle": "Claude (AI Principal)",
+    "claudeRole": "Lead AI Development & Strategy",
+    "hybridTitle": "The Hybrid Advantage",
+    "hybridRole": "Human Creativity + AI Efficiency",
+    "analyticsTitle": "AI Analytics Engine",
+    "analyticsRole": "Data Intelligence & Insights",
+    "ctaTitle": "Ready to Experience AI + Human Collaboration?",
+    "ctaDescription": "Schedule a consultation to see how our hybrid team can transform your business with the perfect blend of human expertise and AI capabilities.",
+    "ctaButton": "Schedule Strategy Session"
   },
   "contact": {
     "title": "Start Your AI Journey",
@@ -186,26 +197,123 @@
   },
   "agentsGallery": {
     "title": "Custom AI Agents Gallery",
-    "subtitle": "Pre-trained, specialized agents ready to transform your operations"
+    "subtitle": "Pre-trained, specialized agents ready to transform your operations",
+    "agents": [
+      {
+        "id": "executive",
+        "name": "Executive Assistant AI",
+        "role": "C-Suite Support",
+        "description": "Your 24/7 executive assistant that manages calendars, prepares briefings, and handles communications.",
+        "capabilities": [
+          "Smart calendar management",
+          "Meeting preparation & notes",
+          "Email prioritization & drafting",
+          "Travel coordination",
+          "Report generation"
+        ],
+        "metrics": {
+          "efficiency": "80% time saved",
+          "accuracy": "99.9% scheduling accuracy"
+        },
+        "gradient": "from-purple-500 to-indigo-600"
+      },
+      {
+        "id": "sales",
+        "name": "Sales Hunter AI",
+        "role": "Lead Generation",
+        "description": "Autonomous sales agent that finds, qualifies, and engages prospects at scale.",
+        "capabilities": [
+          "Lead discovery & enrichment",
+          "Automated outreach sequences",
+          "Meeting booking",
+          "CRM synchronization",
+          "Performance analytics"
+        ],
+        "metrics": {
+          "efficiency": "10x more outreach",
+          "accuracy": "85% response rate"
+        },
+        "gradient": "from-green-500 to-emerald-600"
+      },
+      {
+        "id": "customer",
+        "name": "Customer Success AI",
+        "role": "Support Automation",
+        "description": "Intelligent agent that provides instant, personalized customer support across all channels.",
+        "capabilities": [
+          "Multi-channel support",
+          "Sentiment analysis",
+          "Issue resolution",
+          "Knowledge base management",
+          "Escalation handling"
+        ],
+        "metrics": {
+          "efficiency": "90% first-contact resolution",
+          "accuracy": "95% satisfaction score"
+        },
+        "gradient": "from-blue-500 to-cyan-600"
+      },
+      {
+        "id": "analyst",
+        "name": "Data Analyst AI",
+        "role": "Business Intelligence",
+        "description": "Advanced analytics agent that turns raw data into actionable insights.",
+        "capabilities": [
+          "Automated reporting",
+          "Anomaly detection",
+          "Predictive modeling",
+          "Data visualization",
+          "Trend analysis"
+        ],
+        "metrics": {
+          "efficiency": "100x faster analysis",
+          "accuracy": "98% prediction accuracy"
+        },
+        "gradient": "from-orange-500 to-red-600"
+      },
+      {
+        "id": "developer",
+        "name": "Code Assistant AI",
+        "role": "Development Support",
+        "description": "Pair programmer that writes, reviews, and optimizes code.",
+        "capabilities": [
+          "Code generation",
+          "Bug detection & fixing",
+          "Code review",
+          "Documentation writing",
+          "Test creation"
+        ],
+        "metrics": {
+          "efficiency": "3x faster development",
+          "accuracy": "90% bug prevention"
+        },
+        "gradient": "from-pink-500 to-rose-600"
+      },
+      {
+        "id": "marketing",
+        "name": "Marketing Creator AI",
+        "role": "Content Generation",
+        "description": "Creative agent that produces marketing content and campaigns.",
+        "capabilities": [
+          "Content writing",
+          "Social media management",
+          "Ad copy generation",
+          "SEO optimization",
+          "Campaign analytics"
+        ],
+        "metrics": {
+          "efficiency": "20x content output",
+          "accuracy": "2x engagement rate"
+        },
+        "gradient": "from-teal-500 to-green-600"
+      }
+    ]
   },
   "dataShowcase": {
-    "title": "Bring Your Messy Data",
-    "subtitle": "We'll turn any data you have into a smart, functional system",
-    "types": [
-      {
-        "name": "Your Office Files (The Messy Ones)",
-        "description": "Stop worrying about scattered Word docs, old Excel files, and random PDFs."
-      },
-      {
-        "name": "Spreadsheets & Databases",
-        "description": "From old CSVs to complex databases - we'll make them intelligent."
-      },
-      {
-        "name": "Web Scraping & APIs",
-        "description": "We gather data from any online source and turn it into analytics."
-      }
-    ],
-    "cta": "Start Data Transformation"
+    "title": "Bring Your Messy Data - We'll Handle Everything",
+    "subtitle": "No ERP required. No data restructuring needed. Our AI understands whatever you have and builds its own smart database",
+    "pipeline": "AI Processing Pipeline",
+    "cta": "Send Us Your Messy Data"
   },
   "callback": {
     "title": "Get a Callback",

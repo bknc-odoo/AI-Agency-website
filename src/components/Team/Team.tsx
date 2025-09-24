@@ -1,6 +1,8 @@
 import React from 'react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 const Team: React.FC = () => {
+  const { t } = useTranslation()
 
   return (
     <section id="team" className="py-20 px-4 relative overflow-hidden">
@@ -11,10 +13,10 @@ const Team: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
-            Meet Our AI + Human Hybrid Team
+            {t('team.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto">
-            Led by a human CEO with AI employees working together to deliver unprecedented results. The future of business leadership.
+            {t('team.quote')}
           </p>
         </div>
 
@@ -72,9 +74,9 @@ const Team: React.FC = () => {
 
         {/* AI Employees Section */}
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-white mb-4">AI Employees Under My Leadership</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">{t('team.aiEmployeesTitle')}</h3>
           <p className="text-slate-300 max-w-2xl mx-auto">
-            Meet the AI team members that work 24/7 to execute our vision and deliver exceptional results for our clients.
+            {t('team.aiEmployeesDescription')}
           </p>
         </div>
 
@@ -92,8 +94,8 @@ const Team: React.FC = () => {
                   <circle cx="16" cy="16" r="1" fill="currentColor"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Claude (AI Principal)</h3>
-              <p className="text-purple-400 text-sm mb-4">Lead AI Development & Strategy</p>
+              <h3 className="text-xl font-bold text-white mb-2">{t('team.claudeTitle')}</h3>
+              <p className="text-purple-400 text-sm mb-4">{t('team.claudeRole')}</p>
             </div>
 
             <ul className="space-y-3 mb-6">
@@ -132,8 +134,8 @@ const Team: React.FC = () => {
                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">The Hybrid Advantage</h3>
-              <p className="text-green-400 text-sm mb-4">Human Creativity + AI Efficiency</p>
+              <h3 className="text-xl font-bold text-white mb-2">{t('team.hybridTitle')}</h3>
+              <p className="text-green-400 text-sm mb-4">{t('team.hybridRole')}</p>
             </div>
 
             <ul className="space-y-3 mb-6">
@@ -176,8 +178,8 @@ const Team: React.FC = () => {
                   <circle cx="19" cy="6" r="1" fill="currentColor"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">AI Analytics Engine</h3>
-              <p className="text-cyan-400 text-sm mb-4">Data Intelligence & Insights</p>
+              <h3 className="text-xl font-bold text-white mb-2">{t('team.analyticsTitle')}</h3>
+              <p className="text-cyan-400 text-sm mb-4">{t('team.analyticsRole')}</p>
             </div>
 
             <ul className="space-y-3 mb-6">
@@ -211,13 +213,13 @@ const Team: React.FC = () => {
         {/* Call to Action */}
         <div className="text-center">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Ready to Experience AI + Human Collaboration?
+            {t('team.ctaTitle')}
           </h3>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Schedule a consultation to see how our hybrid team can transform your business with the perfect blend of human expertise and AI capabilities.
+            {t('team.ctaDescription')}
           </p>
           <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105">
-            Schedule Strategy Session
+            {t('team.ctaButton')}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" strokeWidth="2"/>
             </svg>
