@@ -118,7 +118,45 @@
     "analyticsRole": "Data Intelligence & Insights",
     "ctaTitle": "Ready to Experience AI + Human Collaboration?",
     "ctaDescription": "Schedule a consultation to see how our hybrid team can transform your business with the perfect blend of human expertise and AI capabilities.",
-    "ctaButton": "Schedule Strategy Session"
+    "ctaButton": "Schedule Strategy Session",
+    "ceo": {
+      "title": "Nord AI CEO",
+      "role": "Chief Executive Officer",
+      "experience1": "15+ years business strategy leadership",
+      "experience2": "Trained by industry-leading AI mentors",
+      "experience3": "Leading 100+ AI implementations",
+      "metric1": "CEO",
+      "metric1Label": "Leadership",
+      "metric2": "15+",
+      "metric2Label": "Years"
+    },
+    "claude": {
+      "capability1": "Advanced reasoning & problem solving",
+      "capability2": "Real-time code generation & optimization",
+      "capability3": "24/7 availability & continuous learning",
+      "metric1": "24/7",
+      "metric1Label": "Availability",
+      "metric2": "∞",
+      "metric2Label": "Processing Power"
+    },
+    "hybrid": {
+      "capability1": "Human intuition guides AI execution",
+      "capability2": "AI handles complex tasks at scale",
+      "capability3": "Continuous learning & improvement",
+      "metric1": "10x",
+      "metric1Label": "Faster Results",
+      "metric2": "99%",
+      "metric2Label": "Quality Assured"
+    },
+    "analytics": {
+      "capability1": "Real-time data processing & analysis",
+      "capability2": "Predictive modeling & forecasting",
+      "capability3": "Automated insights & recommendations",
+      "metric1": "Real",
+      "metric1Label": "Time",
+      "metric2": "Smart",
+      "metric2Label": "Analytics"
+    }
   },
   "contact": {
     "title": "Start Your AI Journey",

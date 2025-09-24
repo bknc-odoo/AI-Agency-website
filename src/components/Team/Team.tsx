@@ -40,33 +40,33 @@ const Team: React.FC = () => {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Nord AI CEO</h3>
-              <p className="text-yellow-400 text-sm mb-4 font-semibold">Chief Executive Officer</p>
+              <h3 className="text-2xl font-bold text-white mb-2">{t('team.ceo.title')}</h3>
+              <p className="text-yellow-400 text-sm mb-4 font-semibold">{t('team.ceo.role')}</p>
             </div>
 
             <ul className="space-y-3 mb-6">
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
-                15+ years business strategy leadership
+                {t('team.ceo.experience1')}
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
-                Trained by industry-leading AI mentors
+                {t('team.ceo.experience2')}
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
-                Leading 100+ AI implementations
+                {t('team.ceo.experience3')}
               </li>
             </ul>
 
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-yellow-400">CEO</div>
-                <div className="text-xs text-slate-400">Leadership</div>
+                <div className="text-lg font-bold text-yellow-400">{t('team.ceo.metric1')}</div>
+                <div className="text-xs text-slate-400">{t('team.ceo.metric1Label')}</div>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-orange-400">15+</div>
-                <div className="text-xs text-slate-400">Years</div>
+                <div className="text-lg font-bold text-orange-400">{t('team.ceo.metric2')}</div>
+                <div className="text-xs text-slate-400">{t('team.ceo.metric2Label')}</div>
               </div>
             </div>
           </div>
@@ -101,26 +101,26 @@ const Team: React.FC = () => {
             <ul className="space-y-3 mb-6">
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse"></div>
-                Advanced reasoning & problem solving
+                {t('team.claude.capability1')}
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse"></div>
-                Real-time code generation & optimization
+                {t('team.claude.capability2')}
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse"></div>
-                24/7 availability & continuous learning
+                {t('team.claude.capability3')}
               </li>
             </ul>
 
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-purple-400">24/7</div>
-                <div className="text-xs text-slate-400">Availability</div>
+                <div className="text-lg font-bold text-purple-400">{t('team.claude.metric1')}</div>
+                <div className="text-xs text-slate-400">{t('team.claude.metric1Label')}</div>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-pink-400">∞</div>
-                <div className="text-xs text-slate-400">Processing Power</div>
+                <div className="text-lg font-bold text-pink-400">{t('team.claude.metric2')}</div>
+                <div className="text-xs text-slate-400">{t('team.claude.metric2Label')}</div>
               </div>
             </div>
           </div>
@@ -141,26 +141,26 @@ const Team: React.FC = () => {
             <ul className="space-y-3 mb-6">
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                Human intuition guides AI execution
+                {t('team.hybrid.capability1')}
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                AI handles complex tasks at scale
+                {t('team.hybrid.capability2')}
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                Continuous learning & improvement
+                {t('team.hybrid.capability3')}
               </li>
             </ul>
 
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-green-400">10x</div>
-                <div className="text-xs text-slate-400">Faster Results</div>
+                <div className="text-lg font-bold text-green-400">{t('team.hybrid.metric1')}</div>
+                <div className="text-xs text-slate-400">{t('team.hybrid.metric1Label')}</div>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-emerald-400">99%</div>
-                <div className="text-xs text-slate-400">Quality Assured</div>
+                <div className="text-lg font-bold text-emerald-400">{t('team.hybrid.metric2')}</div>
+                <div className="text-xs text-slate-400">{t('team.hybrid.metric2Label')}</div>
               </div>
             </div>
           </div>
@@ -185,26 +185,26 @@ const Team: React.FC = () => {
             <ul className="space-y-3 mb-6">
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
-                Real-time data processing & analysis
+                {t('team.analytics.capability1')}
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
-                Predictive modeling & forecasting
+                {t('team.analytics.capability2')}
               </li>
               <li className="flex items-center text-sm text-slate-300">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
-                Automated insights & recommendations
+                {t('team.analytics.capability3')}
               </li>
             </ul>
 
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-cyan-400">Real</div>
-                <div className="text-xs text-slate-400">Time</div>
+                <div className="text-lg font-bold text-cyan-400">{t('team.analytics.metric1')}</div>
+                <div className="text-xs text-slate-400">{t('team.analytics.metric1Label')}</div>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                <div className="text-lg font-bold text-blue-400">Smart</div>
-                <div className="text-xs text-slate-400">Analytics</div>
+                <div className="text-lg font-bold text-blue-400">{t('team.analytics.metric2')}</div>
+                <div className="text-xs text-slate-400">{t('team.analytics.metric2Label')}</div>
               </div>
             </div>
           </div>
