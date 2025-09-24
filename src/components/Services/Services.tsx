@@ -40,10 +40,14 @@ const Services: React.FC = () => {
   ]
 
   return (
-    <section id="services" className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-20 px-4 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 to-slate-800/50" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
             {t('services.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
@@ -52,25 +56,59 @@ const Services: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div
               key={service.key}
-              className="tech-card digital-noise rounded-2xl p-8"
+              className="tech-card digital-noise rounded-2xl p-8 group hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
             >
-              <div className="mb-6 flex justify-center">{service.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-              <p className="text-slate-300 mb-6 leading-relaxed">{service.description}</p>
+              {/* Icon with glow effect */}
+              <div className="mb-6 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full scale-150 group-hover:scale-200 transition-transform duration-300"></div>
+                  <div className="relative z-10">{service.icon}</div>
+                </div>
+              </div>
 
-              <ul className="space-y-2">
+              {/* Title with gradient effect */}
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
+                {service.title}
+              </h3>
+
+              <p className="text-slate-300 mb-6 leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
+                {service.description}
+              </p>
+
+              {/* Enhanced feature list */}
+              <ul className="space-y-3">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-slate-400">
-                    <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3"></div>
-                    {feature}
+                  <li key={featureIndex} className="flex items-center text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
+                    <span className="font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
+
+              {/* Holographic border effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+              {/* Corner accents */}
+              <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
             </div>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-12">
+          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105">
+            Start Your AI Transformation
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
