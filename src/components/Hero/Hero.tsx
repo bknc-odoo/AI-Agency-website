@@ -1,8 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
+import ParticleNetwork from '@/components/Effects/ParticleNetwork'
 
 const Hero: React.FC = () => {
   const { t, language } = useTranslation()
+  const [displayedText, setDisplayedText] = useState('')
+  const [isTypingComplete, setIsTypingComplete] = useState(false)
+
+  const fullText = t('hero.title')
+
+  useEffect(() => {
+    setDisplayedText('')
+    setIsTypingComplete(false)
+
+    let currentIndex = 0
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayedText(fullText.slice(0, currentIndex))
+        currentIndex++
+      } else {
+        clearInterval(typingInterval)
+        setIsTypingComplete(true)
+      }
+    }, 50) // Clean typing speed
+
+    return () => clearInterval(typingInterval)
+  }, [fullText])
 
   const renderSubtitle = () => {
     const subtitle = t('hero.subtitle')
@@ -22,31 +45,37 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Elements */}
+      {/* Particle Network Background */}
+      <ParticleNetwork />
+
+      {/* Tech Grid Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card opacity-90" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-2xl animate-float" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-primary/20 rounded-full animate-pulse-slow" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary/10 rounded-full animate-pulse-slow" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 opacity-95" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            <span className="text-foreground">
-              {t('hero.title')}
+            <span className="text-white">
+              {displayedText}
+              <span className="inline-block w-1 h-12 md:h-16 lg:h-20 ml-2 bg-cyan-400 animate-pulse" style={{
+                opacity: isTypingComplete ? 0 : 1,
+                transition: 'opacity 0.5s'
+              }} />
               <br />
             </span>
-{renderSubtitle()}
+            <span className={`inline-block transition-all duration-500 ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              {renderSubtitle()}
+            </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className={`text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-700 delay-300 ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {t('hero.description')}
           </p>
 
-          <div className="flex justify-center">
+          <div className={`flex justify-center transition-all duration-700 delay-500 ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105">
               {t('hero.cta')}
               <svg

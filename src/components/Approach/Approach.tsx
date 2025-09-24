@@ -56,7 +56,7 @@ const Approach: React.FC = () => {
                 <div className="hidden lg:block absolute top-12 left-full w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-transparent z-10"></div>
               )}
 
-              <div className="bg-slate-900/50 rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 h-full">
+              <div className="tech-card rounded-2xl p-8 h-full">
                 <div className="flex items-center mb-6">
                   <div className="mr-4">{step.icon}</div>
                   <span className="text-4xl font-bold text-cyan-400">{step.number}</span>
