@@ -157,7 +157,13 @@ const AgentsGallery: React.FC = () => {
                     <p className="text-cyan-400 text-sm">{agent.role}</p>
                   </div>
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
-                    <span className="text-2xl">🤖</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+                      <rect x="3" y="11" width="18" height="10" rx="2" stroke="currentColor" strokeWidth="2"/>
+                      <circle cx="12" cy="5" r="2" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M12 7v4l-3 3m6-3l-3-3" stroke="currentColor" strokeWidth="2"/>
+                      <circle cx="8" cy="16" r="1" fill="currentColor"/>
+                      <circle cx="16" cy="16" r="1" fill="currentColor"/>
+                    </svg>
                   </div>
                 </div>
 
@@ -237,12 +243,9 @@ const AgentsGallery: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4">
-                <button className={`flex-1 py-3 rounded-lg bg-gradient-to-r ${selectedAgent.gradient} text-white font-semibold`}>
-                  Start Free Trial
-                </button>
+              <div className="flex justify-center">
                 <button
-                  className="flex-1 py-3 rounded-lg border border-slate-600 text-slate-300 font-semibold hover:border-cyan-400 transition-colors"
+                  className="px-8 py-3 rounded-lg border border-slate-600 text-slate-300 font-semibold hover:border-cyan-400 hover:text-white transition-colors"
                   onClick={() => setSelectedAgent(null)}
                 >
                   Close
