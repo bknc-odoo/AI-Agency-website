@@ -16,137 +16,140 @@ const Capabilities: React.FC = () => {
 
   const capabilities: Capability[] = [
     {
-      category: "Computer Vision AI",
+      category: "Voice AI Agents",
       color: "from-cyan-400 to-blue-500",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
-          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="12" cy="12" r="1" fill="currentColor"/>
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="currentColor" strokeWidth="2"/>
+          <line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" strokeWidth="2"/>
+          <line x1="8" y1="23" x2="16" y2="23" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
       items: [
         {
-          title: "Object Detection & Tracking",
-          description: "Real-time identification and tracking of objects in video streams",
-          metrics: "99.9% accuracy, <50ms latency"
+          title: "24/7 Customer Service Agent",
+          description: "Handle customer inquiries, complaints, and support requests with human-like conversation",
+          metrics: "95% customer satisfaction, 70% cost reduction"
         },
         {
-          title: "Facial Recognition",
-          description: "Secure biometric authentication and emotion analysis",
-          metrics: "1:1M matching in 200ms"
+          title: "Sales & Lead Qualification Agent",
+          description: "Engage prospects, qualify leads, and schedule appointments automatically",
+          metrics: "3x more qualified leads, 60% conversion rate"
         },
         {
-          title: "Document OCR Processing",
-          description: "Extract text from any document format with structure preservation",
-          metrics: "98% accuracy, 50+ languages"
+          title: "Appointment Booking Agent",
+          description: "Schedule meetings, reschedule conflicts, and send confirmations across all platforms",
+          metrics: "100% accuracy, 85% time saved"
         },
         {
-          title: "Medical Image Analysis",
-          description: "AI-powered diagnosis assistance and anomaly detection",
-          metrics: "FDA-approved algorithms"
+          title: "Order Processing & Support Agent",
+          description: "Take orders, process payments, handle returns and provide order status updates",
+          metrics: "99.9% order accuracy, instant processing"
         }
       ]
     },
     {
-      category: "Natural Language AI",
+      category: "Knowledge Base Agents",
       color: "from-purple-400 to-pink-500",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="12" cy="12" r="1" fill="currentColor"/>
-          <circle cx="8" cy="12" r="1" fill="currentColor"/>
-          <circle cx="16" cy="12" r="1" fill="currentColor"/>
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" strokeWidth="2"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="12" cy="8" r="2" stroke="currentColor" strokeWidth="2"/>
+          <path d="M15 13a3 3 0 1 0-6 0" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
       items: [
         {
-          title: "Sentiment Analysis",
-          description: "Understand customer emotions across all channels",
-          metrics: "95% accuracy, real-time"
+          title: "Internal Knowledge Assistant",
+          description: "Instant answers from company policies, procedures, and documentation for employees",
+          metrics: "90% faster information retrieval, 24/7 availability"
         },
         {
-          title: "Multi-Language Translation",
-          description: "Instant translation preserving context and tone",
-          metrics: "100+ languages, 99% fluency"
+          title: "Customer FAQ & Support Agent",
+          description: "Automatically answer customer questions from your knowledge base and documentation",
+          metrics: "80% ticket reduction, instant responses"
         },
         {
-          title: "Content Generation",
-          description: "Create human-quality content at scale",
-          metrics: "SEO-optimized, brand-aligned"
+          title: "Training & Onboarding Agent",
+          description: "Guide new employees through training materials and answer onboarding questions",
+          metrics: "50% faster onboarding, 95% completion rate"
         },
         {
-          title: "Voice Assistants",
-          description: "Natural conversation AI for customer service",
-          metrics: "90% first-call resolution"
+          title: "Technical Documentation Agent",
+          description: "Help teams find code snippets, API docs, and technical specifications instantly",
+          metrics: "75% less development time, 100% accuracy"
         }
       ]
     },
     {
-      category: "Predictive Analytics",
+      category: "Process Automation Agents",
       color: "from-green-400 to-emerald-500",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <path d="M3 3v18h18" stroke="currentColor" strokeWidth="2"/>
-          <path d="M7 12l4-4 3 3 5-5" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="7" cy="12" r="1" fill="currentColor"/>
-          <circle cx="11" cy="8" r="1" fill="currentColor"/>
-          <circle cx="14" cy="11" r="1" fill="currentColor"/>
-          <circle cx="19" cy="6" r="1" fill="currentColor"/>
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+          <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 3v9l4 4" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
       items: [
         {
-          title: "Sales Forecasting",
-          description: "Predict revenue with machine learning models",
-          metrics: "±5% accuracy, 3-year horizon"
+          title: "Data Entry & Processing Agent",
+          description: "Extract data from documents, emails, and forms to automatically update systems",
+          metrics: "99.8% accuracy, 10x faster processing"
         },
         {
-          title: "Risk Assessment",
-          description: "Identify and quantify business risks automatically",
-          metrics: "85% risk prevention rate"
+          title: "Invoice & Payment Agent",
+          description: "Generate invoices, process payments, and handle billing automation end-to-end",
+          metrics: "Zero human errors, 30-day payment cycles"
         },
         {
-          title: "Churn Prediction",
-          description: "Identify at-risk customers before they leave",
-          metrics: "92% prediction accuracy"
+          title: "Email & Communication Agent",
+          description: "Sort emails, draft responses, schedule follow-ups, and manage communication workflows",
+          metrics: "80% email volume reduction, instant responses"
         },
         {
-          title: "Demand Planning",
-          description: "Optimize inventory with AI-driven demand forecasts",
-          metrics: "30% reduction in stock-outs"
+          title: "Report Generation Agent",
+          description: "Create daily, weekly, monthly reports from multiple data sources automatically",
+          metrics: "100% consistent reports, real-time updates"
         }
       ]
     },
     {
-      category: "Generative AI",
+      category: "Custom Business Agents",
       color: "from-orange-400 to-red-500",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
-          <path d="M12 8v8m-4-4h8" stroke="currentColor" strokeWidth="2"/>
+          <path d="M20 7h-9" stroke="currentColor" strokeWidth="2"/>
+          <path d="M14 17H5" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="17" cy="17" r="3" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="8" cy="7" r="3" stroke="currentColor" strokeWidth="2"/>
+          <path d="M5 17a3 3 0 0 1 6 0" stroke="currentColor" strokeWidth="2"/>
+          <path d="M14 7a3 3 0 0 1 6 0" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
       items: [
         {
-          title: "Code Generation",
-          description: "AI writes production-ready code from requirements",
-          metrics: "10x faster development"
+          title: "Industry-Specific Expert Agent",
+          description: "Custom AI trained on your industry knowledge, regulations, and best practices",
+          metrics: "Domain expertise level: 95%, compliance: 100%"
         },
         {
-          title: "Design Creation",
-          description: "Generate UI/UX designs and marketing materials",
-          metrics: "1000+ variations per hour"
+          title: "Workflow Integration Agent",
+          description: "Connect all your business tools and automate complex multi-step workflows",
+          metrics: "15+ tool integrations, 90% workflow automation"
         },
         {
-          title: "Synthetic Data",
-          description: "Create realistic test data preserving privacy",
-          metrics: "GDPR compliant, infinite scale"
+          title: "Decision Support Agent",
+          description: "Analyze business data and provide recommendations for strategic decisions",
+          metrics: "Data-driven insights, 40% better decisions"
         },
         {
-          title: "3D Model Generation",
-          description: "Create 3D assets from text descriptions",
-          metrics: "Production-ready quality"
+          title: "Custom API & Tool Agent",
+          description: "Build specialized agents that integrate with your unique systems and requirements",
+          metrics: "Tailored solutions, unlimited scalability"
         }
       ]
     }
@@ -160,10 +163,10 @@ const Capabilities: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            AI Capabilities Matrix
+            Business AI Automation Hub
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Explore the full spectrum of AI technologies we can deploy for your business
+            Custom AI agents and automation tools that transform your business operations from day one
           </p>
         </div>
 
@@ -208,7 +211,10 @@ const Capabilities: React.FC = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect">
-            Explore Your AI Solution
+            Start Your AI Automation Journey
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17l9.2-9.2M17 17V7H7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
         </div>
       </div>
