@@ -1,0 +1,148 @@
+/* Deep Blue & Electric Blue Theme Override */
+:root {
+  /* Deep Navy/Midnight Blue Backgrounds */
+  --background: 215 45% 8%; /* Deep navy blue background */
+  --foreground: 210 40% 98%; /* Pure white text */
+
+  /* Card and Surface Colors */
+  --card: 215 40% 12%; /* Slightly lighter navy for cards */
+  --card-foreground: 210 40% 98%; /* White text on cards */
+
+  /* Popover Colors */
+  --popover: 215 40% 12%; /* Same as card */
+  --popover-foreground: 210 40% 98%;
+
+  /* Primary Electric Blue */
+  --primary: 200 100% 50%; /* Bright electric blue (#00D4FF) */
+  --primary-foreground: 215 45% 8%; /* Dark blue text on electric blue */
+
+  /* Secondary Colors */
+  --secondary: 215 35% 15%; /* Darker navy for secondary elements */
+  --secondary-foreground: 210 40% 98%;
+
+  /* Muted Colors */
+  --muted: 215 35% 15%; /* Same as secondary */
+  --muted-foreground: 210 20% 70%; /* Light gray for muted text */
+
+  /* Accent Colors */
+  --accent: 195 100% 60%; /* Lighter electric blue for accents */
+  --accent-foreground: 215 45% 8%;
+
+  /* Destructive/Error Colors */
+  --destructive: 0 84% 60%; /* Keep red for errors */
+  --destructive-foreground: 210 40% 98%;
+
+  /* Border and Input Colors */
+  --border: 215 30% 20%; /* Subtle blue-gray borders */
+  --input: 215 30% 20%; /* Same as border for inputs */
+
+  /* Ring/Focus Colors */
+  --ring: 200 100% 50%; /* Electric blue for focus rings */
+
+  /* Border radius remains the same */
+  --radius: 0.75rem;
+}
+
+/* Custom Gradient Text Class */
+.gradient-text {
+  background: linear-gradient(135deg, #00D4FF 0%, #0EA5E9 50%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Custom animations with blue theme */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out;
+}
+
+/* Glow effects for the blue theme */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.glow-effect-hover:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+/* Custom button hover effects */
+button:hover, .hover\:scale-105:hover {
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+}
+
+/* Enhanced border hover effects */
+.hover\:border-primary\/50:hover {
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
