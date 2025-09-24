@@ -63,6 +63,83 @@
                 display: none;
             }
         }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 58, 138, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-menu a, .mobile-menu button {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            transition: color 0.3s ease;
+        }
+        .mobile-menu a:hover, .mobile-menu button:hover {
+            color: #00D4FF;
+        }
+        .mobile-lang-switcher {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .mobile-lang-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #00D4FF;
+            border-radius: 8px;
+            background: transparent;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .mobile-lang-btn.active {
+            background: #00D4FF;
+            color: #1E3A8A;
+        }
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            width: 20px;
+            height: 2px;
+            background: #94A3B8;
+            margin: 2px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-4px, 4px);
+            background: #00D4FF;
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-4px, -4px);
+            background: #00D4FF;
+        }
     </style>
 </head>
 
@@ -94,17 +171,34 @@
                             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 rounded-md px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold" data-translate="cta-get-started">Get Started</button>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <!-- Mobile Get Started Button -->
-                            <button class="md:hidden inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-8 rounded-md px-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs" data-translate="cta-get-started">Get Started</button>
-                            <!-- Language Switcher -->
-                            <div class="flex items-center bg-card/80 rounded-lg p-1 border border-primary/20">
+                            <!-- Desktop Language Switcher -->
+                            <div class="hidden md:flex items-center bg-card/80 rounded-lg p-1 border border-primary/20">
                                 <button id="lang-en" class="lang-btn px-3 py-1.5 text-xs font-medium rounded-md transition-colors bg-primary text-primary-foreground">EN</button>
                                 <button id="lang-ua" class="lang-btn px-3 py-1.5 text-xs font-medium rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-primary/10">UA</button>
+                            </div>
+                            <!-- Mobile Hamburger Menu -->
+                            <div class="md:hidden hamburger" id="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#services" data-translate="nav-services" onclick="closeMobileMenu()">Services</a>
+                <a href="#approach" data-translate="nav-approach" onclick="closeMobileMenu()">Approach</a>
+                <a href="#team" data-translate="nav-team" onclick="closeMobileMenu()">Team</a>
+                <button class="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-lg" data-translate="cta-get-started" onclick="closeMobileMenu()">Get Started</button>
+
+                <div class="mobile-lang-switcher">
+                    <button id="lang-en-mobile" class="mobile-lang-btn active">EN</button>
+                    <button id="lang-ua-mobile" class="mobile-lang-btn">UA</button>
+                </div>
+            </div>
 
             <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
                 <div class="absolute inset-0">
@@ -689,6 +783,16 @@
                 activeFixedBtn.classList.add('active');
             }
 
+            // Update mobile language buttons
+            document.querySelectorAll('#lang-en-mobile, #lang-ua-mobile').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            const activeMobileBtn = document.getElementById(`lang-${lang}-mobile`);
+            if (activeMobileBtn) {
+                activeMobileBtn.classList.add('active');
+            }
+
             // Store language preference
             localStorage.setItem('nordai-lang', lang);
             currentLang = lang;
@@ -701,6 +805,31 @@
         // Fixed language switcher event listeners
         document.getElementById('lang-en-fixed').addEventListener('click', () => updateContent('en'));
         document.getElementById('lang-ua-fixed').addEventListener('click', () => updateContent('ua'));
+
+        // Mobile language switcher event listeners
+        document.getElementById('lang-en-mobile').addEventListener('click', () => updateContent('en'));
+        document.getElementById('lang-ua-mobile').addEventListener('click', () => updateContent('ua'));
+
+        // Mobile menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        function closeMobileMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
