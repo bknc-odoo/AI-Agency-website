@@ -159,9 +159,9 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-6 py-4 text-lg font-semibold text-slate-900 transition-colors hover:bg-cyan-300 glow-effect"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-xl font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect"
               >
-                Book Your Free Consultation
+                Start Your AI Journey
               </button>
             </form>
 

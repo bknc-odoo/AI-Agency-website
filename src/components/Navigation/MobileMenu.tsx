@@ -33,28 +33,37 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         <nav className="flex flex-col items-center space-y-8">
           <a
             href="#services"
-            className="text-2xl text-foreground hover:text-primary transition-colors"
+            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
             onClick={handleLinkClick}
           >
             {t('nav.services')}
           </a>
           <a
             href="#approach"
-            className="text-2xl text-foreground hover:text-primary transition-colors"
+            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
             onClick={handleLinkClick}
           >
             {t('nav.approach')}
           </a>
           <a
             href="#team"
-            className="text-2xl text-foreground hover:text-primary transition-colors"
+            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
             onClick={handleLinkClick}
           >
             {t('nav.team')}
           </a>
+          <a
+            href="https://www.nordgaimer.coach"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
+            onClick={handleLinkClick}
+          >
+            One-to-One Mentorship
+          </a>
 
           <button
-            className="btn-primary text-lg px-6 py-3"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-6 py-3 text-lg font-semibold text-slate-900 transition-colors hover:bg-cyan-300"
             onClick={handleLinkClick}
           >
             {t('nav.getStarted')}

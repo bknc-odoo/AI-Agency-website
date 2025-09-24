@@ -70,6 +70,14 @@ const Navigation: React.FC = () => {
               >
                 {t('nav.team')}
               </a>
+              <a
+                href="https://www.nordgaimer.coach"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 hover:text-cyan-400 transition-colors"
+              >
+                One-to-One Mentorship
+              </a>
               <button className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-cyan-300">
                 {t('nav.getStarted')}
               </button>

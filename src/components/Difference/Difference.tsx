@@ -63,7 +63,7 @@ const Difference: React.FC = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect">
-            Experience the Nord Difference
+            Experience the Nord AI Difference
           </button>
         </div>
       </div>

@@ -1,9 +1,12 @@
 import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { StrategyIcon, RobotIcon, AnalyticsIcon, AutomationIcon } from '@/components/Icons/Icons'
+import enTranslations from '@/translations/en.json'
+import uaTranslations from '@/translations/ua.json'
 
 const Services: React.FC = () => {
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
+  const translations = language === 'en' ? enTranslations : uaTranslations
 
   const services = [
     {
@@ -11,28 +14,28 @@ const Services: React.FC = () => {
       icon: <StrategyIcon size={48} className="text-cyan-400" />,
       title: t('services.strategy.title'),
       description: t('services.strategy.description'),
-      features: ['Strategic Planning', 'ROI Analysis', 'Implementation Roadmap', 'Risk Assessment']
+      features: translations.services.strategy.features
     },
     {
       key: 'agents',
       icon: <RobotIcon size={48} className="text-cyan-400" />,
       title: t('services.agents.title'),
       description: t('services.agents.description'),
-      features: ['Executive Assistant Agents', 'Content Creation Agents', 'Lead Generation Agents', 'Internal Strategy Agents']
+      features: translations.services.agents.features
     },
     {
       key: 'analytics',
       icon: <AnalyticsIcon size={48} className="text-cyan-400" />,
       title: t('services.analytics.title'),
       description: t('services.analytics.description'),
-      features: ['Predictive Analytics', 'Real-time Dashboards', 'Data Mining', 'Business Intelligence']
+      features: translations.services.analytics.features
     },
     {
       key: 'automation',
       icon: <AutomationIcon size={48} className="text-cyan-400" />,
       title: t('services.automation.title'),
       description: t('services.automation.description'),
-      features: ['Workflow Automation', 'RPA Integration', 'Smart Chatbots', 'AI Analysts']
+      features: translations.services.automation.features
     }
   ]
 
