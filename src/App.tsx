@@ -3,10 +3,14 @@ import TranslationProvider from './components/TranslationProvider'
 import Navigation from './components/Navigation/Navigation'
 import Hero from './components/Hero/Hero'
 import Services from './components/Services/Services'
+import Capabilities from './components/Capabilities/Capabilities'
+import AgentsGallery from './components/AgentsGallery/AgentsGallery'
+import DataShowcase from './components/DataShowcase/DataShowcase'
 import Approach from './components/Approach/Approach'
 import Difference from './components/Difference/Difference'
 import Team from './components/Team/Team'
 import Contact from './components/Contact/Contact'
+import CallbackWidget from './components/CallbackWidget/CallbackWidget'
 import './styles/globals.css'
 
 const App: React.FC = () => {
@@ -16,10 +20,14 @@ const App: React.FC = () => {
         <Navigation />
         <Hero />
         <Services />
+        <Capabilities />
+        <AgentsGallery />
+        <DataShowcase />
         <Approach />
         <Difference />
         <Team />
         <Contact />
+        <CallbackWidget />
       </div>
     </TranslationProvider>
   )
