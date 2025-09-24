@@ -30,6 +30,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 p-2 text-white hover:text-cyan-400 transition-colors"
+          aria-label="Close menu"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
         <nav className="flex flex-col items-center space-y-8">
           <a
             href="#services"
