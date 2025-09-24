@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import ParticleNetwork from '@/components/Effects/ParticleNetwork'
+import CircuitPattern from '@/components/Effects/CircuitPattern'
 
 const Hero: React.FC = () => {
   const { t, language } = useTranslation()
@@ -44,9 +45,12 @@ const Hero: React.FC = () => {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden digital-noise">
       {/* Particle Network Background */}
       <ParticleNetwork />
+
+      {/* Circuit Pattern */}
+      <CircuitPattern />
 
       {/* Tech Grid Background */}
       <div className="absolute inset-0">
@@ -66,7 +70,7 @@ const Hero: React.FC = () => {
               }} />
               <br />
             </span>
-            <span className={`inline-block transition-all duration-500 ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <span className={`inline-block transition-all duration-500 neon-glow ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               {renderSubtitle()}
             </span>
           </h1>

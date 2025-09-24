@@ -7,11 +7,20 @@ interface Particle {
   vy: number
   radius: number
   opacity: number
+  pulsePhase: number
+}
+
+interface DataFlow {
+  from: Particle
+  to: Particle
+  progress: number
+  active: boolean
 }
 
 const ParticleNetwork: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const particlesRef = useRef<Particle[]>([])
+  const dataFlowsRef = useRef<DataFlow[]>([])
   const mouseRef = useRef({ x: 0, y: 0 })
   const animationFrameRef = useRef<number | null>(null)
 
@@ -41,7 +50,8 @@ const ParticleNetwork: React.FC = () => {
         vx: (Math.random() - 0.5) * 0.2, // Slower movement
         vy: (Math.random() - 0.5) * 0.2,
         radius: Math.random() * 1.5 + 0.5, // Smaller dots
-        opacity: Math.random() * 0.5 + 0.2
+        opacity: Math.random() * 0.5 + 0.2,
+        pulsePhase: Math.random() * Math.PI * 2
       })
     }
 
@@ -56,11 +66,58 @@ const ParticleNetwork: React.FC = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
+      // Create random data flows
+      if (Math.random() < 0.02 && particlesRef.current.length > 1) {
+        const fromIndex = Math.floor(Math.random() * particlesRef.current.length)
+        const toIndex = Math.floor(Math.random() * particlesRef.current.length)
+
+        if (fromIndex !== toIndex) {
+          const distance = Math.sqrt(
+            Math.pow(particlesRef.current[fromIndex].x - particlesRef.current[toIndex].x, 2) +
+            Math.pow(particlesRef.current[fromIndex].y - particlesRef.current[toIndex].y, 2)
+          )
+
+          if (distance < 200) {
+            dataFlowsRef.current.push({
+              from: particlesRef.current[fromIndex],
+              to: particlesRef.current[toIndex],
+              progress: 0,
+              active: true
+            })
+          }
+        }
+      }
+
+      // Update and draw data flows
+      dataFlowsRef.current = dataFlowsRef.current.filter(flow => {
+        if (flow.active) {
+          flow.progress += 0.03
+
+          if (flow.progress <= 1) {
+            // Draw data packet
+            const x = flow.from.x + (flow.to.x - flow.from.x) * flow.progress
+            const y = flow.from.y + (flow.to.y - flow.from.y) * flow.progress
+
+            ctx.beginPath()
+            ctx.arc(x, y, 2, 0, Math.PI * 2)
+            ctx.fillStyle = 'rgba(255, 255, 0, 0.8)'
+            ctx.shadowBlur = 10
+            ctx.shadowColor = 'rgba(255, 255, 0, 0.5)'
+            ctx.fill()
+            ctx.shadowBlur = 0
+
+            return true
+          }
+        }
+        return false
+      })
+
       // Update and draw particles
       particlesRef.current.forEach((particle, i) => {
         // Update position
         particle.x += particle.vx
         particle.y += particle.vy
+        particle.pulsePhase += 0.05
 
         // Wrap around edges instead of bouncing
         if (particle.x < 0) particle.x = canvas.width
@@ -68,9 +125,10 @@ const ParticleNetwork: React.FC = () => {
         if (particle.y < 0) particle.y = canvas.height
         if (particle.y > canvas.height) particle.y = 0
 
-        // Draw particle with subtle glow
+        // Draw particle with pulsing effect
+        const pulseSize = particle.radius + Math.sin(particle.pulsePhase) * 0.5
         ctx.beginPath()
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2)
+        ctx.arc(particle.x, particle.y, pulseSize, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(0, 212, 255, ${particle.opacity})`
         ctx.fill()
 

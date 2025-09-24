@@ -55,7 +55,7 @@ const Services: React.FC = () => {
           {services.map((service) => (
             <div
               key={service.key}
-              className="tech-card rounded-2xl p-8"
+              className="tech-card digital-noise rounded-2xl p-8"
             >
               <div className="mb-6 flex justify-center">{service.icon}</div>
               <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
