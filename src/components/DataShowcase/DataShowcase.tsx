@@ -17,89 +17,89 @@ const DataShowcase: React.FC = () => {
 
   const dataTypes: DataType[] = [
     {
-      id: 'structured',
-      name: 'Structured Data',
-      icon: '📊',
-      description: 'Traditional databases, spreadsheets, and organized datasets',
-      formats: ['SQL Databases', 'CSV Files', 'Excel Sheets', 'JSON/XML', 'APIs'],
+      id: 'office-chaos',
+      name: 'Your Office Files (The Messy Ones)',
+      icon: '📁',
+      description: 'Stop worrying about your scattered Word docs, old Excel files, and random PDFs. Our AI reads everything.',
+      formats: ['Word Documents', 'Excel Spreadsheets', 'PowerPoint Files', 'PDF Reports', 'Email Archives'],
       capabilities: [
-        'Real-time analytics',
-        'Predictive modeling',
-        'Pattern recognition',
-        'Automated reporting',
-        'Data validation'
+        'Reads any document format',
+        'Extracts key information automatically',
+        'Connects related data across files',
+        'Creates searchable knowledge base',
+        'No reformatting required'
       ],
-      useCase: 'Financial analysis, sales forecasting, inventory management',
-      processingTime: '< 1 second',
-      accuracy: '99.9%'
+      useCase: 'Turn your document chaos into organized, searchable intelligence',
+      processingTime: 'Minutes, not months',
+      accuracy: 'AI understands context, not just text'
     },
     {
-      id: 'unstructured',
-      name: 'Unstructured Data',
-      icon: '📄',
-      description: 'Documents, emails, PDFs, and free-form text content',
-      formats: ['PDFs', 'Word Documents', 'Emails', 'Web Pages', 'Text Files'],
-      capabilities: [
-        'Content extraction',
-        'Sentiment analysis',
-        'Entity recognition',
-        'Document classification',
-        'Information retrieval'
-      ],
-      useCase: 'Contract analysis, customer feedback, legal document review',
-      processingTime: '2-5 seconds',
-      accuracy: '97%'
-    },
-    {
-      id: 'multimedia',
-      name: 'Multimedia Data',
-      icon: '🎥',
-      description: 'Images, videos, audio files, and visual content',
-      formats: ['Images (JPG, PNG)', 'Videos (MP4, AVI)', 'Audio (MP3, WAV)', 'Live Streams'],
-      capabilities: [
-        'Object detection',
-        'Face recognition',
-        'Audio transcription',
-        'Content moderation',
-        'Quality analysis'
-      ],
-      useCase: 'Security monitoring, content creation, medical imaging',
-      processingTime: '5-30 seconds',
-      accuracy: '95%'
-    },
-    {
-      id: 'realtime',
-      name: 'Real-time Streaming',
-      icon: '⚡',
-      description: 'Live data feeds, IoT sensors, and continuous data streams',
-      formats: ['IoT Sensors', 'API Streams', 'Log Files', 'Social Media', 'Trading Data'],
-      capabilities: [
-        'Stream processing',
-        'Anomaly detection',
-        'Real-time alerts',
-        'Live dashboards',
-        'Predictive maintenance'
-      ],
-      useCase: 'Manufacturing monitoring, fraud detection, system alerts',
-      processingTime: 'Instant',
-      accuracy: '98%'
-    },
-    {
-      id: 'cloud',
-      name: 'Cloud & Enterprise',
+      id: 'google-drive',
+      name: 'Your Google Drive Disaster',
       icon: '☁️',
-      description: 'Cloud platforms, data warehouses, and enterprise systems',
-      formats: ['AWS S3', 'Google BigQuery', 'Salesforce', 'SAP', 'Microsoft Azure'],
+      description: 'All those Google Sheets, Docs, and Slides sitting in random folders? AI organizes it all automatically.',
+      formats: ['Google Sheets', 'Google Docs', 'Google Slides', 'Shared Folders', 'Collaborative Files'],
       capabilities: [
-        'ETL processes',
-        'Data migration',
-        'System integration',
-        'Automated backups',
-        'Compliance monitoring'
+        'Connects to Google Workspace directly',
+        'Reads collaborative documents',
+        'Tracks changes and versions',
+        'Builds unified data view',
+        'No manual export needed'
       ],
-      useCase: 'Enterprise integration, data migration, compliance reporting',
-      processingTime: '1-60 minutes',
-      accuracy: '99.5%'
+      useCase: 'Transform your Google Drive mess into structured business intelligence',
+      processingTime: 'Syncs continuously',
+      accuracy: 'Understands collaborative context'
+    },
+    {
+      id: 'email-madness',
+      name: 'Your Email Mountains',
+      icon: '📧',
+      description: 'Years of emails with attachments, contracts, and conversations? AI extracts every important detail.',
+      formats: ['Gmail Archives', 'Outlook Files', 'Email Attachments', 'Threading History', 'Contact Lists'],
+      capabilities: [
+        'Reads email content and attachments',
+        'Extracts contracts and agreements',
+        'Identifies key relationships',
+        'Creates timeline of interactions',
+        'Privacy-safe processing'
+      ],
+      useCase: 'Turn email chaos into relationship and contract intelligence',
+      processingTime: 'Processes years of emails overnight',
+      accuracy: 'Understands business relationships'
+    },
+    {
+      id: 'legacy-systems',
+      name: 'Your Old System Exports',
+      icon: '💾',
+      description: 'That ancient CRM export, old accounting software data, or CSV files from 2015? AI makes sense of it all.',
+      formats: ['CSV Exports', 'Database Dumps', 'Legacy Reports', 'Old Software Files', 'Mixed Formats'],
+      capabilities: [
+        'Handles any file format',
+        'Cleans messy data automatically',
+        'Connects historical patterns',
+        'No data migration needed',
+        'Preserves data history'
+      ],
+      useCase: 'Rescue valuable insights from old systems without expensive migrations',
+      processingTime: 'Works with what you have',
+      accuracy: 'Smart enough to handle inconsistencies'
+    },
+    {
+      id: 'real-world-chaos',
+      name: 'Your Real-World Mix',
+      icon: '🔄',
+      description: 'Photos of whiteboards, scanned documents, voice recordings, and handwritten notes? AI handles the real world.',
+      formats: ['Phone Photos', 'Scanned Documents', 'Voice Recordings', 'Handwritten Notes', 'Mixed Media'],
+      capabilities: [
+        'Reads handwriting and photos',
+        'Transcribes voice recordings',
+        'Processes mixed media files',
+        'Connects physical and digital',
+        'No perfect formats required'
+      ],
+      useCase: 'Digitize and organize everything from the physical world',
+      processingTime: 'Understands messy real-world data',
+      accuracy: 'Handles imperfect inputs perfectly'
     }
   ]
 
@@ -108,10 +108,10 @@ const DataShowcase: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Data Processing Capabilities
+            Bring Your Messy Data - We'll Handle Everything
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Any data type, any format, any scale - our AI processes it all
+            No ERP required. No data restructuring needed. Our AI understands whatever you have and builds its own smart database
           </p>
         </div>
 
@@ -231,8 +231,11 @@ const DataShowcase: React.FC = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect">
-            Process Your Data Now
+          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-400/25 glow-effect">
+            Send Us Your Messy Data
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 11l5-5 5 5M12 6v14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
         </div>
       </div>
