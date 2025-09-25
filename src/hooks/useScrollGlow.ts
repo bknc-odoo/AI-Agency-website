@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 export const useScrollGlow = (threshold = 0.3) => {
   const [isInView, setIsInView] = useState(false)
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(

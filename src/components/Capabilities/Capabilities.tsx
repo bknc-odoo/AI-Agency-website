@@ -78,10 +78,7 @@ const Capabilities: React.FC = () => {
 
   return (
     <section id="capabilities" className="py-20 px-4 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900/90" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
             {t('capabilities.title')}
