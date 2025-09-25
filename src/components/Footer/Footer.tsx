@@ -1,9 +1,7 @@
 import React from 'react'
-import { useTranslation } from '@/hooks/useTranslation'
 import NordAILogo from '@/components/ui/NordAILogo'
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
 
   const scrollToSection = (sectionId: string) => {
