@@ -258,17 +258,17 @@ const Technologies: React.FC = () => {
             {duplicatedTechnologies.map((tech, index) => (
               <div
                 key={`${tech.name}-${index}`}
-                className="flex-none w-32 h-20 tech-card digital-noise rounded-xl p-4 text-center group hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center"
+                className="flex-none w-36 h-24 tech-card digital-noise rounded-xl p-3 text-center group hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center"
               >
                 {/* Tech Logo */}
-                <div className="relative mb-2">
+                <div className="relative mb-1">
                   <div className="w-8 h-8 mx-auto rounded-lg bg-slate-800/50 flex items-center justify-center group-hover:bg-slate-800/70 transition-colors duration-300">
                     {tech.logo}
                   </div>
                 </div>
 
                 {/* Tech Info */}
-                <h3 className="text-xs font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300 truncate w-full">
+                <h3 className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300 text-center leading-tight">
                   {tech.name}
                 </h3>
 
