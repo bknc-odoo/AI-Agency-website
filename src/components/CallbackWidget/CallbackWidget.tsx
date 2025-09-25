@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 interface CallbackForm {
   name: string
   email: string
   phone: string
   preferredTime: string
-  urgency: 'low' | 'medium' | 'high'
   message: string
 }
 
 const CallbackWidget: React.FC = () => {
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
   const [formData, setFormData] = useState<CallbackForm>({
     name: '',
     email: '',
     phone: '',
     preferredTime: '',
-    urgency: 'medium',
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -41,7 +41,6 @@ const CallbackWidget: React.FC = () => {
         ...formData,
         timestamp: new Date().toISOString(),
         source: 'website_callback_widget',
-        urgencyLevel: formData.urgency,
         userAgent: navigator.userAgent,
         referrer: document.referrer || 'direct'
       }
@@ -65,7 +64,6 @@ const CallbackWidget: React.FC = () => {
             email: '',
             phone: '',
             preferredTime: '',
-            urgency: 'medium',
             message: ''
           })
         }, 3000)
@@ -84,8 +82,8 @@ const CallbackWidget: React.FC = () => {
     window.location.href = 'tel:+1234567890' // Replace with your phone number
   }
 
-  const openWhatsApp = () => {
-    window.open('https://wa.me/1234567890?text=Hi%20Nord%20AI,%20I%27d%20like%20to%20discuss%20AI%20solutions', '_blank') // Replace with your WhatsApp number
+  const openTelegram = () => {
+    window.open('https://t.me/nordai_bot', '_blank') // Replace with your Telegram username
   }
 
   return (
@@ -118,7 +116,7 @@ const CallbackWidget: React.FC = () => {
                   📅
                 </button>
                 <div className="absolute right-14 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                  Schedule Callback
+                  {t('callback.scheduleTooltip')}
                 </div>
               </div>
 
@@ -131,20 +129,20 @@ const CallbackWidget: React.FC = () => {
                   📞
                 </button>
                 <div className="absolute right-14 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                  Call Now
+                  {t('callback.callTooltip')}
                 </div>
               </div>
 
-              {/* WhatsApp */}
+              {/* Telegram */}
               <div className="relative group">
                 <button
-                  onClick={openWhatsApp}
-                  className="w-12 h-12 rounded-full bg-green-600 text-white shadow-lg hover:shadow-green-400/50 transition-all duration-300 flex items-center justify-center hover:scale-110"
+                  onClick={openTelegram}
+                  className="w-12 h-12 rounded-full bg-blue-500 text-white shadow-lg hover:shadow-blue-400/50 transition-all duration-300 flex items-center justify-center hover:scale-110"
                 >
-                  💬
+                  ✈️
                 </button>
                 <div className="absolute right-14 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                  WhatsApp
+                  {t('callback.telegramTooltip')}
                 </div>
               </div>
             </div>
@@ -159,8 +157,8 @@ const CallbackWidget: React.FC = () => {
             {!submitted ? (
               <>
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">Request Callback</h3>
-                  <p className="text-slate-300">We'll call you within 15 minutes</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">{t('callback.modalTitle')}</h3>
+                  <p className="text-slate-300">{t('callback.modalSubtitle')}</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -168,7 +166,7 @@ const CallbackWidget: React.FC = () => {
                     <input
                       type="text"
                       name="name"
-                      placeholder="Your Name *"
+                      placeholder={t('callback.namePlaceholder')}
                       required
                       value={formData.name}
                       onChange={handleInputChange}
@@ -180,7 +178,7 @@ const CallbackWidget: React.FC = () => {
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="Phone Number *"
+                      placeholder={t('callback.phonePlaceholder')}
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
@@ -192,30 +190,18 @@ const CallbackWidget: React.FC = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Email Address"
+                      placeholder={t('callback.emailPlaceholder')}
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition-colors"
                     />
                   </div>
 
-                  <div>
-                    <select
-                      name="urgency"
-                      value={formData.urgency}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-cyan-400 transition-colors"
-                    >
-                      <option value="low">Low Priority</option>
-                      <option value="medium">Medium Priority</option>
-                      <option value="high">Urgent</option>
-                    </select>
-                  </div>
 
                   <div>
                     <textarea
                       name="message"
-                      placeholder="Brief message about your AI needs..."
+                      placeholder={t('callback.messagePlaceholder')}
                       rows={3}
                       value={formData.message}
                       onChange={handleInputChange}
@@ -229,14 +215,14 @@ const CallbackWidget: React.FC = () => {
                       disabled={isSubmitting}
                       className="flex-1 py-3 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 disabled:opacity-50 glow-effect"
                     >
-                      {isSubmitting ? 'Requesting...' : 'Request Callback'}
+                      {isSubmitting ? t('callback.requesting') : t('callback.requestButton')}
                     </button>
                     <button
                       type="button"
                       onClick={() => setIsOpen(false)}
                       className="px-6 py-3 rounded-lg border border-slate-600 text-slate-300 font-semibold hover:border-cyan-400 transition-colors"
                     >
-                      Cancel
+                      {t('callback.cancelButton')}
                     </button>
                   </div>
                 </form>
@@ -248,8 +234,8 @@ const CallbackWidget: React.FC = () => {
                     <path d="M20 6L9 17l-5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Callback Requested!</h3>
-                <p className="text-slate-300">We'll contact you within 15 minutes during business hours.</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{t('callback.successTitle')}</h3>
+                <p className="text-slate-300">{t('callback.successMessage')}</p>
               </div>
             )}
           </div>

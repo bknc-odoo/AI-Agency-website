@@ -552,11 +552,72 @@
       "submit": "Request Callback"
     },
     "success": "Thank you! We'll contact you shortly.",
-    "error": "Something went wrong. Please try again."
+    "error": "Something went wrong. Please try again.",
+    "scheduleTooltip": "Schedule Callback",
+    "callTooltip": "Call Now",
+    "telegramTooltip": "Telegram",
+    "modalTitle": "Request Callback",
+    "modalSubtitle": "We'll call you within 15 minutes",
+    "namePlaceholder": "Your Name *",
+    "phonePlaceholder": "Phone Number *",
+    "emailPlaceholder": "Email Address",
+    "messagePlaceholder": "Brief message about your AI needs...",
+    "requesting": "Requesting...",
+    "requestButton": "Request Callback",
+    "cancelButton": "Cancel",
+    "successTitle": "Callback Requested!",
+    "successMessage": "We'll contact you within 15 minutes during business hours."
   },
   "footer": {
     "tagline": "Making AI Simple",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "description": "Making AI simple and accessible for businesses of all sizes. Transform your operations with custom AI solutions.",
+    "quickLinks": "Quick Links",
+    "aiSolutions": "AI Solutions",
+    "aiAgents": "AI Agents",
+    "ourApproach": "Our Approach",
+    "team": "Team",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "bookConsultation": "Book Consultation",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "copyright": "© {year} NordAI. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "madeBy": "Made with ❤️ by Ivan Nordgaimer"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real results from businesses that trusted NordAI to accelerate their digital transformation.",
+    "ctaText": "Ready to join our success stories?",
+    "ctaButton": "Start Your AI Journey",
+    "clients": [
+      {
+        "name": "Sarah Chen",
+        "title": "CEO, TechFlow Solutions",
+        "company": "TechFlow Solutions",
+        "content": "NordAI transformed our customer service with their custom AI agents. We've reduced response time by 70% while maintaining exceptional quality.",
+        "result": "70% faster response time",
+        "industry": "SaaS"
+      },
+      {
+        "name": "Michael Rodriguez",
+        "title": "VP Operations, LogiCorp",
+        "company": "LogiCorp International",
+        "content": "The AI automation system NordAI built for us eliminated manual data entry entirely. Our team now focuses on strategic work instead of repetitive tasks.",
+        "result": "100% automation of data entry",
+        "industry": "Logistics"
+      },
+      {
+        "name": "Emily Thompson",
+        "title": "Marketing Director, GrowthLab",
+        "company": "GrowthLab Marketing",
+        "content": "Their predictive analytics solution helped us identify our best leads 3x faster. Our conversion rate improved dramatically within the first month.",
+        "result": "3x faster lead qualification",
+        "industry": "Marketing"
+      }
+    ]
   }
 }

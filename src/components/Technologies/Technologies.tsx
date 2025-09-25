@@ -9,7 +9,7 @@ const Technologies: React.FC = () => {
       name: 'ChatGPT',
       category: 'Language Model',
       logo: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-green-400">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-green-400">
           <path d="M12 2C13.1 2 14 2.9 14 4V8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8V4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
           <path d="M12 14C13.1 14 14 14.9 14 16V20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20V16C10 14.9 10.9 14 12 14Z" fill="currentColor"/>
           <path d="M4 12C4 10.9 4.9 10 6 10H10C11.1 10 12 10.9 12 12C12 13.1 11.1 14 10 14H6C4.9 14 4 13.1 4 12Z" fill="currentColor"/>
@@ -114,6 +114,117 @@ const Technologies: React.FC = () => {
           <circle cx="12" cy="12" r="2" fill="currentColor"/>
         </svg>
       )
+    },
+    {
+      name: 'Anthropic',
+      category: 'AI Safety',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-violet-400">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.3"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Stability AI',
+      category: 'Image Generation',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-rose-400">
+          <path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
+          <path d="M9 9h6v6H9z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Cohere',
+      category: 'Language AI',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-teal-400">
+          <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" strokeWidth="2"/>
+          <polyline points="3.27,6.96 12,12.01 20.73,6.96" stroke="currentColor" strokeWidth="2"/>
+          <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Replicate',
+      category: 'ML Platform',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-amber-400">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" strokeWidth="2"/>
+          <polyline points="14,2 14,8 20,8" stroke="currentColor" strokeWidth="2"/>
+          <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" strokeWidth="2"/>
+          <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" strokeWidth="2"/>
+          <polyline points="10,9 9,9 8,9" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Pinecone',
+      category: 'Vector Database',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-lime-400">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
+          <path d="M2 17l10 5 10-5" stroke="currentColor" strokeWidth="2"/>
+          <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="12" cy="7" r="1" fill="currentColor"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Runway ML',
+      category: 'Video Generation',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-fuchsia-400">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="8" cy="8" r="2" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.3"/>
+          <path d="M21 15l-5-5L5 21" stroke="currentColor" strokeWidth="2"/>
+          <path d="M16 8l5-5" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Cursor',
+      category: 'AI Code Editor',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-sky-400">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" strokeWidth="2"/>
+          <polyline points="14,2 14,8 20,8" stroke="currentColor" strokeWidth="2"/>
+          <path d="M10 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      )
+    },
+    {
+      name: 'GitHub Copilot',
+      category: 'Code Assistant',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-slate-400">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Perplexity',
+      category: 'AI Search',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-emerald-500">
+          <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="11" cy="11" r="3" fill="currentColor" opacity="0.3"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Weaviate',
+      category: 'Vector Database',
+      logo: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-orange-500">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 6v6l4 4" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        </svg>
+      )
     }
   ]
 
@@ -134,7 +245,7 @@ const Technologies: React.FC = () => {
         </div>
 
         {/* Technologies Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
           {technologies.map((tech, index) => (
             <div
               key={tech.name}
