@@ -9,22 +9,23 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #00D4FF 0%, #38BDF8 50%, #06B6D4 100%);
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 50%, #0EA5E9 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  font-weight: 700;
 }
 
 .gradient-text-animated {
-  background: linear-gradient(90deg, #00D4FF 0%, #38BDF8 25%, #06B6D4 50%, #00D4FF 75%, #38BDF8 100%);
+  background: linear-gradient(90deg, #2563EB 0%, #1D4ED8 25%, #0EA5E9 50%, #2563EB 75%, #1D4ED8 100%);
   background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   animation: shimmer 2s ease-in-out infinite;
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  font-weight: 700;
   position: relative;
 }
 
