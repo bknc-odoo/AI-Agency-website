@@ -101,8 +101,7 @@
         "title": "Ongoing Support",
         "description": "24/7 monitoring and continuous optimization to ensure peak performance."
       }
-    },
-    "cta": "Experience the Nord AI Difference"
+    }
   },
   "team": {
     "title": "Meet Our AI + Human Hybrid Team",
@@ -187,14 +186,10 @@
       "messagePlaceholder": "Describe your AI needs and objectives...",
       "note": "We'll respond within 24 hours to schedule your consultation."
     },
-    "cta": "Start Your AI Journey"
   },
   "capabilities": {
     "title": "Business AI Automation Hub",
-    "subtitle": "Discover which AI capabilities can transform your business operations",
-    "title": "Business AI Automation Hub",
     "subtitle": "Custom AI agents and automation tools that transform your business operations from day one",
-    "cta": "Start Your AI Automation Journey",
     "categories": {
       "voice": "Voice AI Agents",
       "knowledge": "Knowledge Base Agents",
@@ -351,7 +346,6 @@
     "title": "Bring Your Messy Data - We'll Handle Everything",
     "subtitle": "No ERP required. No data restructuring needed. Our AI understands whatever you have and builds its own smart database",
     "pipeline": "AI Processing Pipeline",
-    "cta": "Send Us Your Messy Data",
     "dataTypes": [
       {
         "id": "office-chaos",
@@ -445,7 +439,6 @@
   "capabilities": {
     "title": "Business AI Automation Hub",
     "subtitle": "Custom AI agents and automation tools that transform your business operations from day one",
-    "cta": "Start Your AI Automation Journey",
     "categories": {
       "voice": "Voice AI Agents",
       "knowledge": "Knowledge Base Agents",

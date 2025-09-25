@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
       <CircuitPattern />
 
       {/* Tech Grid Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" style={{ zIndex: -1 }}>
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 opacity-95" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
