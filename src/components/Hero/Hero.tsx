@@ -73,9 +73,9 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container text-center">
+      <div className="relative z-10 container-enhanced text-center">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-5 leading-tight">
             <span className="text-white">
               {displayedText}
               <span className="inline-block w-1 h-12 md:h-16 lg:h-20 ml-2 bg-cyan-400 animate-pulse" style={{
@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
             </span>
           </h1>
 
-          <p className={`text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-700 delay-300 ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className={`text-lg md:text-xl text-slate-300 mb-7 max-w-2xl mx-auto leading-relaxed transition-all duration-700 delay-300 ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {t('hero.description')}
           </p>
 

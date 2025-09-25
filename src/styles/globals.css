@@ -412,3 +412,88 @@ body {
     filter: hue-rotate(0deg);
   }
 }
+
+/* Compact spacing utilities */
+.compact-section {
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  .compact-section {
+    padding: 5rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .compact-section {
+    padding: 6rem 0;
+  }
+}
+
+/* Clean grid layouts */
+.neat-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .neat-grid {
+    gap: 2rem;
+  }
+}
+
+/* Improved typography hierarchy */
+.section-title-enhanced {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-title-enhanced {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title-enhanced {
+    font-size: 3.5rem;
+  }
+}
+
+.subtitle-enhanced {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .subtitle-enhanced {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Enhanced container for better spacing */
+.container-enhanced {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-enhanced {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-enhanced {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

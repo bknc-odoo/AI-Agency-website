@@ -19,14 +19,19 @@ const App: React.FC = () => {
       <div className="min-h-screen bg-slate-900 text-white overflow-x-hidden">
         <Navigation />
         <Hero />
-        <Services />
-        <Capabilities />
-        <AgentsGallery />
-        <DataShowcase />
-        <Approach />
-        <Difference />
-        <Team />
-        <Contact />
+
+        {/* Main content with improved spacing */}
+        <main className="relative">
+          <Services />
+          <Capabilities />
+          <AgentsGallery />
+          <DataShowcase />
+          <Approach />
+          <Difference />
+          <Team />
+          <Contact />
+        </main>
+
         <CallbackWidget />
       </div>
     </TranslationProvider>
