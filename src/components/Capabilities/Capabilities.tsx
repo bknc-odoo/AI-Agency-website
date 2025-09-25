@@ -130,7 +130,7 @@ const Capabilities: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 hidden">
           <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105">
             {t('capabilities.cta')}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">

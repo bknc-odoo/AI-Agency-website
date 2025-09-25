@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
+import { useScrollGlow } from '@/hooks/useScrollGlow'
 import enTranslations from '@/translations/en.json'
 import uaTranslations from '@/translations/ua.json'
 
@@ -18,6 +19,7 @@ interface DataType {
 const DataShowcase: React.FC = () => {
   const { t, language } = useTranslation()
   const [activeData, setActiveData] = useState(0)
+  const { ref: titleRef, isInView } = useScrollGlow(0.3)
 
   // Get data types from translations
   const translations = language === 'en' ? enTranslations : uaTranslations
@@ -87,7 +89,10 @@ const DataShowcase: React.FC = () => {
     <section id="data-showcase" className="py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
+          <h2
+            ref={titleRef}
+            className={`text-4xl md:text-5xl font-bold text-white mb-6 title-glow-on-scroll ${isInView ? 'in-view' : ''}`}
+          >
             {t('dataShowcase.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">

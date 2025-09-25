@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
+import { useScrollGlow } from '@/hooks/useScrollGlow'
 import enTranslations from '@/translations/en.json'
 import uaTranslations from '@/translations/ua.json'
 
@@ -21,6 +22,7 @@ const AgentsGallery: React.FC = () => {
   const translations = language === 'en' ? enTranslations : uaTranslations
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const { ref: titleRef, isInView } = useScrollGlow(0.3)
 
   const agents: Agent[] = translations.agentsGallery.agents || []
 
@@ -42,7 +44,10 @@ const AgentsGallery: React.FC = () => {
     <section id="agents-gallery" className="py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
+          <h2
+            ref={titleRef}
+            className={`text-4xl md:text-5xl font-bold text-white mb-6 title-glow-on-scroll ${isInView ? 'in-view' : ''}`}
+          >
             {t('agentsGallery.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
