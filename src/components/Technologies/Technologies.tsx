@@ -293,24 +293,6 @@ const Technologies: React.FC = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 60s linear infinite;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   )
 }
