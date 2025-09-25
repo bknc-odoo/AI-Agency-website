@@ -1,6 +1,8 @@
 import React from 'react'
+import { useScrollGlow } from '@/hooks/useScrollGlow'
 
 const Testimonials: React.FC = () => {
+  const { ref: titleRef, isInView } = useScrollGlow(0.3)
   const testimonials = [
     {
       id: 1,
@@ -35,7 +37,10 @@ const Testimonials: React.FC = () => {
     <section className="py-20 px-4 bg-slate-900/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2
+            ref={titleRef}
+            className={`text-4xl md:text-5xl font-bold text-white mb-6 title-glow-on-scroll ${isInView ? 'in-view' : ''}`}
+          >
             What Our Clients Say
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">

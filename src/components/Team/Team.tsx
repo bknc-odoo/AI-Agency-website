@@ -1,8 +1,10 @@
 import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
+import { useScrollGlow } from '@/hooks/useScrollGlow'
 
 const Team: React.FC = () => {
   const { t } = useTranslation()
+  const { ref: titleRef, isInView } = useScrollGlow(0.3)
 
   return (
     <section id="team" className="py-20 px-4 relative overflow-hidden">
@@ -12,7 +14,10 @@ const Team: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
+          <h2
+            ref={titleRef}
+            className={`text-4xl md:text-5xl font-bold text-white mb-6 title-glow-on-scroll ${isInView ? 'in-view' : ''}`}
+          >
             {t('team.title')}
           </h2>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto">
