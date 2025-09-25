@@ -7,7 +7,7 @@ const Testimonials: React.FC = () => {
       name: "Sarah Chen",
       title: "CEO, TechFlow Solutions",
       company: "TechFlow Solutions",
-      content: "Nord AI transformed our customer service with their custom AI agents. We've reduced response time by 70% while maintaining exceptional quality.",
+      content: "NordAI transformed our customer service with their custom AI agents. We've reduced response time by 70% while maintaining exceptional quality.",
       result: "70% faster response time",
       industry: "SaaS"
     },
@@ -16,7 +16,7 @@ const Testimonials: React.FC = () => {
       name: "Michael Rodriguez",
       title: "VP Operations, LogiCorp",
       company: "LogiCorp International",
-      content: "The AI automation system Nord AI built for us eliminated manual data entry entirely. Our team now focuses on strategic work instead of repetitive tasks.",
+      content: "The AI automation system NordAI built for us eliminated manual data entry entirely. Our team now focuses on strategic work instead of repetitive tasks.",
       result: "100% automation of data entry",
       industry: "Logistics"
     },
@@ -39,7 +39,7 @@ const Testimonials: React.FC = () => {
             What Our Clients Say
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Real results from businesses that trusted Nord AI to accelerate their digital transformation.
+            Real results from businesses that trusted NordAI to accelerate their digital transformation.
           </p>
         </div>
 
