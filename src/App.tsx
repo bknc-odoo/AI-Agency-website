@@ -10,6 +10,7 @@ import Approach from './components/Approach/Approach'
 import Difference from './components/Difference/Difference'
 import Team from './components/Team/Team'
 import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
 import CallbackWidget from './components/CallbackWidget/CallbackWidget'
 import './styles/globals.css'
 
@@ -27,6 +28,7 @@ const App: React.FC = () => {
         <Difference />
         <Team />
         <Contact />
+        <Footer />
         <CallbackWidget />
       </div>
     </TranslationProvider>

@@ -113,7 +113,7 @@ const Capabilities: React.FC = () => {
           {capabilities[activeCategory].items.map((item, index) => (
             <div
               key={item.title}
-              className="tech-card digital-noise rounded-xl p-6 opacity-0 animate-fade-in"
+              className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 opacity-0 animate-fade-in hover:border-cyan-400/50 transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
             >
               <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
