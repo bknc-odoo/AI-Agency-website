@@ -1,0 +1,189 @@
+import React from 'react'
+import { useTranslation } from '@/hooks/useTranslation'
+
+const Technologies: React.FC = () => {
+  const { t } = useTranslation()
+
+  const technologies = [
+    {
+      name: 'ChatGPT',
+      category: 'Language Model',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-green-400">
+          <path d="M12 2C13.1 2 14 2.9 14 4V8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8V4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
+          <path d="M12 14C13.1 14 14 14.9 14 16V20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20V16C10 14.9 10.9 14 12 14Z" fill="currentColor"/>
+          <path d="M4 12C4 10.9 4.9 10 6 10H10C11.1 10 12 10.9 12 12C12 13.1 11.1 14 10 14H6C4.9 14 4 13.1 4 12Z" fill="currentColor"/>
+          <path d="M14 12C14 10.9 14.9 10 16 10H20C21.1 10 22 10.9 22 12C22 13.1 21.1 14 20 14H16C14.9 14 14 13.1 14 12Z" fill="currentColor"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Claude',
+      category: 'AI Assistant',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-orange-400">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
+          <path d="M8 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="8" r="2" fill="currentColor"/>
+        </svg>
+      )
+    },
+    {
+      name: 'ElevenLabs',
+      category: 'Voice AI',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-purple-400">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 19v4" stroke="currentColor" strokeWidth="2"/>
+          <path d="M8 23h8" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      )
+    },
+    {
+      name: 'n8n',
+      category: 'Workflow Automation',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-red-400">
+          <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.3"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Make',
+      category: 'Automation Platform',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-blue-400">
+          <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
+          <path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="8" cy="8" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="16" cy="16" r="2" fill="currentColor" opacity="0.5"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Midjourney',
+      category: 'Image Generation',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-pink-400">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5-5 5 5M12 5v12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Zapier',
+      category: 'Integration Platform',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-yellow-400">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
+          <path d="M9 9h6M9 15h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      )
+    },
+    {
+      name: 'Hugging Face',
+      category: 'ML Platform',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.1"/>
+        </svg>
+      )
+    },
+    {
+      name: 'OpenAI API',
+      category: 'AI Platform',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-emerald-400">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
+          <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      )
+    },
+    {
+      name: 'LangChain',
+      category: 'AI Framework',
+      logo: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-indigo-400">
+          <path d="M4 12a8 8 0 018-8 8.2 8.2 0 013.2.7 8 8 0 010 14.6A8.2 8.2 0 0112 20a8 8 0 01-8-8z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 8v8M8 12h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        </svg>
+      )
+    }
+  ]
+
+  return (
+    <section className="py-20 px-4 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 to-slate-900/50" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
+            {t('technologies.title') || 'Cutting-Edge AI Technologies'}
+          </h2>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            {t('technologies.subtitle') || 'We leverage the most advanced AI technologies and platforms to build solutions that define the future of business automation.'}
+          </p>
+        </div>
+
+        {/* Technologies Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {technologies.map((tech, index) => (
+            <div
+              key={tech.name}
+              className="tech-card digital-noise rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+            >
+              {/* Tech Logo */}
+              <div className="relative mb-4">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 blur-xl rounded-full scale-150 group-hover:scale-200 transition-transform duration-300"></div>
+                <div className="relative z-10 w-16 h-16 mx-auto rounded-xl bg-slate-800/50 flex items-center justify-center mb-3 group-hover:bg-slate-800/70 transition-colors duration-300">
+                  {tech.logo}
+                </div>
+              </div>
+
+              {/* Tech Info */}
+              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300">
+                {tech.name}
+              </h3>
+              <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
+                {tech.category}
+              </p>
+
+              {/* Holographic border effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+              {/* Corner accents */}
+              <div className="absolute top-3 left-3 w-4 h-4 border-l-2 border-t-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute top-3 right-3 w-4 h-4 border-r-2 border-t-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute bottom-3 left-3 w-4 h-4 border-l-2 border-b-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+              <div className="absolute bottom-3 right-3 w-4 h-4 border-r-2 border-b-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-colors duration-300"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <p className="text-slate-300 mb-6 text-lg">
+            {t('technologies.cta_text') || 'Ready to harness the power of these cutting-edge technologies?'}
+          </p>
+          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 glow-effect hover:scale-105">
+            {t('technologies.cta') || 'Explore Our AI Solutions'}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Technologies

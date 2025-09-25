@@ -87,7 +87,11 @@ const DataShowcase: React.FC = () => {
 
   return (
     <section id="data-showcase" className="py-20 px-4 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 to-slate-900/50" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2
             ref={titleRef}

@@ -342,6 +342,12 @@
       }
     ]
   },
+  "technologies": {
+    "title": "Cutting-Edge AI Technologies",
+    "subtitle": "We leverage the most advanced AI technologies and platforms to build solutions that define the future of business automation.",
+    "cta_text": "Ready to harness the power of these cutting-edge technologies?",
+    "cta": "Explore Our AI Solutions"
+  },
   "dataShowcase": {
     "title": "Bring Your Messy Data - We'll Handle Everything",
     "subtitle": "No ERP required. No data restructuring needed. Our AI understands whatever you have and builds its own smart database",
