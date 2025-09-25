@@ -77,7 +77,7 @@ const Capabilities: React.FC = () => {
   ]
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden">
+    <section id="capabilities" className="py-20 px-4 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900/90" />
 

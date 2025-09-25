@@ -84,7 +84,7 @@ const DataShowcase: React.FC = () => {
   }
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-slate-800/20 to-slate-900/50">
+    <section id="data-showcase" className="py-20 px-4 bg-gradient-to-b from-slate-800/20 to-slate-900/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">

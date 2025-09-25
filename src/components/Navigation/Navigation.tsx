@@ -50,6 +50,22 @@ const Navigation: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault()
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 80 // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+    setIsAiSolutionsOpen(false)
+  }
+
   return (
     <>
       <nav
@@ -74,6 +90,7 @@ const Navigation: React.FC = () => {
             <div className="hidden md:flex items-center space-x-6">
               <a
                 href="#services"
+                onClick={(e) => scrollToSection(e, 'services')}
                 className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
                 {t('nav.services')}
@@ -121,21 +138,21 @@ const Navigation: React.FC = () => {
                   <a
                     href="#capabilities"
                     className="block px-4 py-2 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
-                    onClick={() => setIsAiSolutionsOpen(false)}
+                    onClick={(e) => scrollToSection(e, 'capabilities')}
                   >
                     {t('nav.aiCapabilities')}
                   </a>
                   <a
                     href="#agents-gallery"
                     className="block px-4 py-2 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
-                    onClick={() => setIsAiSolutionsOpen(false)}
+                    onClick={(e) => scrollToSection(e, 'agents-gallery')}
                   >
                     {t('nav.customAgents')}
                   </a>
                   <a
                     href="#data-showcase"
                     className="block px-4 py-2 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
-                    onClick={() => setIsAiSolutionsOpen(false)}
+                    onClick={(e) => scrollToSection(e, 'data-showcase')}
                   >
                     {t('nav.dataProcessing')}
                   </a>
@@ -144,12 +161,14 @@ const Navigation: React.FC = () => {
 
               <a
                 href="#approach"
+                onClick={(e) => scrollToSection(e, 'approach')}
                 className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
                 {t('nav.approach')}
               </a>
               <a
                 href="#team"
+                onClick={(e) => scrollToSection(e, 'team')}
                 className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
                 {t('nav.team')}
@@ -162,7 +181,22 @@ const Navigation: React.FC = () => {
               >
                 {t('nav.mentorship')}
               </a>
-              <button className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-cyan-300">
+              <button
+                onClick={(e) => {
+                  e.preventDefault()
+                  const element = document.getElementById('contact')
+                  if (element) {
+                    const offset = 80
+                    const elementPosition = element.getBoundingClientRect().top
+                    const offsetPosition = elementPosition + window.pageYOffset - offset
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    })
+                  }
+                }}
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-cyan-300"
+              >
                 {t('nav.getStarted')}
               </button>
             </div>
