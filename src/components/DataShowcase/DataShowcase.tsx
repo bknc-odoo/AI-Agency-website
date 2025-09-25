@@ -121,7 +121,7 @@ const DataShowcase: React.FC = () => {
         </div>
 
         {/* Active Data Type Details */}
-        <div className="tech-card rounded-2xl p-8 mb-8">
+        <div className="bg-slate-800/30 border border-slate-700/50 rounded-2xl p-8 mb-8">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Left Side - Description */}
             <div>
@@ -188,7 +188,7 @@ const DataShowcase: React.FC = () => {
         </div>
 
         {/* Processing Pipeline Visualization */}
-        <div className="tech-card rounded-2xl p-8">
+        <div className="bg-slate-800/30 border border-slate-700/50 rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-white mb-6 text-center">{t('dataShowcase.pipeline')}</h3>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {translations.dataShowcase.pipelineSteps.map((stage: any, index: number) => (
