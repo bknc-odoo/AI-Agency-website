@@ -129,7 +129,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </a>
 
           <button
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-cyan-400 px-6 py-3 text-lg font-semibold text-slate-900 transition-colors hover:bg-cyan-300"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-6 py-3 text-lg font-semibold text-white transition-all duration-300 hover:shadow-md hover:shadow-blue-500/25 hover:scale-105"
             onClick={handleLinkClick}
           >
             {t('nav.getStarted')}

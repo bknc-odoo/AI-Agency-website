@@ -1,9 +1,24 @@
 import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { SpeedIcon, CustomIcon, SupportIcon } from '@/components/Icons/Icons'
+import NordAILogo from '@/components/ui/NordAILogo'
 
 const Difference: React.FC = () => {
   const { t } = useTranslation()
+
+  const renderTitle = () => {
+    const title = t('difference.title')
+
+    if (title === 'The NordAI Difference') {
+      return (
+        <>
+          The <NordAILogo /> Difference
+        </>
+      )
+    }
+
+    return title
+  }
 
   const stats = [
     {
@@ -38,7 +53,7 @@ const Difference: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
-            {t('difference.title')}
+            {renderTitle()}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             {t('difference.description')}

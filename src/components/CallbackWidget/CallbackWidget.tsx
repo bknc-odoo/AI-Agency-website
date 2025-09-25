@@ -96,14 +96,14 @@ const CallbackWidget: React.FC = () => {
           {/* Main Call Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white shadow-2xl hover:shadow-cyan-400/50 transition-all duration-300 flex items-center justify-center group hover:scale-110 glow-effect"
+            className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center group hover:scale-110 glow-effect"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="group-hover:animate-pulse">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="2" fill="none"/>
             </svg>
 
             {/* Pulse Ring */}
-            <div className="absolute inset-0 rounded-full bg-cyan-400 opacity-30 animate-ping"></div>
+            <div className="absolute inset-0 rounded-full bg-blue-600 opacity-30 animate-ping"></div>
           </button>
 
           {/* Quick Actions */}
@@ -227,7 +227,7 @@ const CallbackWidget: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex-1 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 disabled:opacity-50 glow-effect"
+                      className="flex-1 py-3 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 disabled:opacity-50 glow-effect"
                     >
                       {isSubmitting ? 'Requesting...' : 'Request Callback'}
                     </button>
