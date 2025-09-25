@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { StrategyIcon, RobotIcon, AnalyticsIcon, AutomationIcon } from '@/components/Icons/Icons'
 import enTranslations from '@/translations/en.json'
 import uaTranslations from '@/translations/ua.json'
 
+interface Service {
+  key: string
+  icon: React.ReactNode
+  title: string
+  description: string
+  features: string[]
+}
+
 const Services: React.FC = () => {
   const { t, language } = useTranslation()
   const translations = language === 'en' ? enTranslations : uaTranslations
+  const [selectedService, setSelectedService] = useState<Service | null>(null)
 
-  const services = [
+  const services: Service[] = [
     {
       key: 'strategy',
       icon: <StrategyIcon size={48} className="text-cyan-400" />,
@@ -59,8 +68,9 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={service.key}
-              className="tech-card digital-noise rounded-2xl p-8 group hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in"
+              className="tech-card digital-noise rounded-2xl p-8 group hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in cursor-pointer"
               style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+              onClick={() => setSelectedService(service)}
             >
               {/* Icon with glow effect */}
               <div className="mb-6 flex justify-center">
@@ -79,15 +89,16 @@ const Services: React.FC = () => {
                 {service.description}
               </p>
 
-              {/* Enhanced feature list */}
-              <ul className="space-y-3">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
-                    <span className="font-medium">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Learn More Button */}
+              <button
+                className="w-full py-2 rounded-lg bg-gradient-to-r from-cyan-400/10 to-blue-500/10 text-cyan-400 font-semibold hover:from-cyan-400/20 hover:to-blue-500/20 transition-all duration-300"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setSelectedService(service)
+                }}
+              >
+                Learn More
+              </button>
 
               {/* Holographic border effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
@@ -101,15 +112,77 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 glow-effect hover:scale-105">
-            Start Your AI Transformation
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-        </div>
+        {/* Selected Service Modal */}
+        {selectedService && (
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedService(null)}
+          >
+            <div
+              className="bg-slate-900 rounded-2xl p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-cyan-400/30"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Service Icon */}
+              <div className="flex justify-center mb-6">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full scale-150"></div>
+                  <div className="relative z-10">{selectedService.icon}</div>
+                </div>
+              </div>
+
+              <h3 className="text-3xl font-bold text-white mb-4 text-center">{selectedService.title}</h3>
+              <p className="text-slate-300 mb-8 text-center text-lg">{selectedService.description}</p>
+
+              {/* Features Grid */}
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                {selectedService.features.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3 bg-slate-800/30 rounded-lg p-4">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-slate-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Additional Information */}
+              <div className="bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-lg p-6 mb-6">
+                <h4 className="text-xl font-semibold text-white mb-3">Implementation Process</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center font-bold">1</span>
+                    <p className="text-slate-300">Initial consultation to understand your needs</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center font-bold">2</span>
+                    <p className="text-slate-300">Custom solution design and planning</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center font-bold">3</span>
+                    <p className="text-slate-300">Implementation and integration</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center font-bold">4</span>
+                    <p className="text-slate-300">Ongoing support and optimization</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-center gap-4">
+                <button
+                  className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-300"
+                  onClick={() => setSelectedService(null)}
+                >
+                  Get Started
+                </button>
+                <button
+                  className="px-8 py-3 rounded-lg border border-slate-600 text-slate-300 font-semibold hover:border-cyan-400 hover:text-white transition-colors"
+                  onClick={() => setSelectedService(null)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
