@@ -2,6 +2,7 @@ import React from 'react'
 import TranslationProvider from './components/TranslationProvider'
 import Navigation from './components/Navigation/Navigation'
 import Hero from './components/Hero/Hero'
+import Footer from './components/Footer/Footer'
 import './styles/globals.css'
 
 const App: React.FC = () => {
@@ -163,6 +164,8 @@ const App: React.FC = () => {
             </div>
           </div>
         </section>
+
+        <Footer />
       </div>
     </TranslationProvider>
   )
