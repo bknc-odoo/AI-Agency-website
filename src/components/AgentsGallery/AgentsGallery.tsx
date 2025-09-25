@@ -39,7 +39,7 @@ const AgentsGallery: React.FC = () => {
   const visibleAgents = agents.slice(currentIndex, currentIndex + 3)
 
   return (
-    <section id="agents-gallery" className="py-20 px-4 bg-slate-900/50">
+    <section id="agents-gallery" className="py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 neon-glow">
