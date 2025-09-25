@@ -22,20 +22,20 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       <div className={`flex gap-4 ${className}`}>
         <button
           onClick={() => handleLanguageChange('en')}
-          className={`px-6 py-3 border-2 border-primary rounded-lg font-semibold transition-all ${
+          className={`px-6 py-3 border-2 rounded-lg font-semibold transition-all duration-300 ${
             language === 'en'
-              ? 'bg-primary text-primary-foreground'
-              : 'bg-transparent text-white hover:bg-primary/20'
+              ? 'bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white border-transparent shadow-md'
+              : 'bg-transparent text-white border-slate-600 hover:border-blue-500 hover:bg-blue-500/10'
           }`}
         >
           EN
         </button>
         <button
           onClick={() => handleLanguageChange('ua')}
-          className={`px-6 py-3 border-2 border-primary rounded-lg font-semibold transition-all ${
+          className={`px-6 py-3 border-2 rounded-lg font-semibold transition-all duration-300 ${
             language === 'ua'
-              ? 'bg-primary text-primary-foreground'
-              : 'bg-transparent text-white hover:bg-primary/20'
+              ? 'bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white border-transparent shadow-md'
+              : 'bg-transparent text-white border-slate-600 hover:border-blue-500 hover:bg-blue-500/10'
           }`}
         >
           UA
@@ -45,23 +45,23 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   }
 
   return (
-    <div className={`hidden md:flex items-center bg-card/80 rounded-lg p-1 border border-primary/20 ${className}`}>
+    <div className={`hidden md:flex items-center bg-slate-800/50 rounded-lg p-1 border border-slate-600/30 ${className}`}>
       <button
         onClick={() => handleLanguageChange('en')}
-        className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+        className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-300 ${
           language === 'en'
-            ? 'bg-primary text-primary-foreground'
-            : 'text-muted-foreground hover:text-foreground'
+            ? 'bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white shadow-md'
+            : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
         }`}
       >
         EN
       </button>
       <button
         onClick={() => handleLanguageChange('ua')}
-        className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+        className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-300 ${
           language === 'ua'
-            ? 'bg-primary text-primary-foreground'
-            : 'text-muted-foreground hover:text-foreground'
+            ? 'bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white shadow-md'
+            : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
         }`}
       >
         UA

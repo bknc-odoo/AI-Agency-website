@@ -189,7 +189,7 @@ const AgentsGallery: React.FC = () => {
 
               <div className="flex justify-center gap-4">
                 <button
-                  className="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-300"
+                  className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
                   onClick={() => setSelectedAgent(null)}
                 >
                   Get Started with This Agent
