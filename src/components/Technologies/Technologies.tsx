@@ -6,6 +6,13 @@ const Technologies: React.FC = () => {
   const { t } = useTranslation()
   const { ref: titleRef, isInView } = useScrollGlow(0.3)
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   const technologies = [
     {
       name: 'ChatGPT',
@@ -289,7 +296,10 @@ const Technologies: React.FC = () => {
           <p className="text-slate-300 mb-6 text-lg">
             {t('technologies.cta_text') || 'Ready to harness the power of these cutting-edge technologies?'}
           </p>
-          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 glow-effect hover:scale-105">
+          <button
+            onClick={scrollToContact}
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 glow-effect hover:scale-105"
+          >
             {t('technologies.cta') || 'Explore Our AI Solutions'}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
