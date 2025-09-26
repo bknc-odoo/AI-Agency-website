@@ -35,74 +35,19 @@ const CallbackWidget: React.FC = () => {
     setIsSubmitting(true)
 
     try {
-      // Step 1: Create lead in Supabase
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
-
-      const leadPayload = {
-        first_name: formData.name.split(' ')[0] || formData.name,
-        last_name: formData.name.split(' ').slice(1).join(' ') || '',
-        email: formData.email,
-        phone_number: formData.phone,
-        service_requested: formData.message || 'ШІ Агенти',
-        voice_opener: null // Will be generated next
-      }
-
-      // Create lead
-      const leadResponse = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': supabaseKey,
-          'Authorization': `Bearer ${supabaseKey}`,
-          'Prefer': 'return=representation'
-        },
-        body: JSON.stringify(leadPayload),
-      })
-
-      if (!leadResponse.ok) {
-        throw new Error('Failed to create lead')
-      }
-
-      const leadData = await leadResponse.json()
-      const leadId = leadData[0]?.id
-
-      // Step 2: Generate voice opener with secure API
-      const voiceOpenerResponse = await fetch('/api/generate-voice-opener', {
+      // Create lead with voice opener generation (single secure API call)
+      const response = await fetch('/api/create-lead', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
           message: formData.message
         })
       })
-
-      let voiceOpener = {
-        state: 'generated',
-        value: `Доброго дня, ${formData.name}! Це Роман з Nord AI Agency. Дякуємо за ваш запит щодо AI рішень.`,
-        isStale: false
-      }
-
-      if (voiceOpenerResponse.ok) {
-        const voiceData = await voiceOpenerResponse.json()
-        voiceOpener = voiceData.voiceOpener || voiceOpener
-      }
-
-      // Step 3: Update lead with voice opener
-
-      await fetch(`${supabaseUrl}/rest/v1/leads?id=eq.${leadId}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': supabaseKey,
-          'Authorization': `Bearer ${supabaseKey}`
-        },
-        body: JSON.stringify({ voice_opener: voiceOpener }),
-      })
-
-      const response = { ok: true } // Simulate successful response
 
       if (response.ok) {
         setSubmitted(true)
