@@ -67,47 +67,30 @@ const CallbackWidget: React.FC = () => {
       const leadData = await leadResponse.json()
       const leadId = leadData[0]?.id
 
-      // Step 2: Generate voice opener with AI
-      const openaiKey = import.meta.env.VITE_OPENAI_API_KEY
-
-      const voiceOpenerPrompt = `Create a personalized Ukrainian voice opener for a call from Nord AI agency to ${formData.name}.
-      Service requested: ${formData.message || 'AI solutions'}
-
-      Rules:
-      - Keep it under 30 words
-      - Sound professional but warm
-      - Mention their specific interest if provided
-      - Start with "Доброго дня" and introduce as Roman from Nord AI
-
-      Return only the voice opener text, nothing else.`
-
-      const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
+      // Step 2: Generate voice opener with secure API
+      const voiceOpenerResponse = await fetch('/api/generate-voice-opener', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${openaiKey}`
         },
         body: JSON.stringify({
-          model: 'gpt-4',
-          messages: [{ role: 'user', content: voiceOpenerPrompt }],
-          max_tokens: 100,
-          temperature: 0.7
+          name: formData.name,
+          message: formData.message
         })
       })
 
-      let voiceOpenerValue = `Доброго дня, ${formData.name}! Це Роман з Nord AI Agency. Дякуємо за ваш запит щодо AI рішень.`
+      let voiceOpener = {
+        state: 'generated',
+        value: `Доброго дня, ${formData.name}! Це Роман з Nord AI Agency. Дякуємо за ваш запит щодо AI рішень.`,
+        isStale: false
+      }
 
-      if (aiResponse.ok) {
-        const aiData = await aiResponse.json()
-        voiceOpenerValue = aiData.choices[0]?.message?.content || voiceOpenerValue
+      if (voiceOpenerResponse.ok) {
+        const voiceData = await voiceOpenerResponse.json()
+        voiceOpener = voiceData.voiceOpener || voiceOpener
       }
 
       // Step 3: Update lead with voice opener
-      const voiceOpener = {
-        state: 'generated',
-        value: voiceOpenerValue,
-        isStale: false
-      }
 
       await fetch(`${supabaseUrl}/rest/v1/leads?id=eq.${leadId}`, {
         method: 'PATCH',
