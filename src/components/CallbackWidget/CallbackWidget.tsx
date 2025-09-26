@@ -121,7 +121,7 @@ const CallbackWidget: React.FC = () => {
           {/* Action Menu */}
           {showMenu && (
             <div className="absolute bottom-20 right-0 bg-slate-900 rounded-xl shadow-2xl border border-cyan-400/30 p-4 min-w-64 animate-fade-in">
-              <h3 className="text-white text-lg font-semibold mb-4 text-center">{t('callback.menuTitle')}</h3>
+              <h3 className="text-white text-lg font-semibold mb-4 text-center">How to Connect</h3>
 
               <div className="space-y-3">
                 {/* Request Callback */}
@@ -141,8 +141,8 @@ const CallbackWidget: React.FC = () => {
                     </svg>
                   </div>
                   <div className="flex-1 text-left">
-                    <div className="font-semibold">{t('callback.requestCallbackTitle')}</div>
-                    <div className="text-sm text-slate-300">{t('callback.requestCallbackDesc')}</div>
+                    <div className="font-semibold">Request Callback</div>
+                    <div className="text-sm text-slate-300">We'll call you within 15 minutes</div>
                   </div>
                 </button>
 
@@ -160,8 +160,8 @@ const CallbackWidget: React.FC = () => {
                     </svg>
                   </div>
                   <div className="flex-1 text-left">
-                    <div className="font-semibold">{t('callback.directCallTitle')}</div>
-                    <div className="text-sm text-slate-300">{t('callback.directCallDesc')}</div>
+                    <div className="font-semibold">Call Now</div>
+                    <div className="text-sm text-slate-300">Speak with us immediately</div>
                   </div>
                 </button>
 
@@ -179,8 +179,8 @@ const CallbackWidget: React.FC = () => {
                     </svg>
                   </div>
                   <div className="flex-1 text-left">
-                    <div className="font-semibold">{t('callback.telegramTitle')}</div>
-                    <div className="text-sm text-slate-300">{t('callback.telegramDesc')}</div>
+                    <div className="font-semibold">Telegram Chat</div>
+                    <div className="text-sm text-slate-300">Message us directly</div>
                   </div>
                 </button>
               </div>
