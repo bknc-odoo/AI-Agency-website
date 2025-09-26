@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 
 interface CallbackForm {
@@ -11,7 +11,7 @@ interface CallbackForm {
 
 const CallbackWidget: React.FC = () => {
   const { t } = useTranslation()
-  const [isOpen, setIsOpen] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState<CallbackForm>({
     name: '',
@@ -22,6 +22,24 @@ const CallbackWidget: React.FC = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowMenu(false)
+      }
+    }
+
+    if (showMenu) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [showMenu])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -86,63 +104,85 @@ const CallbackWidget: React.FC = () => {
     <>
       {/* Floating Widget Button */}
       <div className="fixed bottom-6 right-6 z-50">
-        <div className="relative">
-          {/* Main Callback Button - Primary */}
+        <div className="relative" ref={menuRef}>
+          {/* Main Contact Button */}
           <button
-            onClick={() => setShowForm(true)}
+            onClick={() => setShowMenu(!showMenu)}
             className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center justify-center group hover:scale-110 glow-effect"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="group-hover:animate-pulse">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" strokeWidth="2"/>
-              <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" strokeWidth="2"/>
-              <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2"/>
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
             </svg>
 
             {/* Pulse Ring */}
             <div className="absolute inset-0 rounded-full bg-blue-600 opacity-30 animate-ping"></div>
           </button>
 
-          {/* Secondary Options Toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-slate-700 text-white text-xs font-bold hover:bg-slate-600 transition-colors flex items-center justify-center"
-          >
-            ⋯
-          </button>
+          {/* Action Menu */}
+          {showMenu && (
+            <div className="absolute bottom-20 right-0 bg-slate-900 rounded-xl shadow-2xl border border-cyan-400/30 p-4 min-w-64 animate-fade-in">
+              <h3 className="text-white text-lg font-semibold mb-4 text-center">{t('callback.menuTitle')}</h3>
 
-          {/* Secondary Actions */}
-          {isOpen && (
-            <div className="absolute bottom-20 right-0 space-y-3 animate-fade-in">
-
-              {/* Direct Call - Secondary */}
-              <div className="relative group">
+              <div className="space-y-3">
+                {/* Request Callback */}
                 <button
-                  onClick={makePhoneCall}
-                  className="w-10 h-10 rounded-full bg-slate-700 hover:bg-slate-600 text-white shadow-lg transition-all duration-300 flex items-center justify-center hover:scale-110"
+                  onClick={() => {
+                    setShowMenu(false)
+                    setShowForm(true)
+                  }}
+                  className="w-full flex items-center space-x-3 p-3 rounded-lg bg-gradient-to-r from-blue-600/20 to-cyan-500/20 border border-blue-500/30 text-white hover:bg-blue-600/30 transition-all duration-300 group"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                  </svg>
+                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" strokeWidth="2"/>
+                      <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" strokeWidth="2"/>
+                      <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <div className="font-semibold">{t('callback.requestCallbackTitle')}</div>
+                    <div className="text-sm text-slate-300">{t('callback.requestCallbackDesc')}</div>
+                  </div>
                 </button>
-                <div className="absolute right-12 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                  {t('callback.callTooltip')}
-                </div>
-              </div>
 
-              {/* Telegram - Secondary */}
-              <div className="relative group">
+                {/* Direct Call */}
                 <button
-                  onClick={openTelegram}
-                  className="w-10 h-10 rounded-full bg-slate-700 hover:bg-slate-600 text-white shadow-lg transition-all duration-300 flex items-center justify-center hover:scale-110"
+                  onClick={() => {
+                    setShowMenu(false)
+                    makePhoneCall()
+                  }}
+                  className="w-full flex items-center space-x-3 p-3 rounded-lg bg-slate-700/30 border border-slate-600/30 text-white hover:bg-slate-600/30 transition-all duration-300 group"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                  </svg>
+                  <div className="w-10 h-10 rounded-full bg-slate-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <div className="font-semibold">{t('callback.directCallTitle')}</div>
+                    <div className="text-sm text-slate-300">{t('callback.directCallDesc')}</div>
+                  </div>
                 </button>
-                <div className="absolute right-12 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                  {t('callback.telegramTooltip')}
-                </div>
+
+                {/* Telegram */}
+                <button
+                  onClick={() => {
+                    setShowMenu(false)
+                    openTelegram()
+                  }}
+                  className="w-full flex items-center space-x-3 p-3 rounded-lg bg-slate-700/30 border border-slate-600/30 text-white hover:bg-slate-600/30 transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-slate-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <div className="font-semibold">{t('callback.telegramTitle')}</div>
+                    <div className="text-sm text-slate-300">{t('callback.telegramDesc')}</div>
+                  </div>
+                </button>
               </div>
             </div>
           )}
