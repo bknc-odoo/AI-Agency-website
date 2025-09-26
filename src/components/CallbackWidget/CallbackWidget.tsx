@@ -161,7 +161,7 @@ const CallbackWidget: React.FC = () => {
                   </div>
                   <div className="flex-1 text-left">
                     <div className="font-semibold">{t('callback.callTooltip')}</div>
-                    <div className="text-sm text-slate-300">Зв'яжіться з нами негайно</div>
+                    <div className="text-sm text-slate-300">{t('callback.callDescription')}</div>
                   </div>
                 </button>
 
@@ -180,7 +180,7 @@ const CallbackWidget: React.FC = () => {
                   </div>
                   <div className="flex-1 text-left">
                     <div className="font-semibold">{t('callback.telegramTooltip')}</div>
-                    <div className="text-sm text-slate-300">Напишіть нам напряму</div>
+                    <div className="text-sm text-slate-300">{t('callback.telegramDescription')}</div>
                   </div>
                 </button>
               </div>
