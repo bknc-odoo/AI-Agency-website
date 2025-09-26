@@ -35,24 +35,91 @@ const CallbackWidget: React.FC = () => {
     setIsSubmitting(true)
 
     try {
-      // Replace with your webhook URL
-      const webhookUrl = 'https://hooks.zapier.com/hooks/catch/YOUR_WEBHOOK_ID/' // You'll need to provide this
+      // Step 1: Create lead in Supabase
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-      const payload = {
-        ...formData,
-        timestamp: new Date().toISOString(),
-        source: 'website_callback_widget',
-        userAgent: navigator.userAgent,
-        referrer: document.referrer || 'direct'
+      const leadPayload = {
+        first_name: formData.name.split(' ')[0] || formData.name,
+        last_name: formData.name.split(' ').slice(1).join(' ') || '',
+        email: formData.email,
+        phone_number: formData.phone,
+        service_requested: formData.message || 'ШІ Агенти',
+        voice_opener: null // Will be generated next
       }
 
-      const response = await fetch(webhookUrl, {
+      // Create lead
+      const leadResponse = await fetch(`${supabaseUrl}/rest/v1/leads`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`,
+          'Prefer': 'return=representation'
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(leadPayload),
       })
+
+      if (!leadResponse.ok) {
+        throw new Error('Failed to create lead')
+      }
+
+      const leadData = await leadResponse.json()
+      const leadId = leadData[0]?.id
+
+      // Step 2: Generate voice opener with AI
+      const openaiKey = import.meta.env.VITE_OPENAI_API_KEY
+
+      const voiceOpenerPrompt = `Create a personalized Ukrainian voice opener for a call from Nord AI agency to ${formData.name}.
+      Service requested: ${formData.message || 'AI solutions'}
+
+      Rules:
+      - Keep it under 30 words
+      - Sound professional but warm
+      - Mention their specific interest if provided
+      - Start with "Доброго дня" and introduce as Roman from Nord AI
+
+      Return only the voice opener text, nothing else.`
+
+      const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${openaiKey}`
+        },
+        body: JSON.stringify({
+          model: 'gpt-4',
+          messages: [{ role: 'user', content: voiceOpenerPrompt }],
+          max_tokens: 100,
+          temperature: 0.7
+        })
+      })
+
+      let voiceOpenerValue = `Доброго дня, ${formData.name}! Це Роман з Nord AI Agency. Дякуємо за ваш запит щодо AI рішень.`
+
+      if (aiResponse.ok) {
+        const aiData = await aiResponse.json()
+        voiceOpenerValue = aiData.choices[0]?.message?.content || voiceOpenerValue
+      }
+
+      // Step 3: Update lead with voice opener
+      const voiceOpener = {
+        state: 'generated',
+        value: voiceOpenerValue,
+        isStale: false
+      }
+
+      await fetch(`${supabaseUrl}/rest/v1/leads?id=eq.${leadId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`
+        },
+        body: JSON.stringify({ voice_opener: voiceOpener }),
+      })
+
+      const response = { ok: true } // Simulate successful response
 
       if (response.ok) {
         setSubmitted(true)
