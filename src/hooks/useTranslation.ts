@@ -18,7 +18,7 @@ export const useTranslation = () => {
   return context
 }
 
-export const getTranslation = (language: Language, key: string): string => {
+export const getTranslation = (language: Language, key: string): any => {
   const keys = key.split('.')
   let value: any = translations[language]
 
@@ -31,5 +31,5 @@ export const getTranslation = (language: Language, key: string): string => {
     }
   }
 
-  return typeof value === 'string' ? value : key
+  return value
 }
