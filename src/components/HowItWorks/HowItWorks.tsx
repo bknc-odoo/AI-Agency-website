@@ -127,6 +127,34 @@ const HowItWorks: React.FC = () => {
           ))}
         </div>
 
+        {/* Mini FAQ */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <div className="grid md:grid-cols-2 gap-6">
+            {[1, 2, 3, 4].map((num) => (
+              <div
+                key={num}
+                className="tech-card rounded-xl p-6 hover:border-cyan-400/50 transition-all duration-300"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-white mb-2">
+                      {t(`howItWorks.miniFaq.q${num}.question`)}
+                    </h4>
+                    <p className="text-sm text-slate-300">
+                      {t(`howItWorks.miniFaq.q${num}.answer`)}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="text-center">
           <button

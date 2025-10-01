@@ -409,6 +409,24 @@
         "title": "Monthly Partnership",
         "description": "We work together every month — diagnosing, implementing AI, and tracking ROI improvements."
       }
+    },
+    "miniFaq": {
+      "q1": {
+        "question": "Do I have to subscribe after Fast-Track?",
+        "answer": "No. Fast-Track is standalone. If you don't see value, you don't continue."
+      },
+      "q2": {
+        "question": "What if no ROI opportunities are found?",
+        "answer": "We refund the session. Your risk is zero."
+      },
+      "q3": {
+        "question": "How long does it take to start seeing results?",
+        "answer": "Most clients see quick wins in the first 30–60 days of subscription."
+      },
+      "q4": {
+        "question": "Why not skip straight to subscription?",
+        "answer": "The Fast-Track ensures we only build what drives ROI. No wasted money, no wrong projects."
+      }
     }
   },
   "faq": {
