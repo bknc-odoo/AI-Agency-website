@@ -1,12 +1,17 @@
 {
   "nav": {
     "home": "Home",
-    "approach": "Approach",
-    "outcomes": "Outcomes",
+    "solutions": "Solutions",
+    "solutionsDropdown": {
+      "approach": "Approach",
+      "outcomes": "Outcomes",
+      "howItWorks": "How It Works",
+      "subscriptions": "Subscriptions"
+    },
     "community": "Community",
-    "subscriptions": "Subscriptions",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "mentorship": "Mentorship"
   },
   "hero": {
     "title": "Your AI Transformation Partner.",
@@ -726,11 +731,14 @@
   "footer": {
     "tagline": "NordAI Agency — AI Business Transformation Partner",
     "quickLinks": "Quick Links",
+    "solutions": "Solutions",
     "approach": "Approach",
     "outcomes": "Outcomes",
-    "community": "Community",
+    "howItWorks": "How It Works",
     "subscriptions": "Subscriptions",
+    "community": "Community",
     "faq": "FAQ",
+    "mentorship": "Mentorship",
     "getStarted": "Get Started",
     "contact": "Contact",
     "bookSession": "Book a Session",

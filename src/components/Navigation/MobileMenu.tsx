@@ -9,6 +9,7 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation()
+  const [isSolutionsOpen, setIsSolutionsOpen] = React.useState(false)
 
   const handleLinkClick = (sectionId?: string) => {
     if (sectionId) {
@@ -25,6 +26,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
+    setIsSolutionsOpen(false)
     onClose()
   }
 
@@ -55,7 +57,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </svg>
         </button>
 
-        <nav className="flex flex-col items-center space-y-8">
+        <nav className="flex flex-col items-center space-y-6">
           <button
             onClick={() => handleLinkClick()}
             className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
@@ -63,19 +65,46 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             {t('nav.home')}
           </button>
 
-          <button
-            onClick={() => handleLinkClick('approach')}
-            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
-          >
-            {t('nav.approach')}
-          </button>
+          {/* Solutions Accordion */}
+          <div className="flex flex-col items-center">
+            <button
+              onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+              className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-2"
+            >
+              {t('nav.solutions')}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className={`transition-transform duration-200 ${isSolutionsOpen ? 'rotate-180' : ''}`}>
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
 
-          <button
-            onClick={() => handleLinkClick('case-studies')}
-            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
-          >
-            {t('nav.outcomes')}
-          </button>
+            {/* Solutions Submenu */}
+            <div className={`flex flex-col items-center space-y-4 mt-4 overflow-hidden transition-all duration-300 ${isSolutionsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <button
+                onClick={() => handleLinkClick('approach')}
+                className="text-lg text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                {t('nav.solutionsDropdown.approach')}
+              </button>
+              <button
+                onClick={() => handleLinkClick('case-studies')}
+                className="text-lg text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                {t('nav.solutionsDropdown.outcomes')}
+              </button>
+              <button
+                onClick={() => handleLinkClick('how-it-works')}
+                className="text-lg text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                {t('nav.solutionsDropdown.howItWorks')}
+              </button>
+              <button
+                onClick={() => handleLinkClick('pricing')}
+                className="text-lg text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                {t('nav.solutionsDropdown.subscriptions')}
+              </button>
+            </div>
+          </div>
 
           <button
             onClick={() => handleLinkClick('community')}
@@ -85,18 +114,23 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </button>
 
           <button
-            onClick={() => handleLinkClick('pricing')}
-            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
-          >
-            {t('nav.subscriptions')}
-          </button>
-
-          <button
             onClick={() => handleLinkClick('faq')}
             className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
           >
             {t('nav.faq')}
           </button>
+
+          <a
+            href="https://mentorship.nordai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-2"
+          >
+            {t('nav.mentorship')}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
 
           <button
             className="inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-6 py-3 text-lg font-semibold text-white transition-all duration-300 hover:shadow-md hover:shadow-blue-500/25 hover:scale-105"

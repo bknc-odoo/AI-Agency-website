@@ -1,12 +1,17 @@
 {
   "nav": {
     "home": "Головна",
-    "approach": "Підхід",
-    "outcomes": "Результати",
+    "solutions": "Рішення",
+    "solutionsDropdown": {
+      "approach": "Підхід",
+      "outcomes": "Результати",
+      "howItWorks": "Як це працює",
+      "subscriptions": "Підписки"
+    },
     "community": "Спільнота",
-    "subscriptions": "Підписки",
     "faq": "Питання",
-    "contact": "Контакт"
+    "contact": "Контакт",
+    "mentorship": "Менторство"
   },
   "hero": {
     "title": "Ваш партнер з AI-трансформації.",
@@ -695,11 +700,14 @@
   "footer": {
     "tagline": "NordAI Agency — Партнер з AI-трансформації бізнесу",
     "quickLinks": "Швидкі Посилання",
+    "solutions": "Рішення",
     "approach": "Підхід",
     "outcomes": "Результати",
-    "community": "Спільнота",
+    "howItWorks": "Як це працює",
     "subscriptions": "Підписки",
+    "community": "Спільнота",
     "faq": "Питання",
+    "mentorship": "Менторство",
     "getStarted": "Почати",
     "contact": "Контакт",
     "bookSession": "Записатися на сесію",

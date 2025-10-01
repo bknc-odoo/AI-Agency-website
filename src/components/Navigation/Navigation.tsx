@@ -7,6 +7,7 @@ const Navigation: React.FC = () => {
   const { t } = useTranslation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,21 +86,63 @@ const Navigation: React.FC = () => {
                 {t('nav.home')}
               </a>
 
-              <a
-                href="#approach"
-                onClick={(e) => scrollToSection(e, 'approach')}
-                className="text-slate-300 hover:text-cyan-400 transition-colors"
+              {/* Solutions Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsSolutionsDropdownOpen(true)}
+                onMouseLeave={() => setIsSolutionsDropdownOpen(false)}
               >
-                {t('nav.approach')}
-              </a>
+                <button className="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1">
+                  {t('nav.solutions')}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className={`transition-transform duration-200 ${isSolutionsDropdownOpen ? 'rotate-180' : ''}`}>
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
 
-              <a
-                href="#case-studies"
-                onClick={(e) => scrollToSection(e, 'case-studies')}
-                className="text-slate-300 hover:text-cyan-400 transition-colors"
-              >
-                {t('nav.outcomes')}
-              </a>
+                {/* Dropdown Menu */}
+                <div className={`absolute top-full left-0 mt-2 w-48 bg-slate-800/95 backdrop-blur-lg border border-slate-700 rounded-lg shadow-xl transition-all duration-200 ${isSolutionsDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                  <a
+                    href="#approach"
+                    onClick={(e) => {
+                      scrollToSection(e, 'approach')
+                      setIsSolutionsDropdownOpen(false)
+                    }}
+                    className="block px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors first:rounded-t-lg"
+                  >
+                    {t('nav.solutionsDropdown.approach')}
+                  </a>
+                  <a
+                    href="#case-studies"
+                    onClick={(e) => {
+                      scrollToSection(e, 'case-studies')
+                      setIsSolutionsDropdownOpen(false)
+                    }}
+                    className="block px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
+                  >
+                    {t('nav.solutionsDropdown.outcomes')}
+                  </a>
+                  <a
+                    href="#how-it-works"
+                    onClick={(e) => {
+                      scrollToSection(e, 'how-it-works')
+                      setIsSolutionsDropdownOpen(false)
+                    }}
+                    className="block px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
+                  >
+                    {t('nav.solutionsDropdown.howItWorks')}
+                  </a>
+                  <a
+                    href="#pricing"
+                    onClick={(e) => {
+                      scrollToSection(e, 'pricing')
+                      setIsSolutionsDropdownOpen(false)
+                    }}
+                    className="block px-4 py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors last:rounded-b-lg"
+                  >
+                    {t('nav.solutionsDropdown.subscriptions')}
+                  </a>
+                </div>
+              </div>
 
               <a
                 href="#community"
@@ -110,19 +153,23 @@ const Navigation: React.FC = () => {
               </a>
 
               <a
-                href="#pricing"
-                onClick={(e) => scrollToSection(e, 'pricing')}
-                className="text-slate-300 hover:text-cyan-400 transition-colors"
-              >
-                {t('nav.subscriptions')}
-              </a>
-
-              <a
                 href="#faq"
                 onClick={(e) => scrollToSection(e, 'faq')}
                 className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
                 {t('nav.faq')}
+              </a>
+
+              <a
+                href="https://mentorship.nordai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1"
+              >
+                {t('nav.mentorship')}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </a>
 
               <button

@@ -65,9 +65,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Solutions */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">{t('footer.quickLinks')}</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">{t('footer.solutions')}</h3>
             <ul className="space-y-2">
               <li>
                 <button
@@ -87,10 +87,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('community')}
+                  onClick={() => scrollToSection('how-it-works')}
                   className="text-slate-300 hover:text-cyan-400 transition-colors duration-300"
                 >
-                  {t('footer.community')}
+                  {t('footer.howItWorks')}
                 </button>
               </li>
               <li>
@@ -101,6 +101,21 @@ const Footer: React.FC = () => {
                   {t('footer.subscriptions')}
                 </button>
               </li>
+            </ul>
+          </div>
+
+          {/* Contact & Get Started */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-4">{t('footer.getStarted')}</h3>
+            <ul className="space-y-2">
+              <li>
+                <button
+                  onClick={() => scrollToSection('community')}
+                  className="text-slate-300 hover:text-cyan-400 transition-colors duration-300"
+                >
+                  {t('footer.community')}
+                </button>
+              </li>
               <li>
                 <button
                   onClick={() => scrollToSection('faq')}
@@ -109,13 +124,6 @@ const Footer: React.FC = () => {
                   {t('footer.faq')}
                 </button>
               </li>
-            </ul>
-          </div>
-
-          {/* Contact & Legal */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">{t('footer.getStarted')}</h3>
-            <ul className="space-y-2">
               <li>
                 <button
                   onClick={() => scrollToSection('contact')}
@@ -126,12 +134,15 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://buymeacoffee.com/nordgaimer"
+                  href="https://mentorship.nordai.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-300 hover:text-cyan-400 transition-colors duration-300"
+                  className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-1"
                 >
-                  {t('footer.bookSession')}
+                  {t('footer.mentorship')}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </a>
               </li>
             </ul>
