@@ -11,10 +11,11 @@
     "getStarted": "Get Started"
   },
   "hero": {
-    "title": "The Future Isn't Waiting.",
-    "subtitle": "Choose Intelligence.",
-    "description": "Partner with us to develop and implement bespoke AI solutions that keep your business ahead of the competition.",
-    "cta": "Get in Touch"
+    "title": "Your AI Transformation Partner.",
+    "subtitle": "Fast-Track with AI",
+    "description": "Start with an AI Fast-Track Session to uncover opportunities and design your first quick win. Then scale into full transformation with strategy, automation, and measurable outcomes.",
+    "cta": "Book Your AI Fast-Track Session",
+    "ctaSecondary": "See How It Works"
   },
   "services": {
     "title": "Our Services",

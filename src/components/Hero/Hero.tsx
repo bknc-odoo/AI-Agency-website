@@ -39,22 +39,20 @@ const Hero: React.FC = () => {
   const renderSubtitle = () => {
     const subtitle = t('hero.subtitle')
 
-    if (language === 'ua' && subtitle === 'Обери ШІ.') {
+    if (language === 'ua' && subtitle === 'Швидкий старт з ШІ') {
       return (
         <>
-          <span className="gradient-text">Обери </span>
+          <span className="gradient-text">Швидкий старт з </span>
           <span className="gradient-text-animated">ШІ</span>
-          <span className="gradient-text">.</span>
         </>
       )
     }
 
-    if (language === 'en' && subtitle === 'Choose Intelligence.') {
+    if (language === 'en' && subtitle === 'Fast-Track with AI') {
       return (
         <>
-          <span className="gradient-text">Choose </span>
-          <span className="gradient-text-animated">Intelligence</span>
-          <span className="gradient-text">.</span>
+          <span className="gradient-text">Fast-Track with </span>
+          <span className="gradient-text-animated">AI</span>
         </>
       )
     }
@@ -100,7 +98,7 @@ const Hero: React.FC = () => {
             {t('hero.description')}
           </p>
 
-          <div className={`flex justify-center transition-all duration-700 delay-500 ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-500 ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <button
               onClick={scrollToContact}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 glow-effect hover:scale-105"
@@ -119,6 +117,17 @@ const Hero: React.FC = () => {
                   d="M5 12h14m-7-7l7 7-7 7"
                 />
               </svg>
+            </button>
+            <button
+              onClick={() => {
+                const servicesSection = document.getElementById('services')
+                if (servicesSection) {
+                  servicesSection.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-cyan-400/50 px-8 py-4 text-lg font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-400/10 hover:border-cyan-400 hover:scale-105"
+            >
+              {t('hero.ctaSecondary')}
             </button>
           </div>
         </div>
