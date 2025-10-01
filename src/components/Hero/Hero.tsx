@@ -81,15 +81,14 @@ const Hero: React.FC = () => {
       <div className="relative z-10 container text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            <span className="text-white">
+            <span className="text-white block">
               {displayedText}
               <span className="inline-block w-1 h-12 md:h-16 lg:h-20 ml-2 bg-cyan-400 animate-pulse" style={{
                 opacity: isTypingComplete ? 0 : 1,
                 transition: 'opacity 0.5s'
               }} />
-              <br />
             </span>
-            <span className={`inline-block transition-all duration-500 neon-glow ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <span className={`block transition-all duration-500 neon-glow ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               {renderSubtitle()}
             </span>
           </h1>
