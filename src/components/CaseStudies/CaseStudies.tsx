@@ -220,7 +220,7 @@ const CaseStudies: React.FC = () => {
             {t('caseStudies.ctaText')}
           </p>
           <a
-            href="#contact"
+            href="#pricing"
             className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
           >
             {t('caseStudies.ctaButton')}

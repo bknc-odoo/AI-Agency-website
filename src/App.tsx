@@ -6,6 +6,7 @@ import Services from './components/Services/Services'
 import Approach from './components/Approach/Approach'
 import CaseStudies from './components/CaseStudies/CaseStudies'
 import Community from './components/Community/Community'
+import Pricing from './components/Pricing/Pricing'
 import Team from './components/Team/Team'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Approach />
         <CaseStudies />
         <Community />
+        <Pricing />
         <Team />
         <Contact />
         <Footer />

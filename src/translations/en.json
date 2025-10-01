@@ -300,6 +300,45 @@
       }
     ]
   },
+  "pricing": {
+    "title": "Subscription Partnerships",
+    "subtitle": "After your first Fast-Track Session, most clients continue with a monthly subscription. Choose the level that fits your business.",
+    "badge": "New Client Rate — Limited Spots",
+    "popular": "Most Popular",
+    "cta": "Get Started",
+    "plans": {
+      "startSmall": {
+        "name": "Start Small",
+        "highlight": "Perfect for SMBs starting AI transformation",
+        "features": [
+          "3–4 structured consultancy meetings per month",
+          "AI diagnostic & tailored recommendations",
+          "Priority chat/email support"
+        ]
+      },
+      "goBig": {
+        "name": "Go Big",
+        "highlight": "For growing businesses ready to scale AI ROI",
+        "features": [
+          "Everything in Start Small",
+          "Business process redesign with AI",
+          "Custom AI dashboards & KPI tracking",
+          "Advanced lead-generation automations"
+        ]
+      },
+      "fullInvolvement": {
+        "name": "Full Involvement",
+        "highlight": "The closest thing to having your own AI partner in-house",
+        "features": [
+          "Everything in Go Big",
+          "Direct involvement from Ivan Nordgaimer",
+          "Custom AI agent development",
+          "Industry benchmarking & competitor analysis",
+          "Quarterly ROI reviews"
+        ]
+      }
+    }
+  },
   "community": {
     "badge": "Coming Soon",
     "title": "AI Business Community",
