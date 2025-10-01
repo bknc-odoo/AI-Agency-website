@@ -147,7 +147,8 @@
   },
   "contact": {
     "title": "Start Your AI Journey",
-    "description": "Ready to transform your business with AI? Let's discuss how NordAI can accelerate your digital transformation.",
+    "description": "Everything begins with one simple step — a coffee. Book your Fast-Track Session and see where AI creates ROI in your business.",
+    "cta": "Book Fast-Track Session",
     "benefits": {
       "consultation": {
         "title": "Free Consultation",
@@ -163,7 +164,7 @@
       }
     },
     "form": {
-      "title": "Book Your Consultation",
+      "title": "Book Your Fast-Track Session",
       "name": "Name",
       "email": "Email",
       "company": "Company",
@@ -172,7 +173,9 @@
       "emailPlaceholder": "your@email.com",
       "companyPlaceholder": "Your company name",
       "messagePlaceholder": "Describe your AI needs and objectives...",
-      "note": "We'll respond within 24 hours to schedule your consultation."
+      "note": "We'll respond within 24 hours to schedule your consultation.",
+      "directContact": "Prefer direct? Write to nordgaimer.ivan@gmail.com",
+      "guarantee": "100% refundable if you don't see value after the first session."
     }
   },
   "capabilities": {

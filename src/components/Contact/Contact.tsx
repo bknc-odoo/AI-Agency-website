@@ -195,9 +195,26 @@ const Contact: React.FC = () => {
               </button>
             </form>
 
-            <p className="text-center text-sm text-slate-400 mt-6">
-              {t('contact.form.note')}
-            </p>
+            <div className="mt-6 space-y-3">
+              <p className="text-center text-sm text-slate-400">
+                {t('contact.form.note')}
+              </p>
+
+              {/* Direct Contact */}
+              <p className="text-center text-sm text-slate-300">
+                {t('contact.form.directContact')}
+              </p>
+
+              {/* Guarantee Badge */}
+              <div className="flex items-center justify-center gap-2 p-3 bg-green-400/10 border border-green-400/30 rounded-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-green-400 flex-shrink-0">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span className="text-sm text-green-400 font-semibold">
+                  {t('contact.form.guarantee')}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
