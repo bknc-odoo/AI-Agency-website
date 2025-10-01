@@ -272,11 +272,38 @@
       }
     ]
   },
-  "technologies": {
-    "title": "Cutting-Edge AI Technologies",
-    "subtitle": "We leverage the most advanced AI technologies and platforms to build solutions that define the future of business automation.",
-    "cta_text": "Ready to harness the power of these cutting-edge technologies?",
-    "cta": "Explore Our AI Solutions"
+  "community": {
+    "badge": "Coming Soon",
+    "title": "AI Business Community",
+    "subtitle": "We're building a private community for entrepreneurs and business leaders to exchange ideas, share real AI use cases, and stay ahead in transformation.",
+    "highlights": {
+      "knowledge": {
+        "title": "Knowledge Sharing",
+        "description": "Learn from real business cases and practical AI success stories."
+      },
+      "support": {
+        "title": "Peer Support",
+        "description": "Connect with other business owners and leaders facing similar challenges."
+      },
+      "access": {
+        "title": "Exclusive Access",
+        "description": "Early access to tools, insights, and private strategy sessions."
+      }
+    },
+    "cta": "Join the waitlist",
+    "form": {
+      "title": "Join the Waitlist",
+      "subtitle": "Be the first to know when we launch the community.",
+      "name": "Name",
+      "email": "Email",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "your@email.com",
+      "submit": "Join Waitlist",
+      "submitting": "Submitting...",
+      "cancel": "Cancel",
+      "successTitle": "You're on the list!",
+      "successMessage": "We'll notify you as soon as the community launches."
+    }
   },
   "dataShowcase": {
     "title": "Bring Your Messy Data - We'll Handle Everything",

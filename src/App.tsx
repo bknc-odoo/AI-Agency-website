@@ -5,7 +5,7 @@ import Hero from './components/Hero/Hero'
 import Services from './components/Services/Services'
 import Approach from './components/Approach/Approach'
 import CaseStudies from './components/CaseStudies/CaseStudies'
-import Technologies from './components/Technologies/Technologies'
+import Community from './components/Community/Community'
 import DataShowcase from './components/DataShowcase/DataShowcase'
 import Difference from './components/Difference/Difference'
 import Team from './components/Team/Team'
@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <Services />
         <Approach />
         <CaseStudies />
-        <Technologies />
+        <Community />
         <DataShowcase />
         <Difference />
         <Team />
