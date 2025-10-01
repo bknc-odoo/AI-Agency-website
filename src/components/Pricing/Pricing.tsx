@@ -49,14 +49,17 @@ const Pricing: React.FC = () => {
             </div>
 
             <ul className="space-y-3 mb-8">
-              {(Array.isArray(t('pricing.plans.startSmall.features')) ? t('pricing.plans.startSmall.features') : []).map((feature: string, index: number) => (
-                <li key={index} className="flex items-start gap-3 text-slate-300">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-cyan-400 flex-shrink-0 mt-0.5">
-                    <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span className="text-sm">{feature}</span>
-                </li>
-              ))}
+              {(() => {
+                const features = t('pricing.plans.startSmall.features');
+                return (Array.isArray(features) ? features : []).map((feature: string, index: number) => (
+                  <li key={index} className="flex items-start gap-3 text-slate-300">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-cyan-400 flex-shrink-0 mt-0.5">
+                      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <span className="text-sm">{feature}</span>
+                  </li>
+                ));
+              })()}
             </ul>
 
             <button
@@ -89,14 +92,17 @@ const Pricing: React.FC = () => {
             </div>
 
             <ul className="space-y-3 mb-8">
-              {(Array.isArray(t('pricing.plans.goBig.features')) ? t('pricing.plans.goBig.features') : []).map((feature: string, index: number) => (
-                <li key={index} className="flex items-start gap-3 text-slate-300">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-cyan-400 flex-shrink-0 mt-0.5">
-                    <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span className="text-sm">{feature}</span>
-                </li>
-              ))}
+              {(() => {
+                const features = t('pricing.plans.goBig.features');
+                return (Array.isArray(features) ? features : []).map((feature: string, index: number) => (
+                  <li key={index} className="flex items-start gap-3 text-slate-300">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-cyan-400 flex-shrink-0 mt-0.5">
+                      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <span className="text-sm">{feature}</span>
+                  </li>
+                ));
+              })()}
             </ul>
 
             <button
@@ -124,14 +130,17 @@ const Pricing: React.FC = () => {
             </div>
 
             <ul className="space-y-3 mb-8">
-              {(Array.isArray(t('pricing.plans.fullInvolvement.features')) ? t('pricing.plans.fullInvolvement.features') : []).map((feature: string, index: number) => (
-                <li key={index} className="flex items-start gap-3 text-slate-300">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-cyan-400 flex-shrink-0 mt-0.5">
-                    <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span className="text-sm">{feature}</span>
-                </li>
-              ))}
+              {(() => {
+                const features = t('pricing.plans.fullInvolvement.features');
+                return (Array.isArray(features) ? features : []).map((feature: string, index: number) => (
+                  <li key={index} className="flex items-start gap-3 text-slate-300">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-cyan-400 flex-shrink-0 mt-0.5">
+                      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <span className="text-sm">{feature}</span>
+                  </li>
+                ));
+              })()}
             </ul>
 
             <button
