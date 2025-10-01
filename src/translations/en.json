@@ -45,23 +45,28 @@
   },
   "approach": {
     "title": "Our Approach",
-    "description": "A proven methodology that ensures successful AI implementation from concept to deployment.",
+    "description": "We don't start with tools. We start with your business — then apply AI where it delivers ROI.",
+    "ctaText": "Want to see how this works for your business?",
     "steps": {
       "discovery": {
-        "title": "Discovery",
-        "description": "Deep dive into your business challenges, goals, and current infrastructure to identify AI opportunities."
+        "title": "Discover Bottlenecks",
+        "description": "We uncover hidden blockers in your sales, operations, and finance that waste time and money.",
+        "altText": "Discover bottlenecks icon"
       },
       "strategy": {
-        "title": "Strategy",
-        "description": "Develop a comprehensive AI roadmap with clear milestones, timelines, and success metrics."
+        "title": "Redesign Processes",
+        "description": "We rebuild your workflows for efficiency and clarity — making them scale-ready.",
+        "altText": "Redesign processes icon"
       },
       "development": {
-        "title": "Development",
-        "description": "Build and train custom AI agents using cutting-edge technology and best practices."
+        "title": "Reinforce with AI",
+        "description": "We apply AI only where it creates ROI — custom agents, automations, or analytics that matter.",
+        "altText": "Reinforce with AI icon"
       },
       "integration": {
-        "title": "Integration",
-        "description": "Seamlessly deploy and integrate AI solutions into your existing workflows and systems."
+        "title": "Measure ROI",
+        "description": "We track results with clear KPIs — so every improvement proves its business value.",
+        "altText": "Measure ROI icon"
       }
     }
   },

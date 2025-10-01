@@ -163,3 +163,30 @@ export const RaceIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => 
     <path d="M16.5 12 L19.5 12 M18 10.5 L18 13.5" stroke="currentColor" strokeWidth="1" opacity="0.7"/>
   </svg>
 )
+
+export const BlueprintIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    {/* Blueprint/process design icon */}
+    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
+    {/* Grid lines for blueprint */}
+    <path d="M3 9 L21 9 M3 15 L21 15" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
+    <path d="M9 3 L9 21 M15 3 L15 21" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
+    {/* Process arrows */}
+    <path d="M7 12 L11 12 M11 12 L9 10 M11 12 L9 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M13 12 L17 12 M17 12 L15 10 M17 12 L15 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+)
+
+export const ChartUpIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    {/* Chart with upward arrow */}
+    <path d="M3 3v18h18" stroke="currentColor" strokeWidth="2"/>
+    {/* Rising bars */}
+    <rect x="7" y="14" width="3" height="6" fill="currentColor" opacity="0.3"/>
+    <rect x="12" y="10" width="3" height="10" fill="currentColor" opacity="0.5"/>
+    <rect x="17" y="6" width="3" height="14" fill="currentColor" opacity="0.7"/>
+    {/* Upward arrow trend */}
+    <path d="M6 16 L10 12 L14 14 L20 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M20 6 L20 11 M20 6 L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+)

@@ -15,13 +15,6 @@ const Services: React.FC = () => {
   const { t } = useTranslation()
   const { ref: titleRef, isInView } = useScrollGlow(0.3)
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   const problems: Problem[] = [
     {
       key: 'chaos',
@@ -116,30 +109,24 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
+        {/* CTA Section - Buy Me a Coffee */}
         <div className="text-center mt-12">
           <p className="text-xl text-slate-300 mb-6 max-w-2xl mx-auto">
             {t('services.ctaText')}
           </p>
-          <button
-            onClick={scrollToContact}
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 glow-effect hover:scale-105"
+          <a
+            href="https://www.buymeacoffee.com/nordai.agency"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Book Fast-Track Session via Buy Me a Coffee"
+            className="inline-block transition-transform duration-300 hover:scale-105"
           >
-            {t('services.ctaButton')}
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 12h14m-7-7l7 7-7 7"
-              />
-            </svg>
-          </button>
+            <img
+              src="https://img.buymeacoffee.com/button-api/?text=Book Fast-Track Session&emoji=&slug=nordai.agency&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"
+              alt="Buy Me a Coffee button to book Fast-Track Session"
+              className="h-14"
+            />
+          </a>
         </div>
       </div>
     </section>

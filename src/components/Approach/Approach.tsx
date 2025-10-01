@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useScrollGlow } from '@/hooks/useScrollGlow'
-import { SearchIcon, TargetIcon, CodeIcon, RocketIcon } from '@/components/Icons/Icons'
+import { SearchIcon, BlueprintIcon, RobotIcon, ChartUpIcon } from '@/components/Icons/Icons'
 
 const Approach: React.FC = () => {
   const { t } = useTranslation()
@@ -13,6 +13,7 @@ const Approach: React.FC = () => {
       number: '01',
       title: t('approach.steps.discovery.title'),
       description: t('approach.steps.discovery.description'),
+      altText: t('approach.steps.discovery.altText'),
       icon: <SearchIcon size={40} className="text-cyan-400" />
     },
     {
@@ -20,21 +21,24 @@ const Approach: React.FC = () => {
       number: '02',
       title: t('approach.steps.strategy.title'),
       description: t('approach.steps.strategy.description'),
-      icon: <TargetIcon size={40} className="text-cyan-400" />
+      altText: t('approach.steps.strategy.altText'),
+      icon: <BlueprintIcon size={40} className="text-cyan-400" />
     },
     {
       key: 'development',
       number: '03',
       title: t('approach.steps.development.title'),
       description: t('approach.steps.development.description'),
-      icon: <CodeIcon size={40} className="text-cyan-400" />
+      altText: t('approach.steps.development.altText'),
+      icon: <RobotIcon size={40} className="text-cyan-400" />
     },
     {
       key: 'integration',
       number: '04',
       title: t('approach.steps.integration.title'),
       description: t('approach.steps.integration.description'),
-      icon: <RocketIcon size={40} className="text-cyan-400" />
+      altText: t('approach.steps.integration.altText'),
+      icon: <ChartUpIcon size={40} className="text-cyan-400" />
     }
   ]
 
@@ -70,7 +74,7 @@ const Approach: React.FC = () => {
                 style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards' }}
               >
                 <div className="flex items-center mb-6">
-                  <div className="relative mr-4">
+                  <div className="relative mr-4" role="img" aria-label={step.altText}>
                     <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full scale-150 group-hover:scale-200 transition-transform duration-300"></div>
                     <div className="relative z-10">{step.icon}</div>
                   </div>
@@ -91,6 +95,26 @@ const Approach: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA Section - Buy Me a Coffee */}
+        <div className="text-center mt-16">
+          <p className="text-xl text-slate-300 mb-6 max-w-2xl mx-auto">
+            {t('approach.ctaText')}
+          </p>
+          <a
+            href="https://www.buymeacoffee.com/nordai.agency"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Book Fast-Track Session via Buy Me a Coffee"
+            className="inline-block transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://img.buymeacoffee.com/button-api/?text=Book Fast-Track Session&emoji=&slug=nordai.agency&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"
+              alt="Buy Me a Coffee button to book Fast-Track Session"
+              className="h-14"
+            />
+          </a>
         </div>
       </div>
     </section>
