@@ -305,39 +305,86 @@
   },
   "pricing": {
     "title": "Subscription Partnerships",
-    "subtitle": "After your first Fast-Track Session, most clients continue with a monthly subscription. Choose the level that fits your business.",
-    "badge": "New Client Rate — Limited Spots",
+    "intro": "With NordAI, you don't just buy a one-off project — you get a partnership subscription. Each month we dedicate time to diagnosing your business, redesigning processes, and implementing AI solutions that bring measurable ROI. You don't pay for hours worked — you pay for continuous improvements and results.",
     "popular": "Most Popular",
     "cta": "Get Started",
+    "whatsIncluded": "What's Included",
+    "advantages": "Advantages",
+    "scarcity": "Spots are limited. Long-term plans guarantee your place and discounted pricing.",
     "plans": {
       "startSmall": {
         "name": "Start Small",
-        "highlight": "Perfect for SMBs starting AI transformation",
+        "discount6m": "6 months: $270/month",
+        "discount12m": "12 months: $250/month",
+        "timeDedication": "~4–6 hours/month",
         "features": [
-          "3–4 structured consultancy meetings per month",
-          "AI diagnostic & tailored recommendations",
+          "3–4 structured sessions/month",
+          "AI diagnostic report with ROI opportunities",
           "Priority chat/email support"
+        ],
+        "advantages": [
+          "Lowest-cost entry to AI partnership",
+          "Quick ROI wins within 30 days",
+          "Minimal time investment for owner",
+          "Perfect for testing AI in your business safely"
         ]
       },
       "goBig": {
         "name": "Go Big",
-        "highlight": "For growing businesses ready to scale AI ROI",
+        "discount6m": "6 months: $550/month",
+        "discount12m": "12 months: $500/month",
+        "timeDedication": "~8–10 hours/month",
         "features": [
           "Everything in Start Small",
           "Business process redesign with AI",
-          "Custom AI dashboards & KPI tracking",
-          "Advanced lead-generation automations"
+          "AI dashboards & KPI tracking",
+          "Advanced lead-gen automation"
+        ],
+        "advantages": [
+          "Stronger ROI focus — not just small fixes, but structural changes",
+          "Full visibility into sales & operations",
+          "Hands-on automation that saves costs every month",
+          "Ideal for SMBs ready to scale with AI"
         ]
       },
       "fullInvolvement": {
         "name": "Full Involvement",
-        "highlight": "The closest thing to having your own AI partner in-house",
+        "discount6m": "6 months: $1,100/month",
+        "discount12m": "12 months: $1,000/month",
+        "timeDedication": "~15+ hours/month",
         "features": [
           "Everything in Go Big",
           "Direct involvement from Ivan Nordgaimer",
           "Custom AI agent development",
-          "Industry benchmarking & competitor analysis",
+          "Industry benchmarking & competitor insights",
           "Quarterly ROI reviews"
+        ],
+        "advantages": [
+          "Personal guidance from Ivan (not just consultants)",
+          "Tailored AI agents that give you competitive edge",
+          "Continuous monitoring & ROI reviews",
+          "Functions like having your own AI transformation partner inside your company"
+        ]
+      }
+    },
+    "comparison": {
+      "title": "Why long-term is better",
+      "longTerm": {
+        "title": "6–12 Months",
+        "benefits": [
+          "Guaranteed availability (your slot is secured)",
+          "Lower monthly cost (up to 20% savings)",
+          "Deeper transformation (results compound over time)",
+          "Priority access to new tools & community"
+        ]
+      },
+      "monthly": {
+        "title": "Month-to-Month",
+        "risks": [
+          "Limited availability (may lose your spot if all slots are full)",
+          "Higher monthly cost (no discount)",
+          "Harder to build long-term systems (difficult to strategize)",
+          "Progress may stall if you stop and return later"
         ]
       }
     }
