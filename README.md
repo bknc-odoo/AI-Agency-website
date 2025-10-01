@@ -1,105 +1,124 @@
 # Nord AI - AI Solutions Agency Website
 
-A modern, responsive website for Nord AI, an artificial intelligence solutions agency. Built with clean HTML, CSS, and JavaScript.
+A modern, responsive website for Nord AI, an artificial intelligence solutions agency. Built with React, TypeScript, Tailwind CSS, and Vite.
 
 ## 🚀 Live Demo
 
-Deploy this website to Vercel: [Deploy to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/bknc-odoo/AI-Agency-website)
+Deploy this website to Vercel: [Deploy to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/nordai-agency)
 
 ## ✨ Features
 
-- **Modern Design**: Clean, professional interface with smooth animations
-- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
-- **AI-focused Content**: Showcases AI strategy, custom agents, data analytics, and automation services
-- **Contact Forms**: Interactive consultation booking with service selection
-- **Fast Loading**: Optimized assets and efficient code structure
+- **Modern React Architecture**: Component-based structure with TypeScript
+- **Bilingual Support**: English and Ukrainian translations
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Interactive Carousels**: Case studies showcase with real ROI data
+- **AI-focused Content**: AI strategy, custom agents, automation, and proven outcomes
+- **Contact & Callback Widgets**: Interactive forms with floating callback widget
+- **Fast Loading**: Vite-powered development and optimized production builds
 
 ## 📁 Project Structure
 
 ```
-├── index.html              # Main website file
-├── assets/                 # CSS and JavaScript files
-│   ├── index-CBm6bOgf.css # Compiled styles
-│   └── index-Dv36Aanc.js  # JavaScript functionality
-├── lovable-uploads/        # Images and icons
-│   ├── c20138e1-815d-460a-b5f4-3e5047c01fd9.png # Favicon
-│   └── 9858521e-5991-4f47-afb4-50275169fc18.png # Profile image
-└── README.md              # This file
+├── src/
+│   ├── components/
+│   │   ├── Hero/               # Landing section
+│   │   ├── Services/           # Problem-solution cards
+│   │   ├── Approach/           # 4-step methodology
+│   │   ├── CaseStudies/        # ROI carousel (8 cases)
+│   │   ├── Community/          # Coming soon section
+│   │   ├── Team/               # AI + Human hybrid team
+│   │   ├── Contact/            # Contact form
+│   │   ├── Navigation/         # Header navigation
+│   │   ├── Footer/             # Footer section
+│   │   └── CallbackWidget/     # Floating callback button
+│   ├── translations/
+│   │   ├── en.json            # English translations
+│   │   └── ua.json            # Ukrainian translations
+│   ├── hooks/                 # Custom React hooks
+│   ├── styles/                # Global styles
+│   └── App.tsx                # Main app component
+├── public/                    # Static assets
+├── package.json              # Dependencies
+└── README.md                 # This file
 ```
 
-## 🛠️ Deployment Instructions
+## 🛠️ Development
 
-### Deploy to Vercel (Recommended)
+### Prerequisites
+- Node.js 16+ and npm
 
-1. **Fork or Clone this repository**
-2. **Go to [Vercel](https://vercel.com)**
-3. **Click "New Project"**
-4. **Import your GitHub repository**
-5. **Configure deployment settings:**
-   - Framework Preset: Other
-   - Build Command: (leave empty)
-   - Output Directory: (leave empty)
-   - Install Command: (leave empty)
-6. **Click "Deploy"**
-
-### Deploy to Netlify
-
-1. **Go to [Netlify](https://netlify.com)**
-2. **Drag and drop the project folder** or connect to GitHub
-3. **Set build settings:**
-   - Build command: (leave empty)
-   - Publish directory: (leave empty)
-4. **Click "Deploy Site"**
-
-### Deploy to GitHub Pages
-
-1. **Go to your repository settings**
-2. **Navigate to "Pages" section**
-3. **Select source: "Deploy from a branch"**
-4. **Choose "main" branch and "/ (root)"**
-5. **Click "Save"**
-
-## 🎨 Customization
-
-### Update Contact Information
-Edit the contact email in `index.html`:
-```html
-<a href="mailto:nordgaimer.ivan@gmail.com" class="text-primary hover:underline">nordgaimer.ivan@gmail.com</a>
-```
-
-### Modify Content
-All content can be edited directly in `index.html`. Key sections:
-- Hero section (main headline and description)
-- Services section (AI offerings)
-- Team section (founder information)
-- Contact section (consultation form)
-
-### Style Changes
-Main styles are in `assets/index-CBm6bOgf.css`. The design uses:
-- CSS custom properties for theming
-- Responsive grid layouts
-- Modern animations and transitions
-
-## 🧪 Local Development
+### Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/bknc-odoo/AI-Agency-website.git
-   cd AI-Agency-website
+   git clone https://github.com/yourusername/nordai-agency.git
+   cd nordai-agency
    ```
 
-2. **Open in a local server:**
+2. **Install dependencies:**
    ```bash
-   # Using Python
-   python -m http.server 8000
-
-   # Using Node.js
-   npx serve .
-
-   # Or simply open index.html in your browser
+   npm install
    ```
 
-3. **Access at:** `http://localhost:8000`
+3. **Run development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Access at:** `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The build output will be in the `dist/` directory.
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. **Push your code to GitHub**
+2. **Go to [Vercel](https://vercel.com)**
+3. **Import your repository**
+4. **Vercel will auto-detect Vite and configure:**
+   - Framework Preset: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+5. **Click "Deploy"**
+
+### Deploy to Netlify
+
+1. **Push your code to GitHub**
+2. **Go to [Netlify](https://netlify.com)**
+3. **Import from Git**
+4. **Configure build settings:**
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+5. **Click "Deploy Site"**
+
+## 🎨 Customization
+
+### Update Translations
+Edit translation files in `src/translations/`:
+- `en.json` - English content
+- `ua.json` - Ukrainian content
+
+### Modify Components
+All components are in `src/components/`. Each section has its own folder:
+- `Hero/` - Landing section with CTA
+- `Services/` - Problem-solution cards
+- `Approach/` - 4-step methodology
+- `CaseStudies/` - ROI carousel with 8 real cases
+- `Community/` - Coming soon waitlist
+- `Team/` - AI + Human hybrid team showcase
+- `Contact/` - Contact form
+
+### Style Changes
+- Global styles: `src/styles/globals.css`
+- Tailwind config: `tailwind.config.js`
+- Component-specific styles use Tailwind utility classes
 
 ## 📱 Browser Support
 
