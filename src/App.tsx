@@ -4,7 +4,7 @@ import Navigation from './components/Navigation/Navigation'
 import Hero from './components/Hero/Hero'
 import Services from './components/Services/Services'
 import Approach from './components/Approach/Approach'
-import AgentsGallery from './components/AgentsGallery/AgentsGallery'
+import CaseStudies from './components/CaseStudies/CaseStudies'
 import Technologies from './components/Technologies/Technologies'
 import DataShowcase from './components/DataShowcase/DataShowcase'
 import Difference from './components/Difference/Difference'
@@ -22,7 +22,7 @@ const App: React.FC = () => {
         <Hero />
         <Services />
         <Approach />
-        <AgentsGallery />
+        <CaseStudies />
         <Technologies />
         <DataShowcase />
         <Difference />

@@ -216,117 +216,59 @@
       ]
     }
   },
-  "agentsGallery": {
-    "title": "Custom AI Agents Gallery",
-    "subtitle": "Pre-trained, specialized agents ready to transform your operations",
-    "agents": [
+  "caseStudies": {
+    "title": "Proven Outcomes",
+    "subtitle": "We don't just build automations — we deliver measurable ROI for real businesses.",
+    "problemLabel": "Problem:",
+    "workLabel": "Our Work:",
+    "outcomeLabel": "Outcome:",
+    "ctaText": "Want to explore what AI could do for your business?",
+    "ctaButton": "See Subscription Options",
+    "cases": [
       {
-        "id": "executive",
-        "name": "Executive Assistant AI",
-        "role": "C-Suite Support",
-        "description": "Your 24/7 executive assistant that manages calendars, prepares briefings, and handles communications.",
-        "capabilities": [
-          "Smart calendar management",
-          "Meeting preparation & notes",
-          "Email prioritization & drafting",
-          "Travel coordination",
-          "Report generation"
-        ],
-        "metrics": {
-          "efficiency": "80% time saved",
-          "accuracy": "99.9% scheduling accuracy"
-        },
-        "gradient": "from-purple-500 to-indigo-600"
+        "id": "lead-generation",
+        "title": "Lead Generation at Scale",
+        "problem": "Sales team lacked fresh leads, relied on purchased databases.",
+        "work": "Built LinkedIn + website scraper → one click = up to 10,000 verified contacts (emails, phones, positions).",
+        "outcome": "Generated thousands of new contacts monthly.",
+        "roi": "ROI ≈ 20×",
+        "icon": "contacts"
       },
       {
-        "id": "sales",
-        "name": "Sales Hunter AI",
-        "role": "Lead Generation",
-        "description": "Autonomous sales agent that finds, qualifies, and engages prospects at scale.",
-        "capabilities": [
-          "Lead discovery & enrichment",
-          "Automated outreach sequences",
-          "Meeting booking",
-          "CRM synchronization",
-          "Performance analytics"
-        ],
-        "metrics": {
-          "efficiency": "10x more outreach",
-          "accuracy": "85% response rate"
-        },
-        "gradient": "from-green-500 to-emerald-600"
+        "id": "smart-outreach",
+        "title": "Smart Outreach Automation",
+        "problem": "Manual outreach took too long; generic emails had low reply rates.",
+        "work": "Added AI email automation → personalized messages per lead.",
+        "outcome": "Reply rate grew from ~2% → ~12%; conversions doubled.",
+        "roi": "ROI ≈ 5–7×",
+        "icon": "email"
       },
       {
-        "id": "customer",
-        "name": "Customer Success AI",
-        "role": "Support Automation",
-        "description": "Intelligent agent that provides instant, personalized customer support across all channels.",
-        "capabilities": [
-          "Multi-channel support",
-          "Sentiment analysis",
-          "Issue resolution",
-          "Knowledge base management",
-          "Escalation handling"
-        ],
-        "metrics": {
-          "efficiency": "90% first-contact resolution",
-          "accuracy": "95% satisfaction score"
-        },
-        "gradient": "from-blue-500 to-cyan-600"
+        "id": "voice-agent",
+        "title": "AI Voice Agent for Lead Qualification",
+        "problem": "Sales staff wasted hours cold-calling low-quality leads.",
+        "work": "Deployed AI voice agent → calls leads, asks discovery questions, stores structured data.",
+        "outcome": "Saved ~40 staff hours/month = $1.5–2k labor cost; pipeline quality improved.",
+        "roi": "ROI ≈ 10×",
+        "icon": "phone"
       },
       {
-        "id": "analyst",
-        "name": "Data Analyst AI",
-        "role": "Business Intelligence",
-        "description": "Advanced analytics agent that turns raw data into actionable insights.",
-        "capabilities": [
-          "Automated reporting",
-          "Anomaly detection",
-          "Predictive modeling",
-          "Data visualization",
-          "Trend analysis"
-        ],
-        "metrics": {
-          "efficiency": "100x faster analysis",
-          "accuracy": "98% prediction accuracy"
-        },
-        "gradient": "from-orange-500 to-red-600"
+        "id": "sales-dashboard",
+        "title": "AI Sales Dashboard",
+        "problem": "No real-time sales visibility; managers couldn't see performance by rep.",
+        "work": "Built AI-powered dashboard → live KPI tracking (targets vs actuals, plan progress, suggestions).",
+        "outcome": "Improved accountability; 15% sales increase = ~$50k annual gain.",
+        "roi": "ROI ≈ 8–10×",
+        "icon": "dashboard"
       },
       {
-        "id": "developer",
-        "name": "Code Assistant AI",
-        "role": "Development Support",
-        "description": "Pair programmer that writes, reviews, and optimizes code.",
-        "capabilities": [
-          "Code generation",
-          "Bug detection & fixing",
-          "Code review",
-          "Documentation writing",
-          "Test creation"
-        ],
-        "metrics": {
-          "efficiency": "3x faster development",
-          "accuracy": "90% bug prevention"
-        },
-        "gradient": "from-pink-500 to-rose-600"
-      },
-      {
-        "id": "marketing",
-        "name": "Marketing Creator AI",
-        "role": "Content Generation",
-        "description": "Creative agent that produces marketing content and campaigns.",
-        "capabilities": [
-          "Content writing",
-          "Social media management",
-          "Ad copy generation",
-          "SEO optimization",
-          "Campaign analytics"
-        ],
-        "metrics": {
-          "efficiency": "20x content output",
-          "accuracy": "2x engagement rate"
-        },
-        "gradient": "from-teal-500 to-green-600"
+        "id": "content-engines",
+        "title": "Content Engines (Social Media + Shopify)",
+        "problem": "Content production was slow; product pages outdated often.",
+        "work": "Built AI generators → customer-style images, social videos, auto-Shopify updater.",
+        "outcome": "Cut content costs by ~70%; improved trust and conversion rates.",
+        "roi": "ROI ≈ 4–6×",
+        "icon": "video"
       }
     ]
   },
