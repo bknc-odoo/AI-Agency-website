@@ -103,9 +103,9 @@ const Pricing: React.FC = () => {
           </div>
 
           {/* Go Big */}
-          <div className="tech-card rounded-xl overflow-hidden p-6 relative hover:border-cyan-400/50 transition-all duration-300 md:scale-105 border-cyan-400/40">
+          <div className="tech-card rounded-xl overflow-visible p-6 relative hover:border-cyan-400/50 transition-all duration-300 md:scale-105 border-cyan-400/40">
             {/* Popular Badge */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-400 to-emerald-500 text-slate-900 text-xs font-bold px-4 py-1 rounded-full">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-400 to-emerald-500 text-slate-900 text-xs font-bold px-4 py-1 rounded-full z-10 whitespace-nowrap">
               ⭐ {t('pricing.popular')}
             </div>
 

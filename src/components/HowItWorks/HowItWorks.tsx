@@ -95,9 +95,9 @@ const HowItWorks: React.FC = () => {
                 <div className="hidden md:block absolute top-14 left-[calc(50%+24px)] w-[calc(100%+2rem)] h-0.5 bg-gradient-to-r from-cyan-400/50 to-transparent" />
               )}
 
-              <div className="tech-card digital-noise rounded-2xl p-6 text-center group hover:scale-105 transition-all duration-300 relative">
+              <div className="tech-card digital-noise rounded-2xl p-6 text-center group hover:scale-105 transition-all duration-300 relative overflow-visible">
                 {/* Step Number Badge */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-900 font-bold text-sm shadow-lg">
+                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-900 font-bold text-sm shadow-lg z-10">
                   {index + 1}
                 </div>
 

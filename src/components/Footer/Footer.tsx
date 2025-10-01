@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://mentorship.nordai.com"
+                  href="https://www.nordgaimer.coach"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-1"

@@ -25,24 +25,23 @@ const Contact: React.FC = () => {
     console.log('Form submitted:', formData)
   }
 
-  const benefits = [
+  const steps = [
     {
-      key: 'consultation',
-      title: t('contact.benefits.consultation.title'),
-      description: t('contact.benefits.consultation.description'),
+      key: 'step1',
+      title: t('contact.steps.step1.title'),
+      description: t('contact.steps.step1.description'),
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
-          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
-          <circle cx="9" cy="11" r="1" fill="currentColor"/>
-          <circle cx="15" cy="11" r="1" fill="currentColor"/>
-          <path d="M9 14c1 1 2 1 3 1s2 0 3-1" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M8 12h8M8 8h8M8 16h5M3 4h18a1 1 0 011 1v14a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" opacity="0.1"/>
+          <circle cx="18" cy="18" r="3" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.3"/>
+          <path d="M17 18h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       )
     },
     {
-      key: 'proposal',
-      title: t('contact.benefits.proposal.title'),
-      description: t('contact.benefits.proposal.description'),
+      key: 'step2',
+      title: t('contact.steps.step2.title'),
+      description: t('contact.steps.step2.description'),
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
           <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
@@ -52,13 +51,14 @@ const Contact: React.FC = () => {
       )
     },
     {
-      key: 'implementation',
-      title: t('contact.benefits.implementation.title'),
-      description: t('contact.benefits.implementation.description'),
+      key: 'step3',
+      title: t('contact.steps.step3.title'),
+      description: t('contact.steps.step3.description'),
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
-          <path d="M13 10h8l-10 12v-8H3l10-12v8z" stroke="currentColor" strokeWidth="1" opacity="0.7"/>
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
+          <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
         </svg>
       )
     }
@@ -83,22 +83,22 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        {/* Benefits */}
+        {/* 3 Steps (Value Cards) */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {benefits.map((benefit, index) => (
+          {steps.map((step, index) => (
             <div
-              key={benefit.key}
+              key={step.key}
               className="tech-card digital-noise rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
             >
               <div className="relative mb-6">
                 <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full scale-150 group-hover:scale-200 transition-transform duration-300"></div>
                 <div className="relative z-10 w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
-                  {benefit.icon}
+                  {step.icon}
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">{benefit.title}</h3>
-              <p className="text-slate-300 group-hover:text-slate-200 transition-colors duration-300">{benefit.description}</p>
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">{step.title}</h3>
+              <p className="text-slate-300 group-hover:text-slate-200 transition-colors duration-300">{step.description}</p>
 
               {/* Holographic border effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>

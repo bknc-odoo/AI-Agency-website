@@ -161,7 +161,7 @@ const Navigation: React.FC = () => {
               </a>
 
               <a
-                href="https://mentorship.nordai.com"
+                href="https://www.nordgaimer.coach"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1"

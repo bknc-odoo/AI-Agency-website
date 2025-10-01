@@ -44,8 +44,9 @@ const FAQ: React.FC = () => {
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left group"
+                className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left group cursor-pointer hover:bg-slate-800/30 transition-colors duration-300"
                 aria-expanded={openIndex === index}
+                type="button"
               >
                 <h3 className="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300">
                   {faq.question}

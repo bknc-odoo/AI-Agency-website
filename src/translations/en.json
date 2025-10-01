@@ -152,18 +152,18 @@
     "title": "Start Your AI Journey",
     "description": "Everything begins with one simple step — a coffee ☕. Book your Fast-Track Session and discover where AI creates ROI in your business.",
     "cta": "Send Message",
-    "benefits": {
-      "consultation": {
-        "title": "Free Consultation",
-        "description": "30-minute strategy session"
+    "steps": {
+      "step1": {
+        "title": "Fast-Track Session",
+        "description": "60 minutes focused on your business to identify ROI opportunities."
       },
-      "proposal": {
-        "title": "Custom Proposal",
-        "description": "Tailored solution roadmap"
+      "step2": {
+        "title": "Custom Roadmap",
+        "description": "You receive a tailored roadmap showing how AI can cut costs or grow revenue."
       },
-      "implementation": {
-        "title": "Rapid Implementation",
-        "description": "Fast-track to AI success"
+      "step3": {
+        "title": "Partnership Subscription",
+        "description": "Continue with a monthly subscription for ongoing consultancy, AI solutions, and measurable ROI improvements."
       }
     },
     "form": {
