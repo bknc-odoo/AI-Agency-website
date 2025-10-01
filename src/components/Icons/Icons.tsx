@@ -105,3 +105,61 @@ export const SupportIcon: React.FC<IconProps> = ({ className = "", size = 24 }) 
     <path d="M12 2v2m0 16v2m10-10h-2M4 12H2" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
   </svg>
 )
+
+export const ChaosIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    {/* Tangled arrows representing chaos */}
+    <path d="M3 6 Q8 12, 3 18" stroke="currentColor" strokeWidth="2" opacity="0.3" fill="none"/>
+    <path d="M21 6 Q16 12, 21 18" stroke="currentColor" strokeWidth="2" opacity="0.3" fill="none"/>
+    <path d="M6 3 Q12 8, 18 3" stroke="currentColor" strokeWidth="2" opacity="0.3" fill="none"/>
+    <path d="M6 21 Q12 16, 18 21" stroke="currentColor" strokeWidth="2" opacity="0.3" fill="none"/>
+    {/* Central chaos symbol */}
+    <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
+    <path d="M9 9 L15 15 M15 9 L9 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+)
+
+export const FunnelIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    {/* Leaky funnel */}
+    <path d="M4 4 L20 4 L16 12 L16 20 L8 20 L8 12 Z" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
+    {/* Leak holes */}
+    <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.7"/>
+    <circle cx="14" cy="13" r="1.5" fill="currentColor" opacity="0.7"/>
+    <circle cx="11" cy="16" r="1.5" fill="currentColor" opacity="0.7"/>
+    {/* Drops falling */}
+    <circle cx="9" cy="22" r="1" fill="currentColor" opacity="0.5"/>
+    <circle cx="13" cy="23" r="1" fill="currentColor" opacity="0.5"/>
+  </svg>
+)
+
+export const ClockIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    {/* Clock with hourglass */}
+    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.1"/>
+    {/* Clock hands showing wasted time */}
+    <path d="M12 12 L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 12 L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    {/* Warning symbol for wasted time */}
+    <path d="M12 16 L12 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.7"/>
+    <circle cx="12" cy="19.5" r="0.5" fill="currentColor"/>
+  </svg>
+)
+
+export const RaceIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    {/* Competitors racing ahead with automation */}
+    <path d="M2 12 L22 12" stroke="currentColor" strokeWidth="2" opacity="0.2"/>
+    {/* Slow arrow (you) */}
+    <path d="M2 12 L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+    <path d="M8 12 L6 10 M8 12 L6 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+    {/* Fast arrows (competitors) */}
+    <path d="M12 8 L22 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M22 8 L20 6 M22 8 L20 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 16 L22 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M22 16 L20 14 M22 16 L20 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    {/* Gear for automation */}
+    <circle cx="18" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" fill="currentColor" opacity="0.2"/>
+    <path d="M16.5 12 L19.5 12 M18 10.5 L18 13.5" stroke="currentColor" strokeWidth="1" opacity="0.7"/>
+  </svg>
+)

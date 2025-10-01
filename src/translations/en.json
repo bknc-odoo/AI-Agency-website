@@ -18,47 +18,29 @@
     "ctaSecondary": "See How It Works"
   },
   "services": {
-    "title": "Our Services",
-    "description": "Comprehensive AI solutions designed to accelerate your digital transformation and drive unprecedented growth.",
-    "strategy": {
-      "title": "AI Strategy",
-      "description": "Comprehensive AI roadmaps tailored to your business objectives and market position.",
-      "features": [
-        "Strategic Planning",
-        "ROI Analysis",
-        "Implementation Roadmap",
-        "Risk Assessment"
-      ]
+    "title": "The Problem Today",
+    "description": "AI tools are everywhere — but without strategy, businesses still struggle. Here's where AI makes the real difference.",
+    "ctaText": "The challenge isn't AI tools. It's knowing where they bring ROI.",
+    "ctaButton": "Book AI Fast-Track Session ($50)",
+    "chaos": {
+      "title": "Operational Chaos",
+      "description": "Your operations feel like chaos — manual steps, scattered systems, no clarity.",
+      "solution": "How AI helps: A clear AI roadmap aligns technology with your business goals and removes inefficiencies."
     },
-    "agents": {
-      "title": "Custom AI Agents",
-      "description": "Bespoke AI agents designed and trained specifically for your unique business challenges.",
-      "features": [
-        "Executive Assistant Agents",
-        "Content Creation Agents",
-        "Lead Generation Agents",
-        "Internal Strategy Agents"
-      ]
+    "funnel": {
+      "title": "Leaky Sales Funnels",
+      "description": "Leads slip away, follow-ups are missed, conversion rates stay low.",
+      "solution": "How AI helps: Custom AI agents qualify leads, automate outreach, and keep prospects engaged."
     },
-    "analytics": {
-      "title": "Data Analytics",
-      "description": "Transform raw data into actionable insights with advanced analytics and visualization.",
-      "features": [
-        "Predictive Analytics",
-        "Real-time Dashboards",
-        "Data Mining",
-        "Business Intelligence"
-      ]
+    "time": {
+      "title": "Wasted Time",
+      "description": "Teams spend hours on repetitive tasks and gut-feel decisions.",
+      "solution": "How AI helps: Data analytics turn raw data into insights, saving time and guiding smarter choices."
     },
-    "automation": {
-      "title": "Process Automation",
-      "description": "Streamline operations with intelligent automation solutions that scale with your business.",
-      "features": [
-        "Workflow Automation",
-        "RPA Integration",
-        "Smart Chatbots",
-        "AI Analysts"
-      ]
+    "competitors": {
+      "title": "Falling Behind Competitors",
+      "description": "Competitors adopt faster, cut costs, and deliver better service while you lag.",
+      "solution": "How AI helps: Process automation eliminates bottlenecks, reduces errors, and keeps you ahead."
     }
   },
   "approach": {

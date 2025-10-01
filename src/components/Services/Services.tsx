@@ -1,52 +1,55 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useScrollGlow } from '@/hooks/useScrollGlow'
-import { StrategyIcon, RobotIcon, AnalyticsIcon, AutomationIcon } from '@/components/Icons/Icons'
-import enTranslations from '@/translations/en.json'
-import uaTranslations from '@/translations/ua.json'
+import { ChaosIcon, FunnelIcon, ClockIcon, RaceIcon } from '@/components/Icons/Icons'
 
-interface Service {
+interface Problem {
   key: string
   icon: React.ReactNode
   title: string
   description: string
-  features: string[]
+  solution: string
 }
 
 const Services: React.FC = () => {
-  const { t, language } = useTranslation()
-  const translations = language === 'en' ? enTranslations : uaTranslations
-  const [selectedService, setSelectedService] = useState<Service | null>(null)
+  const { t } = useTranslation()
   const { ref: titleRef, isInView } = useScrollGlow(0.3)
 
-  const services: Service[] = [
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const problems: Problem[] = [
     {
-      key: 'strategy',
-      icon: <StrategyIcon size={48} className="text-cyan-400" />,
-      title: t('services.strategy.title'),
-      description: t('services.strategy.description'),
-      features: translations.services.strategy.features
+      key: 'chaos',
+      icon: <ChaosIcon size={48} className="text-cyan-400" />,
+      title: t('services.chaos.title'),
+      description: t('services.chaos.description'),
+      solution: t('services.chaos.solution')
     },
     {
-      key: 'agents',
-      icon: <RobotIcon size={48} className="text-cyan-400" />,
-      title: t('services.agents.title'),
-      description: t('services.agents.description'),
-      features: translations.services.agents.features
+      key: 'funnel',
+      icon: <FunnelIcon size={48} className="text-cyan-400" />,
+      title: t('services.funnel.title'),
+      description: t('services.funnel.description'),
+      solution: t('services.funnel.solution')
     },
     {
-      key: 'analytics',
-      icon: <AnalyticsIcon size={48} className="text-cyan-400" />,
-      title: t('services.analytics.title'),
-      description: t('services.analytics.description'),
-      features: translations.services.analytics.features
+      key: 'time',
+      icon: <ClockIcon size={48} className="text-cyan-400" />,
+      title: t('services.time.title'),
+      description: t('services.time.description'),
+      solution: t('services.time.solution')
     },
     {
-      key: 'automation',
-      icon: <AutomationIcon size={48} className="text-cyan-400" />,
-      title: t('services.automation.title'),
-      description: t('services.automation.description'),
-      features: translations.services.automation.features
+      key: 'competitors',
+      icon: <RaceIcon size={48} className="text-cyan-400" />,
+      title: t('services.competitors.title'),
+      description: t('services.competitors.description'),
+      solution: t('services.competitors.solution')
     }
   ]
 
@@ -69,41 +72,37 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {problems.map((problem, index) => (
             <div
-              key={service.key}
-              className="tech-card digital-noise rounded-2xl p-8 group hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in cursor-pointer"
+              key={problem.key}
+              className="tech-card digital-noise rounded-2xl p-8 group hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
-              onClick={() => setSelectedService(service)}
             >
               {/* Icon with glow effect */}
               <div className="mb-6 flex justify-center">
                 <div className="relative">
                   <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full scale-150 group-hover:scale-200 transition-transform duration-300"></div>
-                  <div className="relative z-10">{service.icon}</div>
+                  <div className="relative z-10">{problem.icon}</div>
                 </div>
               </div>
 
-              {/* Title with gradient effect */}
+              {/* Title - Problem */}
               <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
-                {service.title}
+                {problem.title}
               </h3>
 
-              <p className="text-slate-300 mb-6 leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
-                {service.description}
+              {/* Description - Problem statement */}
+              <p className="text-slate-300 mb-4 leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
+                {problem.description}
               </p>
 
-              {/* Learn More Button */}
-              <button
-                className="w-full py-2 rounded-lg bg-gradient-to-r from-cyan-400/10 to-blue-500/10 text-cyan-400 font-semibold hover:from-cyan-400/20 hover:to-blue-500/20 transition-all duration-300"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setSelectedService(service)
-                }}
-              >
-                Learn More
-              </button>
+              {/* Solution - How AI helps */}
+              <div className="pt-4 border-t border-cyan-400/20">
+                <p className="text-sm text-cyan-400/90 font-semibold leading-relaxed">
+                  {problem.solution}
+                </p>
+              </div>
 
               {/* Holographic border effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
@@ -117,77 +116,31 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* Selected Service Modal */}
-        {selectedService && (
-          <div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedService(null)}
+        {/* CTA Section */}
+        <div className="text-center mt-12">
+          <p className="text-xl text-slate-300 mb-6 max-w-2xl mx-auto">
+            {t('services.ctaText')}
+          </p>
+          <button
+            onClick={scrollToContact}
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 glow-effect hover:scale-105"
           >
-            <div
-              className="bg-slate-900 rounded-2xl p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-cyan-400/30"
-              onClick={(e) => e.stopPropagation()}
+            {t('services.ctaButton')}
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              {/* Service Icon */}
-              <div className="flex justify-center mb-6">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full scale-150"></div>
-                  <div className="relative z-10">{selectedService.icon}</div>
-                </div>
-              </div>
-
-              <h3 className="text-3xl font-bold text-white mb-4 text-center">{selectedService.title}</h3>
-              <p className="text-slate-300 mb-8 text-center text-lg">{selectedService.description}</p>
-
-              {/* Features Grid */}
-              <div className="grid md:grid-cols-2 gap-4 mb-8">
-                {selectedService.features.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-3 bg-slate-800/30 rounded-lg p-4">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-slate-300">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Additional Information */}
-              <div className="bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-lg p-6 mb-6">
-                <h4 className="text-xl font-semibold text-white mb-3">Implementation Process</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center font-bold">1</span>
-                    <p className="text-slate-300">Initial consultation to understand your needs</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center font-bold">2</span>
-                    <p className="text-slate-300">Custom solution design and planning</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center font-bold">3</span>
-                    <p className="text-slate-300">Implementation and integration</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center font-bold">4</span>
-                    <p className="text-slate-300">Ongoing support and optimization</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex justify-center gap-4">
-                <button
-                  className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
-                  onClick={() => setSelectedService(null)}
-                >
-                  Get Started
-                </button>
-                <button
-                  className="px-8 py-3 rounded-lg border border-slate-600 text-slate-300 font-semibold hover:border-cyan-400 hover:text-white transition-colors"
-                  onClick={() => setSelectedService(null)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 12h14m-7-7l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   )
