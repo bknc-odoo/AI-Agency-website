@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
                 transition: 'opacity 0.5s'
               }} />
             </span>
-            <span className={`block transition-all duration-500 neon-glow ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <span className={`block mb-4 transition-all duration-500 neon-glow ${isTypingComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               {renderSubtitle()}
             </span>
           </h1>
