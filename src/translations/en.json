@@ -172,7 +172,7 @@
       "companyPlaceholder": "Your company name (optional)",
       "messagePlaceholder": "Tell us about your business and what you'd like to achieve with AI...",
       "note": "We'll respond within 24 hours to schedule your consultation.",
-      "directContact": "Prefer direct? Write to nordgaimer.ivan@gmail.com",
+      "directContact": "Prefer direct? Email us directly.",
       "guarantee": "100% refundable if you don't see value after the first session.",
       "buyMeCoffee": "Or book directly with Buy Me a Coffee"
     }
@@ -385,6 +385,29 @@
           "Harder to build long-term systems (difficult to strategize)",
           "Progress may stall if you stop and return later"
         ]
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "A simple flow: start small with a Fast-Track Session, then continue with a subscription partnership if it makes sense.",
+    "cta": "Start with Fast-Track Session",
+    "steps": {
+      "step1": {
+        "title": "Fast-Track Session",
+        "description": "Book a ☕ Fast-Track Session. In 60 minutes, we identify ROI opportunities for your business."
+      },
+      "step2": {
+        "title": "ROI Roadmap",
+        "description": "You receive a clear roadmap: what can be improved, automated, or redesigned with AI to bring value."
+      },
+      "step3": {
+        "title": "Choose a Subscription",
+        "description": "If you see the value, continue with one of our subscription partnerships (Start Small, Go Big, or Full Involvement)."
+      },
+      "step4": {
+        "title": "Monthly Partnership",
+        "description": "We work together every month — diagnosing, implementing AI, and tracking ROI improvements."
       }
     }
   },
