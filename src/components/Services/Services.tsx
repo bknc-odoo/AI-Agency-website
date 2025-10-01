@@ -109,23 +109,16 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Section - Buy Me a Coffee */}
+        {/* CTA Section */}
         <div className="text-center mt-12">
           <p className="text-xl text-slate-300 mb-6 max-w-2xl mx-auto">
             {t('services.ctaText')}
           </p>
           <a
-            href="https://www.buymeacoffee.com/nordai.agency"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Start with Coffee - Book Fast-Track Session"
-            className="inline-block transition-transform duration-300 hover:scale-105"
+            href="#contact"
+            className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
           >
-            <img
-              src="https://img.buymeacoffee.com/button-api/?text=Start with Coffee&emoji=☕&slug=nordai.agency&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"
-              alt="Buy Me a Coffee - Start with Coffee to book Fast-Track Session"
-              className="h-14"
-            />
+            {t('services.ctaButton')}
           </a>
         </div>
       </div>

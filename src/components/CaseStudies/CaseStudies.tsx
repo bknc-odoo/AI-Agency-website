@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useScrollGlow } from '@/hooks/useScrollGlow'
 import enTranslations from '@/translations/en.json'
@@ -10,7 +10,7 @@ interface CaseStudy {
   problem: string
   work: string
   outcome: string
-  roi: string
+  roiBreakdown: string
   icon: string
 }
 
@@ -18,8 +18,23 @@ const CaseStudies: React.FC = () => {
   const { t, language } = useTranslation()
   const translations = language === 'en' ? enTranslations : uaTranslations
   const { ref: titleRef, isInView } = useScrollGlow(0.3)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const cases: CaseStudy[] = translations.caseStudies.cases || []
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 3 >= cases.length ? 0 : prevIndex + 3
+    )
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 3 < 0 ? Math.max(0, cases.length - 3) : prevIndex - 3
+    )
+  }
+
+  const visibleCases = cases.slice(currentIndex, currentIndex + 3)
 
   const getIcon = (iconType: string) => {
     switch (iconType) {
@@ -65,6 +80,29 @@ const CaseStudies: React.FC = () => {
             <circle cx="18" cy="10" r="1.5" fill="currentColor"/>
           </svg>
         )
+      case 'map':
+        return (
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+            <path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M8 2v16M16 6v16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        )
+      case 'users':
+        return (
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        )
+      case 'database':
+        return (
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-cyan-400">
+            <ellipse cx="12" cy="5" rx="9" ry="3" stroke="currentColor" strokeWidth="2"/>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke="currentColor" strokeWidth="2"/>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="currentColor" strokeWidth="2"/>
+          </svg>
+        )
       default:
         return null
     }
@@ -89,49 +127,91 @@ const CaseStudies: React.FC = () => {
           </p>
         </div>
 
-        {/* Case Studies Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {cases.map((caseStudy) => (
-            <div
-              key={caseStudy.id}
-              className="tech-card rounded-xl overflow-hidden p-6 hover:border-cyan-400/50 transition-all duration-300"
-            >
-              {/* Icon */}
-              <div className="mb-4 flex justify-center">
-                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
-                  {getIcon(caseStudy.icon)}
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Previous Button */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 p-3 rounded-full bg-slate-800/80 border border-cyan-400/30 text-cyan-400 hover:bg-slate-800 hover:border-cyan-400 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+            aria-label="Previous cases"
+            disabled={currentIndex === 0}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 p-3 rounded-full bg-slate-800/80 border border-cyan-400/30 text-cyan-400 hover:bg-slate-800 hover:border-cyan-400 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+            aria-label="Next cases"
+            disabled={currentIndex + 3 >= cases.length}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          {/* Carousel Grid */}
+          <div className="grid md:grid-cols-3 gap-6 px-12 mb-8">
+            {visibleCases.map((caseStudy) => (
+              <div
+                key={caseStudy.id}
+                className="tech-card rounded-xl overflow-hidden p-6 hover:border-cyan-400/50 transition-all duration-300"
+              >
+                {/* Icon */}
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
+                    {getIcon(caseStudy.icon)}
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-white mb-4 text-center">{caseStudy.title}</h3>
+
+                {/* Problem */}
+                <div className="mb-3">
+                  <p className="text-xs text-cyan-400 font-semibold mb-1">{t('caseStudies.problemLabel')}</p>
+                  <p className="text-sm text-slate-300">{caseStudy.problem}</p>
+                </div>
+
+                {/* Our Work */}
+                <div className="mb-3">
+                  <p className="text-xs text-cyan-400 font-semibold mb-1">{t('caseStudies.workLabel')}</p>
+                  <p className="text-sm text-slate-300">{caseStudy.work}</p>
+                </div>
+
+                {/* Outcome */}
+                <div className="mb-3">
+                  <p className="text-xs text-cyan-400 font-semibold mb-1">{t('caseStudies.outcomeLabel')}</p>
+                  <p className="text-sm text-slate-300">{caseStudy.outcome}</p>
+                </div>
+
+                {/* ROI Breakdown */}
+                <div className="mt-4 pt-4 border-t border-cyan-400/20">
+                  <p className="text-xs text-green-400 font-semibold mb-1">{t('caseStudies.roiLabel')}</p>
+                  <p className="text-sm text-slate-300">{caseStudy.roiBreakdown}</p>
                 </div>
               </div>
+            ))}
+          </div>
 
-              {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-4 text-center">{caseStudy.title}</h3>
-
-              {/* Problem */}
-              <div className="mb-3">
-                <p className="text-xs text-cyan-400 font-semibold mb-1">{t('caseStudies.problemLabel')}</p>
-                <p className="text-sm text-slate-300">{caseStudy.problem}</p>
-              </div>
-
-              {/* Our Work */}
-              <div className="mb-3">
-                <p className="text-xs text-cyan-400 font-semibold mb-1">{t('caseStudies.workLabel')}</p>
-                <p className="text-sm text-slate-300">{caseStudy.work}</p>
-              </div>
-
-              {/* Outcome */}
-              <div className="mb-3">
-                <p className="text-xs text-cyan-400 font-semibold mb-1">{t('caseStudies.outcomeLabel')}</p>
-                <p className="text-sm text-slate-300">{caseStudy.outcome}</p>
-              </div>
-
-              {/* ROI Badge */}
-              <div className="mt-4 pt-4 border-t border-cyan-400/20 text-center">
-                <p className="text-lg font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
-                  {caseStudy.roi}
-                </p>
-              </div>
-            </div>
-          ))}
+          {/* Carousel Indicators */}
+          <div className="flex justify-center gap-2">
+            {Array.from({ length: Math.ceil(cases.length / 3) }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index * 3)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  Math.floor(currentIndex / 3) === index
+                    ? 'w-8 bg-cyan-400'
+                    : 'bg-slate-600 hover:bg-slate-500'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* CTA Section */}
