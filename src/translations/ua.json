@@ -1,14 +1,12 @@
 {
   "nav": {
-    "services": "Послуги",
-    "aiSolutions": "ШІ Рішення",
-    "aiCapabilities": "ШІ Можливості",
-    "customAgents": "Індивідуальні Агенти",
-    "dataProcessing": "Обробка Даних",
+    "home": "Головна",
     "approach": "Підхід",
-    "team": "Команда",
-    "mentorship": "Індивідуальний Менторинг",
-    "getStarted": "Почати"
+    "outcomes": "Результати",
+    "community": "Спільнота",
+    "subscriptions": "Підписки",
+    "faq": "Питання",
+    "contact": "Контакт"
   },
   "hero": {
     "title": "Ваш партнер з AI-трансформації.",
@@ -654,24 +652,20 @@
     "successMessage": "Ми зв'яжемося з вами протягом 15 хвилин у робочий час."
   },
   "footer": {
-    "tagline": "Робимо ШІ простим",
-    "services": "Послуги",
-    "contact": "Контакти",
-    "description": "Робимо ШІ простим і доступним для бізнесу будь-якого розміру. Перетворіть свої операції за допомогою індивідуальних ШІ рішень.",
+    "tagline": "NordAI Agency — Партнер з AI-трансформації бізнесу",
     "quickLinks": "Швидкі Посилання",
-    "aiSolutions": "ШІ Рішення",
-    "aiAgents": "ШІ Агенти",
-    "ourApproach": "Наш Підхід",
-    "team": "Команда",
+    "approach": "Підхід",
+    "outcomes": "Результати",
+    "community": "Спільнота",
+    "subscriptions": "Підписки",
+    "faq": "Питання",
     "getStarted": "Почати",
-    "contactUs": "Зв'язатися з Нами",
-    "bookConsultation": "Записатися на Консультацію",
-    "linkedin": "LinkedIn",
-    "instagram": "Instagram",
+    "contact": "Контакт",
+    "bookSession": "Записатися на сесію",
     "copyright": "© {year} NordAI. Всі права захищені.",
     "privacyPolicy": "Політика Конфіденційності",
     "termsOfService": "Умови Використання",
-    "madeBy": "Створено з ❤️ Іваном Нордгаймером"
+    "refundGuarantee": "100% повернення, якщо ви не отримаєте цінності після першої сесії"
   },
   "testimonials": {
     "title": "Що Кажуть Наші Клієнти",

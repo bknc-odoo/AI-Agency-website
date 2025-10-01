@@ -1,14 +1,12 @@
 {
   "nav": {
-    "services": "Services",
-    "aiSolutions": "AI Solutions",
-    "aiCapabilities": "AI Capabilities",
-    "customAgents": "Custom Agents",
-    "dataProcessing": "Data Processing",
+    "home": "Home",
     "approach": "Approach",
-    "team": "Team",
-    "mentorship": "1:1 Mentorship",
-    "getStarted": "Get Started"
+    "outcomes": "Outcomes",
+    "community": "Community",
+    "subscriptions": "Subscriptions",
+    "faq": "FAQ",
+    "contact": "Contact"
   },
   "hero": {
     "title": "Your AI Transformation Partner.",
@@ -685,24 +683,20 @@
     "successMessage": "We'll contact you within 15 minutes during business hours."
   },
   "footer": {
-    "tagline": "Making AI Simple",
-    "services": "Services",
-    "contact": "Contact",
-    "description": "Making AI simple and accessible for businesses of all sizes. Transform your operations with custom AI solutions.",
+    "tagline": "NordAI Agency — AI Business Transformation Partner",
     "quickLinks": "Quick Links",
-    "aiSolutions": "AI Solutions",
-    "aiAgents": "AI Agents",
-    "ourApproach": "Our Approach",
-    "team": "Team",
+    "approach": "Approach",
+    "outcomes": "Outcomes",
+    "community": "Community",
+    "subscriptions": "Subscriptions",
+    "faq": "FAQ",
     "getStarted": "Get Started",
-    "contactUs": "Contact Us",
-    "bookConsultation": "Book Consultation",
-    "linkedin": "LinkedIn",
-    "instagram": "Instagram",
+    "contact": "Contact",
+    "bookSession": "Book a Session",
     "copyright": "© {year} NordAI. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "madeBy": "Made with ❤️ by Ivan Nordgaimer"
+    "refundGuarantee": "100% refundable if you don't see value after the first session"
   },
   "testimonials": {
     "title": "What Our Clients Say",

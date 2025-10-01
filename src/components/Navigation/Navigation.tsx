@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import LanguageSwitcher from './LanguageSwitcher'
 import MobileMenu from './MobileMenu'
@@ -7,8 +7,6 @@ const Navigation: React.FC = () => {
   const { t } = useTranslation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isAiSolutionsOpen, setIsAiSolutionsOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,17 +15,6 @@ const Navigation: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsAiSolutionsOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
   useEffect(() => {
@@ -63,7 +50,6 @@ const Navigation: React.FC = () => {
         behavior: 'smooth'
       })
     }
-    setIsAiSolutionsOpen(false)
   }
 
   return (
@@ -89,68 +75,15 @@ const Navigation: React.FC = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
               <a
-                href="#services"
-                onClick={(e) => scrollToSection(e, 'services')}
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToTop()
+                }}
                 className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
-                {t('nav.services')}
+                {t('nav.home')}
               </a>
-
-              {/* AI Solutions Dropdown */}
-              <div
-                className="relative"
-                ref={dropdownRef}
-                onMouseEnter={() => setIsAiSolutionsOpen(true)}
-                onMouseLeave={() => setIsAiSolutionsOpen(false)}
-              >
-                <button
-                  className="flex items-center text-slate-300 hover:text-cyan-400 transition-colors"
-                  onClick={() => setIsAiSolutionsOpen(!isAiSolutionsOpen)}
-                >
-                  {t('nav.aiSolutions')}
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className={`ml-1 transform transition-transform ${
-                      isAiSolutionsOpen ? 'rotate-180' : ''
-                    }`}
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-
-                {/* Dropdown Menu */}
-                <div
-                  className={`absolute top-full left-0 mt-2 w-56 bg-slate-800/95 backdrop-blur-lg rounded-lg border border-slate-700 py-2 transition-all duration-200 ${
-                    isAiSolutionsOpen
-                      ? 'opacity-100 visible transform translate-y-0'
-                      : 'opacity-0 invisible transform -translate-y-2'
-                  }`}
-                >
-                  <a
-                    href="#agents-gallery"
-                    className="block px-4 py-2 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
-                    onClick={(e) => scrollToSection(e, 'agents-gallery')}
-                  >
-                    {t('nav.customAgents')}
-                  </a>
-                  <a
-                    href="#data-showcase"
-                    className="block px-4 py-2 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
-                    onClick={(e) => scrollToSection(e, 'data-showcase')}
-                  >
-                    {t('nav.dataProcessing')}
-                  </a>
-                </div>
-              </div>
 
               <a
                 href="#approach"
@@ -159,21 +92,39 @@ const Navigation: React.FC = () => {
               >
                 {t('nav.approach')}
               </a>
+
               <a
-                href="#team"
-                onClick={(e) => scrollToSection(e, 'team')}
+                href="#case-studies"
+                onClick={(e) => scrollToSection(e, 'case-studies')}
                 className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
-                {t('nav.team')}
+                {t('nav.outcomes')}
               </a>
+
               <a
-                href="https://www.nordgaimer.coach"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#community"
+                onClick={(e) => scrollToSection(e, 'community')}
                 className="text-slate-300 hover:text-cyan-400 transition-colors"
               >
-                {t('nav.mentorship')}
+                {t('nav.community')}
               </a>
+
+              <a
+                href="#pricing"
+                onClick={(e) => scrollToSection(e, 'pricing')}
+                className="text-slate-300 hover:text-cyan-400 transition-colors"
+              >
+                {t('nav.subscriptions')}
+              </a>
+
+              <a
+                href="#faq"
+                onClick={(e) => scrollToSection(e, 'faq')}
+                className="text-slate-300 hover:text-cyan-400 transition-colors"
+              >
+                {t('nav.faq')}
+              </a>
+
               <button
                 onClick={(e) => {
                   e.preventDefault()
@@ -190,7 +141,7 @@ const Navigation: React.FC = () => {
                 }}
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:shadow-md hover:shadow-blue-500/25 hover:scale-105"
               >
-                {t('nav.getStarted')}
+                {t('nav.contact')}
               </button>
             </div>
 

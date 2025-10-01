@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import LanguageSwitcher from './LanguageSwitcher'
 
@@ -9,9 +9,22 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation()
-  const [isAiSolutionsOpen, setIsAiSolutionsOpen] = useState(false)
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (sectionId?: string) => {
+    if (sectionId) {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        const offset = 80
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - offset
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
     onClose()
   }
 
@@ -43,89 +56,53 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         </button>
 
         <nav className="flex flex-col items-center space-y-8">
-          <a
-            href="#services"
+          <button
+            onClick={() => handleLinkClick()}
             className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
-            onClick={handleLinkClick}
           >
-            {t('nav.services')}
-          </a>
+            {t('nav.home')}
+          </button>
 
-          {/* AI Solutions Mobile Expandable */}
-          <div className="text-center">
-            <button
-              className="flex items-center text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
-              onClick={() => setIsAiSolutionsOpen(!isAiSolutionsOpen)}
-            >
-              {t('nav.aiSolutions')}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                className={`ml-2 transform transition-transform ${
-                  isAiSolutionsOpen ? 'rotate-180' : ''
-                }`}
-              >
-                <path
-                  d="M6 9l6 6 6-6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-
-            <div className={`mt-4 space-y-4 transition-all duration-200 overflow-hidden ${
-              isAiSolutionsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-            }`}>
-              <a
-                href="#agents-gallery"
-                className="block text-lg text-slate-400 hover:text-cyan-400 transition-colors"
-                onClick={handleLinkClick}
-              >
-                {t('nav.customAgents')}
-              </a>
-              <a
-                href="#data-showcase"
-                className="block text-lg text-slate-400 hover:text-cyan-400 transition-colors"
-                onClick={handleLinkClick}
-              >
-                {t('nav.dataProcessing')}
-              </a>
-            </div>
-          </div>
-
-          <a
-            href="#approach"
+          <button
+            onClick={() => handleLinkClick('approach')}
             className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
-            onClick={handleLinkClick}
           >
             {t('nav.approach')}
-          </a>
-          <a
-            href="#team"
+          </button>
+
+          <button
+            onClick={() => handleLinkClick('case-studies')}
             className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
-            onClick={handleLinkClick}
           >
-            {t('nav.team')}
-          </a>
-          <a
-            href="https://www.nordgaimer.coach"
-            target="_blank"
-            rel="noopener noreferrer"
+            {t('nav.outcomes')}
+          </button>
+
+          <button
+            onClick={() => handleLinkClick('community')}
             className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
-            onClick={handleLinkClick}
           >
-            {t('nav.mentorship')}
-          </a>
+            {t('nav.community')}
+          </button>
+
+          <button
+            onClick={() => handleLinkClick('pricing')}
+            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
+          >
+            {t('nav.subscriptions')}
+          </button>
+
+          <button
+            onClick={() => handleLinkClick('faq')}
+            className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
+          >
+            {t('nav.faq')}
+          </button>
 
           <button
             className="inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-500 px-6 py-3 text-lg font-semibold text-white transition-all duration-300 hover:shadow-md hover:shadow-blue-500/25 hover:scale-105"
-            onClick={handleLinkClick}
+            onClick={() => handleLinkClick('contact')}
           >
-            {t('nav.getStarted')}
+            {t('nav.contact')}
           </button>
 
           <LanguageSwitcher variant="mobile" className="mt-8" />
