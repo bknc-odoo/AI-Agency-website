@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
               </button>
             </form>
 
-            <div className="mt-6 space-y-3">
+            <div className="mt-6 space-y-4">
               <p className="text-center text-sm text-slate-400">
                 {t('contact.form.note')}
               </p>
@@ -204,6 +204,20 @@ const Contact: React.FC = () => {
               <p className="text-center text-sm text-slate-300">
                 {t('contact.form.directContact')}
               </p>
+
+              {/* Buy Me a Coffee Button */}
+              <div className="text-center">
+                <p className="text-sm text-slate-400 mb-3">{t('contact.form.buyMeCoffee')}</p>
+                <a
+                  href="https://buymeacoffee.com/nordgaimer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 text-slate-900 font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300"
+                >
+                  <span>☕</span>
+                  <span>Buy Me a Coffee</span>
+                </a>
+              </div>
 
               {/* Guarantee Badge */}
               <div className="flex items-center justify-center gap-2 p-3 bg-green-400/10 border border-green-400/30 rounded-lg">

@@ -147,8 +147,8 @@
   },
   "contact": {
     "title": "Start Your AI Journey",
-    "description": "Everything begins with one simple step — a coffee. Book your Fast-Track Session and see where AI creates ROI in your business.",
-    "cta": "Book Fast-Track Session",
+    "description": "Everything begins with one simple step — a coffee ☕. Book your Fast-Track Session and discover where AI creates ROI in your business.",
+    "cta": "Send Message",
     "benefits": {
       "consultation": {
         "title": "Free Consultation",
@@ -164,18 +164,19 @@
       }
     },
     "form": {
-      "title": "Book Your Fast-Track Session",
+      "title": "Contact Form",
       "name": "Name",
       "email": "Email",
       "company": "Company",
-      "message": "Tell us about your project",
+      "message": "Message",
       "namePlaceholder": "Your full name",
       "emailPlaceholder": "your@email.com",
-      "companyPlaceholder": "Your company name",
-      "messagePlaceholder": "Describe your AI needs and objectives...",
+      "companyPlaceholder": "Your company name (optional)",
+      "messagePlaceholder": "Tell us about your business and what you'd like to achieve with AI...",
       "note": "We'll respond within 24 hours to schedule your consultation.",
-      "directContact": "Prefer direct contact? Use the form above or reach out via the chat widget.",
-      "guarantee": "100% refundable if you don't see value after the first session."
+      "directContact": "Prefer direct? Write to nordgaimer.ivan@gmail.com",
+      "guarantee": "100% refundable if you don't see value after the first session.",
+      "buyMeCoffee": "Or book directly with Buy Me a Coffee"
     }
   },
   "capabilities": {
@@ -415,7 +416,7 @@
       },
       {
         "question": "Can I cancel anytime?",
-        "answer": "Yes. Subscriptions are month-to-month. You can stop anytime."
+        "answer": "Yes. Subscriptions are month-to-month, unless you lock in 6–12 months for discounts."
       },
       {
         "question": "Do you only work with certain industries?",
@@ -423,7 +424,7 @@
       },
       {
         "question": "Do you build custom AI agents/software?",
-        "answer": "Yes, but only when it makes ROI sense. We don't just automate for fun — we focus on value."
+        "answer": "Yes, but only when it makes ROI sense. We focus on business value, not automation for its own sake."
       }
     ]
   },
