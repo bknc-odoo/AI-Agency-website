@@ -118,12 +118,12 @@ const Services: React.FC = () => {
             href="https://www.buymeacoffee.com/nordai.agency"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Book Fast-Track Session via Buy Me a Coffee"
+            aria-label="Start with Coffee - Book Fast-Track Session"
             className="inline-block transition-transform duration-300 hover:scale-105"
           >
             <img
-              src="https://img.buymeacoffee.com/button-api/?text=Book Fast-Track Session&emoji=&slug=nordai.agency&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"
-              alt="Buy Me a Coffee button to book Fast-Track Session"
+              src="https://img.buymeacoffee.com/button-api/?text=Start with Coffee&emoji=☕&slug=nordai.agency&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"
+              alt="Buy Me a Coffee - Start with Coffee to book Fast-Track Session"
               className="h-14"
             />
           </a>

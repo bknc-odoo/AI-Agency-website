@@ -3,11 +3,10 @@ import TranslationProvider from './components/TranslationProvider'
 import Navigation from './components/Navigation/Navigation'
 import Hero from './components/Hero/Hero'
 import Services from './components/Services/Services'
-import Capabilities from './components/Capabilities/Capabilities'
+import Approach from './components/Approach/Approach'
 import AgentsGallery from './components/AgentsGallery/AgentsGallery'
 import Technologies from './components/Technologies/Technologies'
 import DataShowcase from './components/DataShowcase/DataShowcase'
-import Approach from './components/Approach/Approach'
 import Difference from './components/Difference/Difference'
 import Team from './components/Team/Team'
 import Contact from './components/Contact/Contact'
@@ -22,11 +21,10 @@ const App: React.FC = () => {
         <Navigation />
         <Hero />
         <Services />
-        <Capabilities />
+        <Approach />
         <AgentsGallery />
         <Technologies />
         <DataShowcase />
-        <Approach />
         <Difference />
         <Team />
         <Contact />

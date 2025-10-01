@@ -81,13 +81,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               isAiSolutionsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}>
               <a
-                href="#capabilities"
-                className="block text-lg text-slate-400 hover:text-cyan-400 transition-colors"
-                onClick={handleLinkClick}
-              >
-                {t('nav.aiCapabilities')}
-              </a>
-              <a
                 href="#agents-gallery"
                 className="block text-lg text-slate-400 hover:text-cyan-400 transition-colors"
                 onClick={handleLinkClick}

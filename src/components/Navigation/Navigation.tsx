@@ -136,13 +136,6 @@ const Navigation: React.FC = () => {
                   }`}
                 >
                   <a
-                    href="#capabilities"
-                    className="block px-4 py-2 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
-                    onClick={(e) => scrollToSection(e, 'capabilities')}
-                  >
-                    {t('nav.aiCapabilities')}
-                  </a>
-                  <a
                     href="#agents-gallery"
                     className="block px-4 py-2 text-slate-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors"
                     onClick={(e) => scrollToSection(e, 'agents-gallery')}
